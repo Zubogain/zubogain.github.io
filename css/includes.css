@@ -1,0 +1,27 @@
+@import url('site-styles/header.css');
+@import url('site-styles/about-us.css');
+@import url('site-styles/amazing-services.css');
+@import url('site-styles/footer.css');
+@import url('sprites.css');
+
+/* custom fonts: Kaushan Script, Montserrat */
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
+
+* {
+	box-sizing: border-box;
+	vertical-align: top;
+	font-size: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+.main {
+	min-width: 122rem;
+	text-align: center;
+	background-color: blue;
+	margin: 0 auto;
+}
