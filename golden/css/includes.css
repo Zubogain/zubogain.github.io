@@ -9,20 +9,35 @@
 @import url('site-styles/contact-us.css');
 @import url('site-styles/footer.css');
 /* custom fonts: roboto_slabregular, Montserrat, Droid Serif */
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif:400i,400|Montserrat:400,500,600,700');
+
 * {
 	box-sizing: border-box;
 	vertical-align: top;
-	font-size: 0;
 	margin: 0;
 }
 
 html {
+	text-align: center;
 	font-size: 62.5%;
 }
 
+body {
+	height: auto;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+}
+
 .main {
-	min-width: 100rem;
+	min-width: 1000px;
+	height: auto;
+	vertical-align: top;
 	text-align: center;
-	background-color: blue;
-	margin: 0 auto;
+}
+
+body, .main, section, article, header {
+  display:block;
+  max-width:100%;
 }
