@@ -1,0 +1,28 @@
+@import url('fonts.css');
+@import url('sprites.css');
+@import url('site-styles/welcome-studio.css');
+@import url('site-styles/services.css');
+@import url('site-styles/our-portfolio.css');
+@import url('site-styles/about-us.css');
+@import url('site-styles/our-team.css');
+@import url('site-styles/freelance.css');
+@import url('site-styles/contact-us.css');
+@import url('site-styles/footer.css');
+/* custom fonts: roboto_slabregular, Montserrat, Droid Serif */
+* {
+	box-sizing: border-box;
+	vertical-align: top;
+	font-size: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+.main {
+	min-width: 100rem;
+	text-align: center;
+	background-color: blue;
+	margin: 0 auto;
+}
