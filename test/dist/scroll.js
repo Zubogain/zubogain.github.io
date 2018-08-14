@@ -1,1 +1,0 @@
-$(document).ready(function(){$('a[href^="#"]').click(function(){return elementClick=$(this).attr("href"),destination=$(elementClick).offset().top,$.browser.safari?$("body").animate({scrollTop:destination},1e3):$("html").animate({scrollTop:destination},1e3),!1})});
