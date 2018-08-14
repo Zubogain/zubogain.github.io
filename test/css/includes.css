@@ -1,3 +1,6 @@
+/* custom fonts: roboto_slabregular, Montserrat, Droid Serif */
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif:400i,400|Montserrat:400,500,600,700');
+
 @import url('fonts.css');
 @import url('sprites.css');
 @import url('site-styles/welcome-studio.css');
@@ -8,8 +11,6 @@
 @import url('site-styles/freelance.css');
 @import url('site-styles/contact-us.css');
 @import url('site-styles/footer.css');
-/* custom fonts: roboto_slabregular, Montserrat, Droid Serif */
-@import url('https://fonts.googleapis.com/css?family=Droid+Serif:400i,400|Montserrat:400,500,600,700');
 
 * {
 	box-sizing: border-box;
