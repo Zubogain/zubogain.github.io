@@ -120,6 +120,7 @@ body {
 .header__countdown__item__container {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .header__countdown__item__number {
