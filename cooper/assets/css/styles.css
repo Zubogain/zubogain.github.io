@@ -34,7 +34,7 @@ body {
 .header .container {
   position: relative;
   background-color: rgb(123, 160, 151);
-  background-image: url("../img/tower.png");
+  background-image: url("../img/Tower.png");
   background-repeat: no-repeat;
   background-position: 50% 35%;
 }
