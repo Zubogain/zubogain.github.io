@@ -120,7 +120,6 @@ body {
 .header__countdown__item__container {
   display: flex;
   justify-content: space-around;
-  align-items: center;
 }
 
 .header__countdown__item__number {
@@ -132,6 +131,7 @@ body {
   color: white;
 
   text-align: center;
+  vertical-align: middle;
 
   background-image: url("../img/bg.png");
   background-repeat: no-repeat;
