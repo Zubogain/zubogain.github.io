@@ -1,8 +1,13 @@
-## Technologies
+![Zubogain card](./.github/zubogain-card.png)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FZubogain%2Fzubogain.github.io.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FZubogain%2Fzubogain.github.io?ref=badge_shield)
 
+## Overview
 
-Prototype is built using [NextJS](https://nextjs.org/)
+A simple website about me.
+
+## Technologies
+
+The site about me was created using [NextJS](https://nextjs.org/).
 
 ## Copyright (proprietary license)
 
