@@ -1,0 +1,22 @@
+.works {
+  z-index: 10000;
+
+  &-container {
+    overflow-y: auto;
+    position: relative;
+    max-height: 100vh;
+
+    z-index: 999;
+  }
+
+  &__item {
+    width: 100%;
+
+    position: relative;
+    z-index: 999;
+
+    & img {
+      object-fit: cover;
+    }
+  }
+}

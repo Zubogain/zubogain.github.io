@@ -1,0 +1,65 @@
+.swiper {
+    margin-top: 30px;
+}
+
+.swiper-slide {
+    height: auto !important;
+    // align-self: stretch !important;
+}
+
+.card {
+    height: 100%;
+    border: 3px solid #000;
+
+    padding: 10px;
+
+    background-color: rgba(255, 255, 255, 0.7);
+
+    // margin-top: 30px;
+
+    &__title {
+        font-size: 24px;
+        // line-height: 30px;
+    }
+
+    &__title,
+    &__subtitle,
+    &__date,
+    &__text {
+        margin: 0;
+    }
+
+    &__header {}
+
+    // / / / / / / 
+
+    &__header {
+        position: relative;
+    }
+
+    &__header &__title {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__header &__date {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+
+    &__subtitle {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    &__date {
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    &__text {
+        margin-top: 5px;
+        font-size: 16px;
+    }
+}

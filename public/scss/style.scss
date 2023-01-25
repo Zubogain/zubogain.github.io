@@ -1,0 +1,69 @@
+// Connection fonts ...
+
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+// Vendors ...
+@import "vendors/bootstrap-config";
+// @import "vendors/bootstrap-largegrid";
+
+// Abstracts ...
+@import "abstracts/variables";
+@import "abstracts/functuions";
+@import "abstracts/mixin";
+@import "abstracts/class";
+
+// Base ...
+@import "base/reset";
+@import "base/other";
+@import "base/accelerate";
+@import "base/grid";
+
+// Layout ...
+@import "layout/header";
+@import "layout/footer";
+@import "layout/slide-down";
+@import "layout/tsparticles";
+
+// Components ...
+@import "components/cap";
+@import "components/card";
+@import "components/form";
+@import "components/link";
+
+// Pages ...
+@import "pages/404";
+@import "pages/home";
+@import "pages/about";
+@import "pages/skills";
+@import "pages/works";
+@import "pages/contact";
+
+html,
+body,
+.main,
+#root,
+#__next {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: #ffffff;
+  overscroll-behavior: contain;
+}
+
+* {
+  font-family: Roboto, "Mulish", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: #000 !important;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+}

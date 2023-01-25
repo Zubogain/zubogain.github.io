@@ -1,0 +1,17 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-rows: 1fr;
+  grid-gap: 1px;
+}
+.item {
+  background: rgba(207, 13, 13, 0.883);
+  display: flex;
+}
+.item:before {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  padding-bottom: calc(9 / 16 * 100%);
+}
