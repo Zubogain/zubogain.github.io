@@ -1,10 +1,11 @@
 import React from "react";
+import staticContent from "@/staticContent";
 
 const Footer = () => {
     return (
         <div className="footer d-flex justify-content-between">
-            <p className="copyrigth">© Emil Shergali</p>
-            <p className="version">prototype - v1.0.0a</p>
+            <p className="copyrigth">© {staticContent.author}</p>
+            <p className="version">{staticContent.codename} - {staticContent.version}</p>
         </div>
     )
 }

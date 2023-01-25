@@ -3,7 +3,7 @@
 
 ## Overview
 
-A simple website about me.
+Minimalistic website about me.
 
 ## Technologies
 
