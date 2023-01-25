@@ -8,6 +8,16 @@ const ContactContainer = () => {
     <React.Fragment>
       <Head>
         <title>Contact</title>
+        <meta name="description" content="I’m interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to use the form." key="desc" />
+        <meta property="og:title" content="Contact me" />
+        <meta
+          property="og:description"
+          content="I’m interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to use the form."
+        />
+        <meta
+          property="og:image"
+          content="https://zubogain.github.io/static/og-image.png"
+        />
       </Head>
       <motion.section
         className="contact d-flex flex-column justify-content-center align-items-center"

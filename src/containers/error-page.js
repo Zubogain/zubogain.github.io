@@ -11,6 +11,16 @@ const ErrorPageContainer = () => {
     <React.Fragment>
       <Head>
         <title>Some mistake</title>
+        <meta name="description" content="Something seems to have gone wrong." key="desc" />
+        <meta property="og:title" content="Page not found" />
+        <meta
+          property="og:description"
+          content="Something seems to have gone wrong."
+        />
+        <meta
+          property="og:image"
+          content="https://zubogain.github.io/static/og-image.png"
+        />
       </Head>
       <section className="error-page h-100">
         <div className="container h-100">

@@ -8,6 +8,16 @@ const HomeContainer = () => {
     <React.Fragment>
       <Head>
         <title>Home</title>
+        <meta name="description" content="Hi, I'm Emil, a software developer and cloud expert" key="desc" />
+        <meta property="og:title" content="Home" />
+        <meta
+          property="og:description"
+          content="Hi, I'm Emil, a software developer and cloud expert"
+        />
+        <meta
+          property="og:image"
+          content="https://zubogain.github.io/static/og-image.png"
+        />
       </Head>
       <motion.section
         className="home d-flex flex-column justify-content-center align-items-center"
