@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
@@ -41,7 +41,6 @@ const Layout = ({ children }) => {
     <React.Fragment>
       <Header />
       <AnimatePresence
-        // exitBeforeEnter
         initial={false}
       >
         {children}

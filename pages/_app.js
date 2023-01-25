@@ -1,41 +1,12 @@
-// import "@Public/scss/style.scss";
-
-// export default function App({ Component, pageProps }) {
-//   return <Component {...pageProps} />
-// }
-
-// // // // // // // // // // // / / / / / / / / / / / / / / / / / / / / / 
-
 import { withRouter } from "next/router";
 import Head from "next/head";
-import Router from "next/router";
 import AppMain from "@/App";
 import "@Public/scss/style.scss";
+import 'swiper/css';
 
 import { wrapper } from "../src/store";
-// import { useState } from "react";
-// import { useDispatch } from "react-redux";
-
-import { AnimateSharedLayout } from "framer-motion";
 
 const MyApp = ({ Component, pageProps, router, store }) => {
-  // const dispatch = useDispatch();
-  // const [isLoadingPage, setIsLoadingPage] = useState(false);
-
-  Router.onRouteChangeStart = (url) => {
-    // dispatch(themeSetIsBlur(true));
-    // setIsLoadingPage(true);
-  };
-
-  Router.onRouteChangeComplete = (url) => {
-    // dispatch(themeSetIsBlur(false));
-    // setIsLoadingPage(false);
-  };
-
-  Router.onRouteChangeError = (err, url) => {
-    // dispatch(themeSetIsBlur(false));
-    // setIsLoadingPage(false);
-  };
 
   return (
     <>
@@ -53,20 +24,11 @@ const MyApp = ({ Component, pageProps, router, store }) => {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         ></link>
       </Head>
-      {/* {isLoadingPage && <PagePreloader />} */}
       <AppMain router={router}>
-        {/* <AnimateSharedLayout> */}
         <Component {...pageProps} lang={router.query.lang} store={store} />
-        {/* </AnimateSharedLayout> */}
       </AppMain>
     </>
   );
-};
-
-MyApp.getInitialProps = async ({ Component, ctx, store, dispatch }) => {
-  let pageProps = {};
-
-  return { pageProps };
 };
 
 export default wrapper.withRedux(withRouter(MyApp));

@@ -1,9 +1,8 @@
 import { connect } from "react-redux";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
-const ErrorPage = ({ animationRouteVariant }) => {
+const ErrorPage = () => {
   const router = useRouter();
 
   return (

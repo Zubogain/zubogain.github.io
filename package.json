@@ -31,5 +31,9 @@
     "swiper": "^8.4.6",
     "TagCloud": "^2.3.2",
     "tsparticles": "^2.8.0"
+  },
+  "devDependencies": {
+    "eslint": "8.32.0",
+    "eslint-config-next": "13.1.5"
   }
 }
