@@ -1,5 +1,3 @@
-import Skills from "@Containers/skills";
+import SkillsContainer from "@Containers/skills";
 
-Skills.getInitialProps = async ({ store, ...ctx }) => {};
-
-export default Skills;
+export default SkillsContainer;

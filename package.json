@@ -11,6 +11,7 @@
   "dependencies": {
     "@n8tb1t/use-scroll-position": "^2.0.3",
     "@next/font": "13.1.5",
+    "@vercel/og": "^0.0.27",
     "bootstrap": "^4.6.2",
     "framer-motion": "^8.5.2",
     "google-map-react": "^2.2.0",

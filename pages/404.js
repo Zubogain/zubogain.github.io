@@ -1,2 +1,3 @@
-import ErrorPage from "@Containers/error-page";
-export default ErrorPage;
+import ErrorPageContainer from "@Containers/error-page";
+
+export default ErrorPageContainer;

@@ -1,0 +1,35 @@
+/*404*/
+.error-page {
+    &__btn {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+
+        opacity: 0.8;
+
+        margin-top: 30px;
+        padding: 15px 30px;
+
+        color: #000;
+
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 3px solid #000;
+
+        @include media-breakpoint-down(md) {
+            padding: 15px 0;
+        }
+
+        @include media-breakpoint-down(lg) {
+            width: 100%;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

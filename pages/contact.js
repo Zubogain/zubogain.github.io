@@ -1,5 +1,3 @@
-import Contact from "@Containers/contact";
+import ContactContainer from "@Containers/contact";
 
-Contact.getInitialProps = async ({ store, ...ctx }) => {};
-
-export default Contact;
+export default ContactContainer;

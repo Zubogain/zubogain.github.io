@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
   const [showAngle, setShowAngle] = useState(true);
 
   useEffect(() => {
-    if (router.route == "/contact") {
+    if (router.route == "/contact" || router.route == "/404") {
       showAngle && setShowAngle(false);
       !showFooter && setShowFooter(true);
     } else {

@@ -1,34 +1,35 @@
-import { connect } from "react-redux";
+import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-const ErrorPage = () => {
+import { connect } from "react-redux";
+
+const ErrorPageContainer = () => {
   const router = useRouter();
 
   return (
-    <>
+    <React.Fragment>
       <Head>
-        <title>Something Error</title>
+        <title>Some mistake</title>
       </Head>
-      <section className="section section__error h-100">
+      <section className="error-page h-100">
         <div className="container h-100">
           <div className="row h-100 pb-5">
             <div className="col-12 mb-5">
               <div className="h-100 d-flex flex-column text-center justify-content-center">
-                <h1 className="cap cap__size-big">
-                  Something Error
+                <h1 className="cap__title">
+                  Page not found
                 </h1>
-                <p className="cap cap__size-bigger">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor
+                <p className="cap__text">
+                  Something seems to have gone wrong.
                 </p>
                 <div className="row pb-5 justify-content-center">
                   <div className="col-lg-auto col-sm-8 col-12 mb-5">
                     <button
-                      className="btn btn--primary cap cap__size-normal w-100"
+                      className="error-page__btn"
                       onClick={() => router.back()}
                     >
-                      Go Back
+                      Go back!
                     </button>
                   </div>
                 </div>
@@ -37,7 +38,7 @@ const ErrorPage = () => {
           </div>
         </div>
       </section>
-    </>
+    </React.Fragment>
   );
 };
 
@@ -45,4 +46,4 @@ const mapStateToProps = ({ theme: { animationRouteVariant } }) => {
   return { animationRouteVariant };
 };
 
-export default connect(mapStateToProps)(ErrorPage);
+export default connect(mapStateToProps)(ErrorPageContainer);

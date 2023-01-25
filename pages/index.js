@@ -1,5 +1,3 @@
-import Home from "@Containers/home";
+import HomeContainer from "@Containers/home";
 
-Home.getInitialProps = async ({ store, ...ctx }) => {};
-
-export default Home;
+export default HomeContainer;
