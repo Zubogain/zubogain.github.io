@@ -22,6 +22,7 @@
     "react-beautiful-dnd": "^13.1.1",
     "react-bootstrap": "^1.6.6",
     "react-dom": "18.2.0",
+    "react-indiana-drag-scroll": "^2.2.0",
     "react-particles": "^2.8.0",
     "react-scroll": "^1.8.9",
     "react-swipeable": "^7.0.0",
