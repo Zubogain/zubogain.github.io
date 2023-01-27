@@ -63,7 +63,7 @@ const Projects = ({ isStopAnimation, setIsStopAnimation }) => {
                                     key={item.title + item.subtitle + item.date + item.text + index}
                                     className="col-12 col-md-6 col-lg-4"
                                 >
-                                    <a href={item.url} target="_blank">
+                                    <a href={item.url} target="_blank" rel="noreferrer">
                                         <div className="card text-center d-flex align-items-center justify-content-center">
                                             <div
                                                 className="card__header d-flex justify-content-center"
