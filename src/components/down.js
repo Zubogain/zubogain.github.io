@@ -16,15 +16,15 @@ const Down = () => {
         const nextRouteIndex = routeIndex + 1;
 
         if (routeIndex != -1 && nextRouteIndex < routes.length) {
-            setNextRoute(routes[nextRouteIndex].replace("[locale]/", ""));
+            setNextRoute(routes[nextRouteIndex].replace("[locale]", router.query.locale));
         }
 
-    }, [router.route]);
+    }, [router.route, router.query.locale]);
 
     console.log(nextRoute)
 
     return (
-        <LinkComponent href={nextRoute} className="slide-down d-flex justify-content-center">
+        <Link href={nextRoute} className="slide-down d-flex justify-content-center">
             <Image
                 priority
                 src="/static/angle-down.svg"
@@ -32,7 +32,7 @@ const Down = () => {
                 width={50}
                 alt="Follow us on Twitter"
             />
-        </LinkComponent>
+        </Link>
     )
 }
 
