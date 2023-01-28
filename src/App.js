@@ -35,9 +35,9 @@ const Layout = ({ children }) => {
       setPrevRoute(routes[prevRouteIndex].replace("[locale]", router.query.locale));
     }
 
-  }, [router.route]);
+  }, [router.route, router.query.locale]);
 
-  console.log(router)
+  // console.log(router)
 
   const handlers = useSwipeable({
     onSwipedUp: (eventData) => { router.push(nextRoute) },
