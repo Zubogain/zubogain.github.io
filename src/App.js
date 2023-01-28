@@ -12,7 +12,7 @@ import Header from "./components/header";
 import { useSwipeable } from "react-swipeable";
 
 const Layout = ({ children }) => {
-  const routes = ["/", "/skills", "/experience", "/contact"];
+  const routes = ["/[locale]", "/[locale]/skills", "/[locale]/experience", "/[locale]/contact"];
 
   const [nextRoute, setNextRoute] = useState("");
   const [prevRoute, setPrevRoute] = useState("");
@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
     const nextRouteIndex = routeIndex + 1;
 
     if (routeIndex != -1 && nextRouteIndex < routes.length) {
-      setNextRoute(routes[nextRouteIndex]);
+      setNextRoute(routes[nextRouteIndex].replace("[locale]", router.query.locale));
     }
 
     // find prev route
@@ -32,10 +32,12 @@ const Layout = ({ children }) => {
     const prevRouteIndex = routeIndex - 1;
 
     if (routeIndex != -1 && prevRouteIndex != -1) {
-      setPrevRoute(routes[prevRouteIndex]);
+      setPrevRoute(routes[prevRouteIndex].replace("[locale]", router.query.locale));
     }
 
   }, [router.route]);
+
+  console.log(router)
 
   const handlers = useSwipeable({
     onSwipedUp: (eventData) => { router.push(nextRoute) },

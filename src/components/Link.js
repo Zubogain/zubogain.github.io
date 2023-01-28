@@ -17,11 +17,13 @@ const LinkComponent = ({
             ? `/${locale}${href}`
             : router.pathname.replace('[locale]', locale)
     }
+    // console.log("Header locale:", locale)
+    // console.log("Header locale:", href)
 
     return (
         <>
-            <Link href={href} legacyBehavior>
-                <a {...rest}>{children}</a>
+            <Link {...rest} href={href} locale={locale}>
+                {children}
             </Link>
         </>
     )
