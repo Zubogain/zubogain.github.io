@@ -1,3 +1,3 @@
-import ErrorPageContainer from "@Containers/error-page";
+import { Redirect } from '@Libs/redirect';
 
-export default ErrorPageContainer;
+export default Redirect;

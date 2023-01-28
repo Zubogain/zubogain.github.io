@@ -1,3 +1,3 @@
-import ExperienceContainer from "@Containers/experience";
+import { Redirect } from '@Libs/redirect';
 
-export default ExperienceContainer;
+export default Redirect;

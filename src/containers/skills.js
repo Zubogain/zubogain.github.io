@@ -1,12 +1,12 @@
 import React from "react";
 import Head from "next/head";
 
-import useTranslation from 'next-translate/useTranslation';
+import { useTranslation } from 'next-i18next';
 
 import { motion } from "framer-motion";
 
 const SkillsContainer = () => {
-  const { t, lang } = useTranslation();
+  const { t } = useTranslation(["skills"]);
 
   return (
     <React.Fragment>

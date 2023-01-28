@@ -2,8 +2,6 @@ import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import { connect } from "react-redux";
-
 const ErrorPageContainer = () => {
   const router = useRouter();
 
@@ -52,8 +50,4 @@ const ErrorPageContainer = () => {
   );
 };
 
-const mapStateToProps = ({ theme: { animationRouteVariant } }) => {
-  return { animationRouteVariant };
-};
-
-export default connect(mapStateToProps)(ErrorPageContainer);
+export default ErrorPageContainer;

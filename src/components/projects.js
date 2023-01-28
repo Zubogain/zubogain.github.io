@@ -1,18 +1,16 @@
 import React, { useEffect, useRef } from "react";
 
-import useTranslation from 'next-translate/useTranslation';
+import { useTranslation } from 'next-i18next';
 
 import { motion, useAnimation } from "framer-motion";
-
-import staticContent from "@/staticContent";
 
 import ScrollContainer from 'react-indiana-drag-scroll'
 import Image from "next/image";
 
 const Projects = ({ isStopAnimation, setIsStopAnimation }) => {
-    const { t, lang } = useTranslation();
+    const { t } = useTranslation(["projects"]);
 
-    const projectsList = t('projects:list', {}, { returnObjects: true });
+    const projectsList = t('projects:list', { returnObjects: true });
 
     const ref = useRef();
 

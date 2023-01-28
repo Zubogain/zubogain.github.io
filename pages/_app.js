@@ -1,5 +1,8 @@
 import { withRouter } from "next/router";
 import Head from "next/head";
+
+import { appWithTranslation } from 'next-i18next';
+
 import AppMain from "@/App";
 import "@Public/scss/style.scss";
 import 'swiper/css';
@@ -38,5 +41,5 @@ const MyApp = ({ Component, pageProps, router, store }) => {
   );
 };
 
-export default wrapper.withRedux(withRouter(MyApp));
+export default appWithTranslation(withRouter(MyApp));
 
