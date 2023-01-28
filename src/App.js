@@ -25,6 +25,8 @@ const Layout = ({ children }) => {
 
     if (routeIndex != -1 && nextRouteIndex < routes.length) {
       setNextRoute(routes[nextRouteIndex].replace("[locale]", router.query.locale));
+    } else {
+      setNextRoute(router.route.replace("[locale]", router.query.locale));
     }
 
     // find prev route
@@ -33,6 +35,8 @@ const Layout = ({ children }) => {
 
     if (routeIndex != -1 && prevRouteIndex != -1) {
       setPrevRoute(routes[prevRouteIndex].replace("[locale]", router.query.locale));
+    } else {
+      setPrevRoute(router.route.replace("[locale]", router.query.locale));
     }
 
   }, [router.route, router.query.locale]);
@@ -57,7 +61,7 @@ const Layout = ({ children }) => {
   const [showAngle, setShowAngle] = useState(true);
 
   useEffect(() => {
-    if (router.route == "/contact" || router.route == "/404") {
+    if (router.route == "/[locale]/contact" || router.route == "/[locale]/404") {
       showAngle && setShowAngle(false);
       !showFooter && setShowFooter(true);
     } else {
