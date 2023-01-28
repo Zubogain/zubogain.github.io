@@ -1,0 +1,25 @@
+{
+    "locales": [
+        "en",
+        "ru"
+    ],
+    "defaultLocale": "en",
+    "pages": {
+        "*": [
+            "common"
+        ],
+        "/": [
+            "home"
+        ],
+        "/skills": [
+            "skills"
+        ],
+        "/experience": [
+            "experience",
+            "projects"
+        ],
+        "/contact": [
+            "contact"
+        ]
+    }
+}
