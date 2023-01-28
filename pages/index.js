@@ -1,3 +1,3 @@
-import HomeContainer from "@Containers/home";
+import { Redirect } from '@Libs/redirect';
 
-export default HomeContainer;
+export default Redirect;

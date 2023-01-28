@@ -1,17 +1,15 @@
 import React, { useEffect, useRef } from "react";
 
-import useTranslation from 'next-translate/useTranslation';
+import { useTranslation } from 'next-i18next';
 
 import { motion, useAnimation } from "framer-motion";
-
-import staticContent from "@/staticContent";
 
 import ScrollContainer from 'react-indiana-drag-scroll'
 
 const Experience = ({ isStopAnimation, setIsStopAnimation }) => {
-    const { t, lang } = useTranslation();
+    const { t } = useTranslation(["experience"]);
 
-    const experienceList = t('experience:list', {}, { returnObjects: true });
+    const experienceList = t('experience:list', { returnObjects: true });
 
     const ref = useRef();
 

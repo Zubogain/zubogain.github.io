@@ -1,3 +1,3 @@
-import SkillsContainer from "@Containers/skills";
+import { Redirect } from '@Libs/redirect';
 
-export default SkillsContainer;
+export default Redirect;

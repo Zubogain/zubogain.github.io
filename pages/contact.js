@@ -1,3 +1,3 @@
-import ContactContainer from "@Containers/contact";
+import { Redirect } from '@Libs/redirect';
 
-export default ContactContainer;
+export default Redirect;
