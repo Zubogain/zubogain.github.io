@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import Image from 'next/image';
 import Link from "next/link";
 import { useRouter } from "next/router";
+import LinkComponent from "./Link";
 
 const Down = () => {
-    const routes = ["/", "/skills", "/experience", "/contact"];
+    const routes = ["/[locale]", "/[locale]/skills", "/[locale]/experience", "/[locale]/contact"];
 
     const [nextRoute, setNextRoute] = useState("");
 
@@ -15,13 +16,15 @@ const Down = () => {
         const nextRouteIndex = routeIndex + 1;
 
         if (routeIndex != -1 && nextRouteIndex < routes.length) {
-            setNextRoute(routes[nextRouteIndex]);
+            setNextRoute(routes[nextRouteIndex].replace("[locale]/", ""));
         }
 
     }, [router.route]);
 
+    console.log(nextRoute)
+
     return (
-        <Link href={nextRoute} className="slide-down d-flex justify-content-center">
+        <LinkComponent href={nextRoute} className="slide-down d-flex justify-content-center">
             <Image
                 priority
                 src="/static/angle-down.svg"
@@ -29,7 +32,7 @@ const Down = () => {
                 width={50}
                 alt="Follow us on Twitter"
             />
-        </Link >
+        </LinkComponent>
     )
 }
 
