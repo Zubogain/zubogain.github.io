@@ -1,9 +1,12 @@
 import React from "react";
 import Head from "next/head";
+import useTranslation from 'next-translate/useTranslation';
 
 import { motion } from "framer-motion";
 
 const HomeContainer = () => {
+  const { t, lang } = useTranslation();
+
   return (
     <React.Fragment>
       <Head>
@@ -29,10 +32,10 @@ const HomeContainer = () => {
         <div className="container">
           <div className="row">
             <div className="col-12 text-center">
-              <h3 className="cap__title">Hi,</h3>
-              <h3 className="cap__title">I am Emil,</h3>
-              <h3 className="cap__title">A software developer</h3>
-              <h3 className="cap__text">Software Developer / Cloud Expert</h3>
+              <h3 className="cap__title">{t("home:title.0")}</h3>
+              <h3 className="cap__title">{t("home:title.1")}</h3>
+              <h3 className="cap__title">{t("home:title.2")}</h3>
+              <h3 className="cap__text">{t("home:subtitle")}</h3>
             </div>
           </div>
         </div>

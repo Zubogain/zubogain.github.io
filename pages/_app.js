@@ -5,6 +5,7 @@ import "@Public/scss/style.scss";
 import 'swiper/css';
 
 import { wrapper } from "../src/store";
+import { AnimatePresence } from "framer-motion";
 
 const MyApp = ({ Component, pageProps, router, store }) => {
 
@@ -25,7 +26,13 @@ const MyApp = ({ Component, pageProps, router, store }) => {
         ></link>
       </Head>
       <AppMain router={router}>
-        <Component {...pageProps} lang={router.query.lang} store={store} />
+        <AnimatePresence
+          initial={false}
+          mode="wait"
+          onExitComplete={() => window.scrollTo(0, 0)}
+        >
+          <Component {...pageProps} lang={router.query.lang} store={store} />
+        </AnimatePresence>
       </AppMain>
     </>
   );

@@ -1,21 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import useTranslation from 'next-translate/useTranslation';
+import setLanguage from 'next-translate/setLanguage'
+
 import ActiveLink from "@/libs/active-link";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter();
+  const { t, lang } = useTranslation();
+
   return (
     <header className="header">
-      <div className="container-fluid">
+      <div className="container">
         <div className="row">
           <div className="col-12">
-            <ul className="header__nav d-flex justify-content-center">
-              <li className="header__nav-item cap__text selected"><ActiveLink href="/" activeClassName="active">Home</ActiveLink></li>
-              <li className="header__nav-item cap__text"><ActiveLink href="/skills" activeClassName="active">Skills</ActiveLink></li>
-              <li className="header__nav-item cap__text"><ActiveLink href="/experience" activeClassName="active">Experience</ActiveLink></li>
-              <li className="header__nav-item cap__text"><ActiveLink href="/contact" activeClassName="active">Contact</ActiveLink></li>
-            </ul>
+            <div className="d-flex justify-content-center">
+              <div className="header__fake" />
+              <ul className="header__nav d-flex justify-content-center">
+                <li className="header__nav-item cap__text selected"><ActiveLink href="/" activeClassName="active">{t("common:header.nav.home")}</ActiveLink></li>
+                <li className="header__nav-item cap__text"><ActiveLink href="/skills" activeClassName="active">{t("common:header.nav.skills")}</ActiveLink></li>
+                <li className="header__nav-item cap__text"><ActiveLink href="/experience" activeClassName="active">{t("common:header.nav.experience")}</ActiveLink></li>
+                <li className="header__nav-item cap__text"><ActiveLink href="/contact" activeClassName="active">{t("common:header.nav.contact")}</ActiveLink></li>
+              </ul>
+
+              <div className="header__lang d-flex justify-content-end">
+                <Link href={router.route} locale={t("common:header.lang.url")} className="cap__text">{t("common:header.lang.value")}</Link>
+              </div>
+            </div>
           </div>
           <div className="col-12">
             <ul className="header__socials d-flex justify-content-center">
@@ -56,7 +70,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </header>
+    </header >
   )
 }
 

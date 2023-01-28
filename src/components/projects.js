@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
+import useTranslation from 'next-translate/useTranslation';
+
 import { motion, useAnimation } from "framer-motion";
 
 import staticContent from "@/staticContent";
@@ -8,6 +10,10 @@ import ScrollContainer from 'react-indiana-drag-scroll'
 import Image from "next/image";
 
 const Projects = ({ isStopAnimation, setIsStopAnimation }) => {
+    const { t, lang } = useTranslation();
+
+    const projectsList = t('projects:list', {}, { returnObjects: true });
+
     const ref = useRef();
 
     const animation = useAnimation();
@@ -35,7 +41,7 @@ const Projects = ({ isStopAnimation, setIsStopAnimation }) => {
     return (
         <React.Fragment>
             <div className="col-12 text-center">
-                <h3 className="cap__title">My projects</h3>
+                <h3 className="cap__title">{t("projects:title")}</h3>
             </div>
 
             <div className="col-12 mt-15 card__container">
@@ -57,7 +63,7 @@ const Projects = ({ isStopAnimation, setIsStopAnimation }) => {
                         className="d-flex w-100"
                         animate={animation}
                     >
-                        {staticContent.projects.map((item, index) => {
+                        {projectsList.map((item, index) => {
                             return (
                                 <div
                                     key={item.title + item.subtitle + item.date + item.text + index}
