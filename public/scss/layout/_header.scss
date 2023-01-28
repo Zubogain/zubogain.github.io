@@ -47,4 +47,21 @@
             }
         }
     }
+
+    &__nav,
+    &__lang,
+    &__fake {
+        width: 100%;
+        flex: 1;
+    }
+
+    &__nav {
+        margin-right: auto;
+    }
+
+    &__lang {
+        margin-left: auto;
+        text-align: right;
+        text-transform: uppercase;
+    }
 }

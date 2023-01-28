@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
+import useTranslation from 'next-translate/useTranslation';
+
 import { motion, useAnimation } from "framer-motion";
 
 import staticContent from "@/staticContent";
@@ -7,6 +9,10 @@ import staticContent from "@/staticContent";
 import ScrollContainer from 'react-indiana-drag-scroll'
 
 const Experience = ({ isStopAnimation, setIsStopAnimation }) => {
+    const { t, lang } = useTranslation();
+
+    const experienceList = t('experience:list', {}, { returnObjects: true });
+
     const ref = useRef();
 
     const animation = useAnimation();
@@ -34,7 +40,7 @@ const Experience = ({ isStopAnimation, setIsStopAnimation }) => {
     return (
         <React.Fragment>
             <div className="col-12 text-center mt-30">
-                <h3 className="cap__title">My experience</h3>
+                <h3 className="cap__title">{t("experience:title")}</h3>
             </div>
 
             <div className="col-12 mt-15 card__container">
@@ -55,7 +61,7 @@ const Experience = ({ isStopAnimation, setIsStopAnimation }) => {
                         className="d-flex w-100"
                         animate={animation}
                     >
-                        {staticContent.experience.map((item, index) => {
+                        {experienceList.map((item, index) => {
                             return (
                                 <div
                                     key={item.title + item.subtitle + item.date + item.text + index}

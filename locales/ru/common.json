@@ -1,0 +1,14 @@
+{
+    "header": {
+        "nav": {
+            "home": "Главная",
+            "skills": "Навыки",
+            "experience": "Опыт",
+            "contact": "Связь"
+        },
+        "lang": {
+            "value": "en",
+            "url": "en"
+        }
+    }
+}

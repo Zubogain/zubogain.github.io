@@ -1,9 +1,12 @@
 import React from "react";
 import Head from "next/head";
+import useTranslation from 'next-translate/useTranslation';
 
 import { motion } from "framer-motion";
 
 const ContactContainer = () => {
+  const { t, lang } = useTranslation();
+
   return (
     <React.Fragment>
       <Head>
@@ -29,9 +32,9 @@ const ContactContainer = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-6 text-center">
-              <h3 className="cap__title">Contact me</h3>
+              <h3 className="cap__title">{t("contact:title")}</h3>
               <h3 className="cap__text">
-                I’m interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to use the form.
+                {t("contact:subtitle")}
               </h3>
             </div>
 
@@ -43,19 +46,19 @@ const ContactContainer = () => {
                     <div className="col-12 mb-auto">
                       <div className="row">
                         <div className="col-6 mt-30">
-                          <input className="form__input" placeholder="Name" />
+                          <input className="form__input" placeholder={t("contact:form.placeholders.name")} />
                         </div>
                         <div className="col-6 mt-30">
-                          <input className="form__input" placeholder="Email" />
+                          <input className="form__input" placeholder={t("contact:form.placeholders.email")} />
                         </div>
                         <div className="col-12 mt-30">
-                          <input className="form__input" placeholder="Subject" />
+                          <input className="form__input" placeholder={t("contact:form.placeholders.subject")} />
                         </div>
 
                         <div className="col-12 mt-30">
                           <textarea
                             className="form__input form__textarea"
-                            placeholder="Message"
+                            placeholder={t("contact:form.placeholders.message")}
                           />
                         </div>
 
@@ -64,7 +67,7 @@ const ContactContainer = () => {
                             className="form__btn ml-auto mr-auto"
                             placeholder="Message"
                           >
-                            Send Message!
+                            {t("contact:form.buttons.send")}
                           </button>
                         </div>
                       </div>

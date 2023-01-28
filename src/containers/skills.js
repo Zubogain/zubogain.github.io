@@ -1,9 +1,13 @@
 import React from "react";
 import Head from "next/head";
 
+import useTranslation from 'next-translate/useTranslation';
+
 import { motion } from "framer-motion";
 
 const SkillsContainer = () => {
+  const { t, lang } = useTranslation();
+
   return (
     <React.Fragment>
       <Head>
@@ -29,9 +33,9 @@ const SkillsContainer = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 text-center">
-              <h3 className="cap__title">Skills</h3>
+              <h3 className="cap__title">{t("skills:title")}</h3>
               <h3 className="cap__text">
-                I’m a Software Developer located in Kazakhstan. I have a serious passion for solving the problems in high load systems and an intuitive innovative interfaces, dynamic user experiences. Well-organised person, problem solver, independent employee with high attention to detail. Interested in the entire Web Software spectrum and working on ambitious projects. Visit my LinkedIn profile for more details or just contact me.
+                {t("skills:text")}
               </h3>
             </div>
           </div>

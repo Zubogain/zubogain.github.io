@@ -50,7 +50,8 @@ body,
   background-color: #ffffff;
 }
 
-#__next {
+#__next,
+.main {
   display: flex;
   flex-direction: column;
 }

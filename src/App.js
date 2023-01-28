@@ -9,9 +9,47 @@ import { loadFull } from "tsparticles";
 import Down from "./components/down";
 import Footer from "./components/footer";
 import Header from "./components/header";
+import { useSwipeable } from "react-swipeable";
 
 const Layout = ({ children }) => {
+  const routes = ["/", "/skills", "/experience", "/contact"];
+
+  const [nextRoute, setNextRoute] = useState("");
+  const [prevRoute, setPrevRoute] = useState("");
+
   const router = useRouter();
+
+  useEffect(() => {
+    const routeIndex = routes.indexOf(router.route);
+    const nextRouteIndex = routeIndex + 1;
+
+    if (routeIndex != -1 && nextRouteIndex < routes.length) {
+      setNextRoute(routes[nextRouteIndex]);
+    }
+
+    // find prev route
+
+    const prevRouteIndex = routeIndex - 1;
+
+    if (routeIndex != -1 && prevRouteIndex != -1) {
+      setPrevRoute(routes[prevRouteIndex]);
+    }
+
+  }, [router.route]);
+
+  const handlers = useSwipeable({
+    onSwipedUp: (eventData) => { router.push(nextRoute) },
+    onSwipedDown: (eventData) => { router.push(prevRoute) },
+    delta: 125,                             // min distance(px) before a swipe starts. *See Notes*
+    preventScrollOnSwipe: false,           // prevents scroll during swipe (*See Details*)
+    trackTouch: true,                      // track touch input
+    trackMouse: true,                     // track mouse input
+    rotationAngle: 0,                      // set a rotation angle
+    swipeDuration: 250,               // allowable duration of a swipe (ms). *See Notes*
+    touchEventOptions: { passive: true },  // options for touch listeners (*See Details*)
+  });
+
+  // const router = useRouter();
 
   const [showFooter, setShowFooter] = useState(false);
   const [showAngle, setShowAngle] = useState(true);
@@ -37,14 +75,12 @@ const Layout = ({ children }) => {
   const particlesLoaded = useCallback(async container => {
     // await console.log(container);
   }, []);
+
+
   return (
-    <React.Fragment>
+    <main className="main noselect" {...handlers}>
       <Header />
-      <AnimatePresence
-        initial={false}
-      >
-        {children}
-      </AnimatePresence>
+      {children}
 
       {showAngle && <Down />}
       {showFooter && <Footer />}
@@ -120,7 +156,7 @@ const Layout = ({ children }) => {
           detectRetina: true,
         }}
       />
-    </React.Fragment>
+    </main >
   );
 };
 
