@@ -17,6 +17,8 @@ const Down = () => {
 
         if (routeIndex != -1 && nextRouteIndex < routes.length) {
             setNextRoute(routes[nextRouteIndex].replace("[locale]", router.query.locale));
+        } else {
+            setNextRoute(router.route.replace("[locale]", router.query.locale));
         }
 
     }, [router.route, router.query.locale]);
