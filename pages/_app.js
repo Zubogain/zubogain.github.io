@@ -28,6 +28,12 @@ const MyApp = ({ Component, pageProps, router, store }) => {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         ></link>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+        <script src="https://npmcdn.com/parse@4.0.0/dist/parse.js"></script>
+
+        <script src="/static/js/emailer.js"></script>
       </Head>
       <AppMain router={router}>
         <AnimatePresence
