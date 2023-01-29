@@ -42,33 +42,39 @@ const ContactContainer = () => {
                   <div className="row d-flex justify-content-center align-items-center h-100">
 
                     <div className="col-12 mb-auto">
-                      <div className="row">
+                      <form
+                        id="contact"
+                        className="row"
+                      >
                         <div className="col-6 mt-30">
-                          <input className="form__input" placeholder={t("contact:form.placeholders.name")} />
+                          <input id="name" className="form__input" placeholder={t("contact:form.placeholders.name")} required />
                         </div>
                         <div className="col-6 mt-30">
-                          <input className="form__input" placeholder={t("contact:form.placeholders.email")} />
+                          <input id="email" className="form__input" placeholder={t("contact:form.placeholders.email")} required />
                         </div>
                         <div className="col-12 mt-30">
-                          <input className="form__input" placeholder={t("contact:form.placeholders.subject")} />
+                          <input id="subject" className="form__input" placeholder={t("contact:form.placeholders.subject")} required />
                         </div>
 
                         <div className="col-12 mt-30">
                           <textarea
+                            id="message"
                             className="form__input form__textarea"
                             placeholder={t("contact:form.placeholders.message")}
+                            required
                           />
                         </div>
 
                         <div className="col-12 mt-30">
                           <button
+                            type="submit"
                             className="form__btn ml-auto mr-auto"
                             placeholder="Message"
                           >
                             {t("contact:form.buttons.send")}
                           </button>
                         </div>
-                      </div>
+                      </form>
                     </div>
                   </div>
                 </div>
