@@ -41,8 +41,6 @@ const Layout = ({ children }) => {
 
   }, [router.route, router.query.locale]);
 
-  // console.log(router)
-
   const handlers = useSwipeable({
     onSwipedUp: (eventData) => { router.push(nextRoute) },
     onSwipedDown: (eventData) => { router.push(prevRoute) },

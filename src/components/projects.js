@@ -8,9 +8,9 @@ import ScrollContainer from 'react-indiana-drag-scroll'
 import Image from "next/image";
 
 const Projects = ({ isStopAnimation, setIsStopAnimation }) => {
-    const { t } = useTranslation(["projects"]);
+    const { t } = useTranslation(["experience"]);
 
-    const projectsList = t('projects:list', { returnObjects: true });
+    const projectsList = t('experience:projects.list', { returnObjects: true });
 
     const ref = useRef();
 
@@ -39,7 +39,7 @@ const Projects = ({ isStopAnimation, setIsStopAnimation }) => {
     return (
         <React.Fragment>
             <div className="col-12 text-center">
-                <h3 className="cap__title">{t("projects:title")}</h3>
+                <h3 className="cap__title">{t("experience:projects.title")}</h3>
             </div>
 
             <div className="col-12 mt-15 card__container">

@@ -23,8 +23,6 @@ const Down = () => {
 
     }, [router.route, router.query.locale]);
 
-    console.log(nextRoute)
-
     return (
         <Link href={nextRoute} className="slide-down d-flex justify-content-center">
             <Image

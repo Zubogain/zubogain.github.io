@@ -6,7 +6,7 @@ export { getStaticPaths }
 export const getStaticProps = async ctx => {
     return {
         props: {
-            ...(await getI18nProps(ctx, ['common', 'experience', 'projects'])),
+            ...(await getI18nProps(ctx, ['common', 'experience'])),
         },
     }
 }
