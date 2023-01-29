@@ -15,6 +15,7 @@ const MyApp = ({ Component, pageProps, router, store }) => {
   return (
     <>
       <Head>
+        <meta name="google-site-verification" content="Zu6yw4P7jufNaVdIAGj9Dqg58TmKKvWgMWHzlE-RNM8" />
         <meta httpEquiv="Content-type" content="text/html;charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
