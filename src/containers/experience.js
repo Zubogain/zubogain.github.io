@@ -5,25 +5,26 @@ import { motion } from "framer-motion";
 
 import Projects from "@/components/projects";
 import Experience from "@/components/experience";
+import { NextSeo } from "next-seo";
+import { useTranslation } from 'next-i18next';
 
 const ExperienceContainer = () => {
+    const { t } = useTranslation(['experience']);
+
     const [isStopAnimation, setIsStopAnimation] = useState(false);
 
     return (
         <React.Fragment>
             <Head>
-                <title>Experience</title>
-                <meta name="description" content="I’m interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to use the form." key="desc" />
-                <meta property="og:title" content="My experience" />
-                <meta
-                    property="og:description"
-                    content="I’m interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to use the form."
-                />
-                <meta
-                    property="og:image"
-                    content="https://zubogain.github.io/static/og-image.png"
-                />
+                <title>{t("experience:title")} & {t("projects:title")}</title>
             </Head>
+            <NextSeo
+                openGraph={{
+                    type: 'website',
+                    title: t("experience:og.title"),
+                    description: t("experience:og.description"),
+                }}
+            />
             <motion.section
                 className="skills d-flex flex-column justify-content-center align-items-center"
                 key={"my_unique_key23"}

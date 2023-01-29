@@ -4,6 +4,7 @@ import Head from "next/head";
 import { useTranslation } from 'next-i18next';
 
 import { motion } from "framer-motion";
+import { NextSeo } from "next-seo";
 
 const SkillsContainer = () => {
   const { t } = useTranslation(["skills"]);
@@ -11,18 +12,15 @@ const SkillsContainer = () => {
   return (
     <React.Fragment>
       <Head>
-        <title>Skills</title>
-        <meta name="description" content="I’m a Software Developer located in Kazakhstan. I have a serious passion for solving the problems in high load systems and an intuitive innovative interfaces, dynamic user experiences. Well-organised person, problem solver, independent employee with high attention to detail. Interested in the entire Web Software spectrum and working on ambitious projects. Visit my LinkedIn profile for more details or just contact me." key="desc" />
-        <meta property="og:title" content="My skills" />
-        <meta
-          property="og:description"
-          content="I’m a Software Developer located in Kazakhstan. I have a serious passion for solving the problems in high load systems and an intuitive innovative interfaces, dynamic user experiences. Well-organised person, problem solver, independent employee with high attention to detail. Interested in the entire Web Software spectrum and working on ambitious projects. Visit my LinkedIn profile for more details or just contact me."
-        />
-        <meta
-          property="og:image"
-          content="https://zubogain.github.io/static/og-image.png"
-        />
+        <title>{t("skills:title")}</title>
       </Head>
+      <NextSeo
+        openGraph={{
+          type: 'website',
+          title: t("skills:og.title"),
+          description: t("skills:og.description"),
+        }}
+      />
       <motion.section
         className="skills d-flex flex-column justify-content-center align-items-center"
         key={"my_unique_key12"}

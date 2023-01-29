@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-import { AnimatePresence } from "framer-motion";
+import { NextSeo } from "next-seo";
 
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
@@ -84,85 +84,118 @@ const Layout = ({ children }) => {
 
 
   return (
-    <main className="main noselect" {...handlers}>
-      <Header />
-      {children}
-
-      {showAngle && <Down />}
-      {showFooter && <Footer />}
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        loaded={particlesLoaded}
-        options={{
-          fpsLimit: 90,
-          interactivity: {
-            events: {
-              onClick: {
-                enable: true,
-                mode: "push",
-              },
-              onHover: {
-                enable: true,
-                mode: "repulse",
-              },
-              resize: false,
+    <React.Fragment>
+      <NextSeo
+        openGraph={{
+          type: 'website',
+          images: [
+            {
+              url: 'https://zubogain.github.io/static/og-image-1200x630.png',
+              width: 1200,
+              height: 630,
+              alt: 'zubogain.github.io 1200x630',
             },
-            modes: {
-              push: {
-                quantity: 1,
-              },
-              repulse: {
-                distance: 200,
-                duration: 0.4,
-              },
+            {
+              url: 'https://zubogain.github.io/static/og-image-800x600.png',
+              width: 800,
+              height: 600,
+              alt: 'zubogain.github.io 800x600',
             },
-          },
-          particles: {
-            color: {
-              value: "#BEBEBE",
+            {
+              url: 'https://zubogain.github.io/static/og-image-600x600.png',
+              width: 600,
+              height: 600,
+              alt: 'zubogain.github.io 600x600',
             },
-            links: {
-              color: "#BEBEBE",
-              distance: 150,
-              enable: true,
-              opacity: 0.5,
-              width: 1,
+            {
+              url: 'https://zubogain.github.io/static/og-image-200x200.png',
+              width: 200,
+              height: 200,
+              alt: 'zubogain.github.io 200x200',
             },
-            collisions: {
-              enable: false,
-            },
-            move: {
-              directions: "none",
-              enable: true,
-              outModes: {
-                default: "bounce",
-              },
-              random: false,
-              speed: 0.7,
-              straight: false,
-            },
-            number: {
-              density: {
-                enable: true,
-                area: 600,
-              },
-              value: 25,
-            },
-            opacity: {
-              value: 1,
-            },
-            shape: {
-              type: "circle",
-            },
-            size: {
-              value: { min: 1, max: 5 },
-            },
-          },
-          detectRetina: true,
+          ],
         }}
       />
-    </main >
+      <main className="main noselect" {...handlers}>
+        <Header />
+        {children}
+
+        {showAngle && <Down />}
+        {showFooter && <Footer />}
+        <Particles
+          id="tsparticles"
+          init={particlesInit}
+          loaded={particlesLoaded}
+          options={{
+            fpsLimit: 90,
+            interactivity: {
+              events: {
+                onClick: {
+                  enable: true,
+                  mode: "push",
+                },
+                onHover: {
+                  enable: true,
+                  mode: "repulse",
+                },
+                resize: false,
+              },
+              modes: {
+                push: {
+                  quantity: 1,
+                },
+                repulse: {
+                  distance: 200,
+                  duration: 0.4,
+                },
+              },
+            },
+            particles: {
+              color: {
+                value: "#BEBEBE",
+              },
+              links: {
+                color: "#BEBEBE",
+                distance: 150,
+                enable: true,
+                opacity: 0.5,
+                width: 1,
+              },
+              collisions: {
+                enable: false,
+              },
+              move: {
+                directions: "none",
+                enable: true,
+                outModes: {
+                  default: "bounce",
+                },
+                random: false,
+                speed: 0.7,
+                straight: false,
+              },
+              number: {
+                density: {
+                  enable: true,
+                  area: 600,
+                },
+                value: 25,
+              },
+              opacity: {
+                value: 1,
+              },
+              shape: {
+                type: "circle",
+              },
+              size: {
+                value: { min: 1, max: 5 },
+              },
+            },
+            detectRetina: true,
+          }}
+        />
+      </main>
+    </React.Fragment>
   );
 };
 
