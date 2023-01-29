@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Image from 'next/image';
 import Link from "next/link";
 import { useRouter } from "next/router";
-import LinkComponent from "./Link";
 
 const Down = () => {
     const routes = ["/[locale]", "/[locale]/skills", "/[locale]/experience", "/[locale]/contact"];
