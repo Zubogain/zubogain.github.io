@@ -1,4 +1,9 @@
 {
     "title": "Skills",
-    "text": "I’m a Software Developer located in Kazakhstan. I have a serious passion for solving the problems in high load systems and an intuitive innovative interfaces, dynamic user experiences. Well-organised person, problem solver, independent employee with high attention to detail. Interested in the entire Web Software spectrum and working on ambitious projects. Visit my LinkedIn profile for more details or just contact me."
+    "text": "I’m a Software Developer located in Kazakhstan. I have a serious passion for solving the problems in high load systems and an intuitive innovative interfaces, dynamic user experiences. Well-organised person, problem solver, independent employee with high attention to detail. Interested in the entire Web Software spectrum and working on ambitious projects. Visit my LinkedIn profile for more details or just contact me.",
+    "og": {
+        "title": "My skills",
+        "description": "I’m a Software Developer located in Kazakhstan. I have a serious passion for solving the problems in high load systems and an intuitive innovative interfaces, dynamic user experiences. Well-organised person, problem solver, independent employee with high attention to detail. Interested in the entire Web Software spectrum and working on ambitious projects. Visit my LinkedIn profile for more details or just contact me.",
+        "image": "https://zubogain.github.io/static/og-image.png"
+    }
 }

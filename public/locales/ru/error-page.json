@@ -1,0 +1,10 @@
+{
+    "title": "Страница не найдена",
+    "subtitle": "Кажется, что-то пошло не так.",
+    "og": {
+        "title": "Страница не найдена",
+        "description": "Кажется, что-то пошло не так.",
+        "image": "https://zubogain.github.io/static/og-image.png"
+    },
+    "go-back": "Вернуться назад!"
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 import { useTranslation } from 'next-i18next';
 
@@ -11,18 +12,15 @@ const HomeContainer = () => {
   return (
     <React.Fragment>
       <Head>
-        <title>Home</title>
-        <meta name="description" content="Hi, I'm Emil, a software developer and cloud expert" key="desc" />
-        <meta property="og:title" content="Home" />
-        <meta
-          property="og:description"
-          content="Hi, I'm Emil, a software developer and cloud expert"
-        />
-        <meta
-          property="og:image"
-          content="https://zubogain.github.io/static/og-image.png"
-        />
+        <title>{t("home:page-title")}</title>
       </Head>
+      <NextSeo
+        openGraph={{
+          type: 'website',
+          title: t("home:og.title"),
+          description: t("home:og.description"),
+        }}
+      />
       <motion.section
         className="home d-flex flex-column justify-content-center align-items-center"
         key={"my_unique_key1"}

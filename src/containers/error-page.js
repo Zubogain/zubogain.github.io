@@ -1,23 +1,24 @@
 import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { NextSeo } from "next-seo";
+import { useTranslation } from 'next-i18next';
 
 const ErrorPageContainer = () => {
+  const { t } = useTranslation(['error-page']);
+
   const router = useRouter();
 
   return (
     <React.Fragment>
       <Head>
-        <title>Some mistake</title>
-        <meta name="description" content="Something seems to have gone wrong." key="desc" />
-        <meta property="og:title" content="Page not found" />
-        <meta
-          property="og:description"
-          content="Something seems to have gone wrong."
-        />
-        <meta
-          property="og:image"
-          content="https://zubogain.github.io/static/og-image.png"
+        <title>{t("error-page:title")}</title>
+        <NextSeo
+          openGraph={{
+            type: 'website',
+            title: t("error-page:og.title"),
+            description: t("error-page:og.description"),
+          }}
         />
       </Head>
       <section className="error-page h-100">
@@ -26,10 +27,10 @@ const ErrorPageContainer = () => {
             <div className="col-12 mb-5">
               <div className="h-100 d-flex flex-column text-center justify-content-center">
                 <h1 className="cap__title">
-                  Page not found
+                  {t("error-page:title")}
                 </h1>
                 <p className="cap__text">
-                  Something seems to have gone wrong.
+                  {t("error-page:subtitle")}
                 </p>
                 <div className="row pb-5 justify-content-center">
                   <div className="col-lg-auto col-sm-8 col-12 mb-5">
@@ -37,7 +38,7 @@ const ErrorPageContainer = () => {
                       className="error-page__btn"
                       onClick={() => router.back()}
                     >
-                      Go back!
+                      {t("error-page:go-back")}
                     </button>
                   </div>
                 </div>

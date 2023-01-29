@@ -37,5 +37,10 @@
             "date": "2022-2022",
             "text": "Streaming startup - web3 party mobile application."
         }
-    ]
+    ],
+    "og": {
+        "title": "My experience",
+        "description": "I’m interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to use the form.",
+        "image": "https://zubogain.github.io/static/og-image.png"
+    }
 }

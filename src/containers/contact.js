@@ -3,25 +3,23 @@ import Head from "next/head";
 
 import { useTranslation } from 'next-i18next';
 import { motion } from "framer-motion";
+import { NextSeo } from "next-seo";
 
 const ContactContainer = () => {
-  const { t, lang } = useTranslation(["contact"]);
+  const { t } = useTranslation(["contact"]);
 
   return (
     <React.Fragment>
       <Head>
-        <title>Contact</title>
-        <meta name="description" content="I’m interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to use the form." key="desc" />
-        <meta property="og:title" content="Contact me" />
-        <meta
-          property="og:description"
-          content="I’m interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to use the form."
-        />
-        <meta
-          property="og:image"
-          content="https://zubogain.github.io/static/og-image.png"
-        />
+        <title>{t("contact:title")}</title>
       </Head>
+      <NextSeo
+        openGraph={{
+          type: 'website',
+          title: t("contact:og.title"),
+          description: t("contact:og.description"),
+        }}
+      />
       <motion.section
         className="contact d-flex flex-column justify-content-center align-items-center"
         key={"my_unique_key432"}

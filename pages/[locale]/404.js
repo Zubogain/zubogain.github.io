@@ -6,7 +6,7 @@ export { getStaticPaths }
 export const getStaticProps = async ctx => {
     return {
         props: {
-            ...(await getI18nProps(ctx, ['common'])),
+            ...(await getI18nProps(ctx, ['common', 'error-page'])),
         },
     }
 }
