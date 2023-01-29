@@ -9,7 +9,7 @@ import ScrollContainer from 'react-indiana-drag-scroll'
 const Experience = ({ isStopAnimation, setIsStopAnimation }) => {
     const { t } = useTranslation(["experience"]);
 
-    const experienceList = t('experience:list', { returnObjects: true });
+    const experienceList = t('experience:experience.list', { returnObjects: true });
 
     const ref = useRef();
 
@@ -38,7 +38,7 @@ const Experience = ({ isStopAnimation, setIsStopAnimation }) => {
     return (
         <React.Fragment>
             <div className="col-12 text-center mt-30">
-                <h3 className="cap__title">{t("experience:title")}</h3>
+                <h3 className="cap__title">{t("experience:experience.title")}</h3>
             </div>
 
             <div className="col-12 mt-15 card__container">

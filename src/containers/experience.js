@@ -11,18 +11,22 @@ import { useTranslation } from 'next-i18next';
 const ExperienceContainer = () => {
     const { t } = useTranslation(['experience']);
 
+    const projectsList = t('experience:projects.list', { returnObjects: true });
+    const experienceList = t('experience:experience.list', { returnObjects: true });
+
     const [isStopAnimation, setIsStopAnimation] = useState(false);
 
     return (
         <React.Fragment>
             <Head>
-                <title>{t("experience:title")} & {t("projects:title")}</title>
+                <title>{`${t("experience:projects.title")} & ${t("experience:experience.title")}`}</title>
             </Head>
             <NextSeo
                 openGraph={{
                     type: 'website',
                     title: t("experience:og.title"),
-                    description: t("experience:og.description"),
+                    description: `${t("experience:projects.title")}: ${projectsList.map((item) => (item.title)).join(", ")}
+                    ${t("experience:experience.title")}: ${experienceList.map((item) => (item.title)).join(", ")}`
                 }}
             />
             <motion.section
