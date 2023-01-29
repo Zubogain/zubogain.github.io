@@ -12,7 +12,7 @@ $(document).ready(function () {
             subject: document.getElementById('subject').value,
             message: document.getElementById('message').value
         }
-        Parse.Cloud.run("sendEmail", data, {
+        Parse.Cloud.run("sendmail", data, {
             success: function (object) {
                 alert('Message sent');
             },
