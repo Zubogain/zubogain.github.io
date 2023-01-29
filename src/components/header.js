@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,7 +6,6 @@ import { useTranslation } from 'next-i18next';
 
 import ActiveLink from "@/libs/active-link";
 import { useRouter } from "next/router";
-import LinkComponent from "./Link";
 import LanguageSwitchLink from "./LanguageSwitchLink";
 import i18nextConfig from '../../next-i18next.config'
 
@@ -25,10 +24,10 @@ const Header = () => {
             <div className="d-flex justify-content-center">
               <div className="header__fake" />
               <ul className="header__nav d-flex justify-content-center">
-                <li className="header__nav-item cap__text selected"><LinkComponent href="/">{t("common:header.nav.home")}</LinkComponent></li>
-                <li className="header__nav-item cap__text"><LinkComponent href="/skills">{t("common:header.nav.skills")}</LinkComponent></li>
-                <li className="header__nav-item cap__text"><LinkComponent href="/experience">{t("common:header.nav.experience")}</LinkComponent></li>
-                <li className="header__nav-item cap__text"><LinkComponent href="/contact">{t("common:header.nav.contact")}</LinkComponent></li>
+                <li className="header__nav-item cap__text selected"><ActiveLink href={`/${currentLocale}/`} activeClassName="active">{t("common:header.nav.home")}</ActiveLink></li>
+                <li className="header__nav-item cap__text"><ActiveLink href={`/${currentLocale}/skills/`} activeClassName="active">{t("common:header.nav.skills")}</ActiveLink></li>
+                <li className="header__nav-item cap__text"><ActiveLink href={`/${currentLocale}/experience/`} activeClassName="active">{t("common:header.nav.experience")}</ActiveLink></li>
+                <li className="header__nav-item cap__text"><ActiveLink href={`/${currentLocale}/contact/`} activeClassName="active">{t("common:header.nav.contact")}</ActiveLink></li>
               </ul>
 
               <div className="header__lang d-flex justify-content-end">
