@@ -29,11 +29,11 @@ const MyApp = ({ Component, pageProps, router, store }) => {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         ></link>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" defer></script>
 
-        <script src="https://npmcdn.com/parse@4.0.0/dist/parse.js"></script>
+        <script src="https://npmcdn.com/parse@4.0.0/dist/parse.js" defer></script>
 
-        <script src="/static/js/emailer.js"></script>
+        <script src="/static/js/emailer.js" defer></script>
       </Head>
       <AppMain router={router}>
         <AnimatePresence
