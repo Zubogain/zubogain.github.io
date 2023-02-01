@@ -5,8 +5,6 @@ import { appWithTranslation } from 'next-i18next';
 
 import AppMain from "@/App";
 import "@Public/scss/style.scss";
-import 'swiper/css';
-import 'react-toastify/dist/ReactToastify.css';
 
 import { wrapper } from "../src/store";
 import { AnimatePresence } from "framer-motion";
