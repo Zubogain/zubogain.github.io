@@ -104,6 +104,7 @@ const ContactContainer = () => {
                   key={"my_unique_key4322"}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
                 >
                   <Image
@@ -113,12 +114,13 @@ const ContactContainer = () => {
                   <h3 className="cap__title cap__title--medium text-lowercase">{t("contact:form.success-message.title")}</h3>
                 </motion.div>
                 :
-                <React.Fragment>
+                <>
                   <motion.div
                     className="col-12 col-lg-6 text-center"
                     key={"my_unique_key432222"}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
                     <h3 className="cap__title">{t("contact:title")}</h3>
@@ -129,9 +131,10 @@ const ContactContainer = () => {
 
                   <motion.div
                     className="col-12 col-lg-12"
-                    key={"my_unique_key4322232sd2"}
+                    key={"my_unique_key4322223211"}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
                     <div className="row justify-content-center">
@@ -189,7 +192,7 @@ const ContactContainer = () => {
                       </div>
                     </div>
                   </motion.div>
-                </React.Fragment>
+                </>
               }
             </AnimatePresence>
           </div>
