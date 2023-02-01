@@ -2,6 +2,8 @@ import fetch from "isomorphic-unfetch";
 
 export const CONTACT_FORM_REQUEST = "CONTACT_FORM_REQUEST";
 
+const API_URL = "https://ce6o270nf8.execute-api.us-east-1.amazonaws.com/Prod";
+
 export const contactSetRequest = ({ isError, isResponse, prevIsResponse }) => ({
     type: CONTACT_FORM_REQUEST,
     payload: { isError, isResponse, prevIsResponse },
@@ -12,7 +14,7 @@ export const asyncContactRequest = ({ name, email, subject, message }) => async 
 
     dispatch(contactSetRequest({ message: "", isResponse: true, prevIsResponse: false }));
 
-    const response = await fetch("https://ce6o270nf8.execute-api.us-east-1.amazonaws.com/Prod/email", {
+    const response = await fetch(`${API_URL}/email`, {
         method: 'POST',
         body: JSON.stringify({ name, email, subject, message })
     });
