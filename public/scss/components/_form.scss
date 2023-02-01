@@ -30,6 +30,7 @@
   }
 
   &__btn {
+    position: relative;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -60,6 +61,23 @@
 
     &:hover {
       opacity: 1;
+    }
+
+    &:disabled {
+      cursor: default;
+    }
+
+    &-loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      z-index: 9999999;
+      overflow: hidden;
     }
   }
 
