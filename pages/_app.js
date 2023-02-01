@@ -6,6 +6,7 @@ import { appWithTranslation } from 'next-i18next';
 import AppMain from "@/App";
 import "@Public/scss/style.scss";
 import 'swiper/css';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { wrapper } from "../src/store";
 import { AnimatePresence } from "framer-motion";
@@ -28,12 +29,6 @@ const MyApp = ({ Component, pageProps, router, store }) => {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         ></link>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" defer></script>
-
-        <script src="https://npmcdn.com/parse@4.0.0/dist/parse.js" defer></script>
-
-        <script src="/static/js/emailer.js" defer></script>
       </Head>
       <AppMain router={router}>
         <AnimatePresence
@@ -48,5 +43,5 @@ const MyApp = ({ Component, pageProps, router, store }) => {
   );
 };
 
-export default appWithTranslation(withRouter(MyApp));
+export default appWithTranslation(wrapper.withRedux(withRouter(MyApp)));
 

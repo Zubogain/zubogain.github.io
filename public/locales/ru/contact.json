@@ -10,6 +10,10 @@
         },
         "buttons": {
             "send": "Отправить сообщение!"
+        },
+        "success-message": {
+            "title": "Сообщение отправлено",
+            "subtitle": "lorem ipsum dolor sit"
         }
     },
     "og": {

@@ -80,7 +80,6 @@ const Layout = ({ children }) => {
     // await console.log(container);
   }, []);
 
-
   return (
     <React.Fragment>
       <NextSeo
