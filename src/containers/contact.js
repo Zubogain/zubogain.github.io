@@ -110,7 +110,9 @@ const ContactContainer = () => {
                   <Image
                     className="cap__image mb-10"
                     src={checkedSVG}
-                    alt="checked" />
+                    alt="checked"
+                    priority={true}
+                  />
                   <h3 className="cap__title cap__title--medium text-lowercase">{t("contact:form.success-message.title")}</h3>
                 </motion.div>
                 :
