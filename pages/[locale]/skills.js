@@ -1,6 +1,6 @@
 import { getStaticPaths, getI18nProps } from '@Libs/getStatic';
 
-import SkillsContainer from "@Containers/skills";
+import SkillsContainer from "@Containers/Skills";
 
 export { getStaticPaths }
 export const getStaticProps = async ctx => {

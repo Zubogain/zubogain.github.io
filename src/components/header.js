@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { useTranslation } from 'next-i18next';
 
-import ActiveLink from "@/libs/active-link";
+import ActiveLink from "@/libs/ActiveLink";
 import { useRouter } from "next/router";
 import LanguageSwitchLink from "./LanguageSwitchLink";
 import i18nextConfig from '../../next-i18next.config'
@@ -35,7 +35,6 @@ const Header = () => {
                   if (locale === currentLocale) return null
                   return <LanguageSwitchLink locale={locale} key={locale} />
                 })}
-                {/* <Link href={router.route} locale={t("common:header.lang.url")} className="cap__text">{t("common:header.lang.value")}</Link> */}
               </div>
             </div>
           </div>
@@ -78,17 +77,8 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </header >
+    </header>
   )
 }
 
 export default Header;
-
-// export { getStaticPaths }
-// export const getStaticProps = async ctx => {
-//   return {
-//     props: {
-//       ...(await getI18nProps(ctx, ['common'])),
-//     },
-//   }
-// }

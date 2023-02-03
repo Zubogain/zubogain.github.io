@@ -1,26 +1,11 @@
-.swiper {
-    margin-top: 30px;
-}
-
-.swiper-slide {
-    height: auto !important;
-    // align-self: stretch !important;
-}
-
 .card {
     height: 100%;
-    // width: 33%;
     border: 3px solid #000;
 
     padding: 10px;
 
     background-color: rgba(255, 255, 255, 0.7);
 
-    // margin-top: 30px;
-
-    // &__cont {
-    //     position: relative;
-    // }
     &__subtitle {
         &-1 {
             white-space: nowrap !important;
@@ -36,10 +21,6 @@
             text-overflow: ellipsis !important;
             margin-left: 3px !important;
         }
-    }
-
-    &__container {
-        // border: 3px solid black;
     }
 
     &__left,
@@ -97,7 +78,6 @@
         text-overflow: ellipsis !important;
 
         font-size: 24px;
-        // line-height: 30px;
     }
 
     &__title,
@@ -106,10 +86,6 @@
     &__text {
         margin: 0;
     }
-
-    &__header {}
-
-    // / / / / / / 
 
     &__header {
         position: relative;

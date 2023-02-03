@@ -5,11 +5,8 @@ import { appWithTranslation } from 'next-i18next';
 
 import AppMain from "@/App";
 import "@Public/scss/style.scss";
-import 'swiper/css';
-import 'react-toastify/dist/ReactToastify.css';
 
 import { wrapper } from "../src/store";
-import { AnimatePresence } from "framer-motion";
 
 const MyApp = ({ Component, pageProps, router, store }) => {
 
@@ -31,13 +28,7 @@ const MyApp = ({ Component, pageProps, router, store }) => {
         ></link>
       </Head>
       <AppMain router={router}>
-        <AnimatePresence
-          initial={false}
-          mode="wait"
-          onExitComplete={() => window.scrollTo(0, 0)}
-        >
-          <Component {...pageProps} lang={router.query.lang} store={store} />
-        </AnimatePresence>
+        <Component {...pageProps} lang={router.query.lang} store={store} />
       </AppMain>
     </>
   );

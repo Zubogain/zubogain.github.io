@@ -4,7 +4,7 @@ import Head from "next/head";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useTranslation } from 'next-i18next';
-import { motion, useAnimation, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { NextSeo } from "next-seo";
 import { asyncContactRequest, contactSetRequest } from "@/actions/contact";
 
@@ -53,25 +53,6 @@ const ContactContainer = () => {
   }, [contactState.isResponse, contactState.prevIsResponse]);
 
   useEffect(() => () => dispatch(contactSetRequest({ isError: false, isResponse: false, prevIsResponse: false })), []);
-
-
-  // const animationBeforeRequest = useAnimation();
-  // const animationAfterRequest = useAnimation();
-
-  // useEffect(() => {
-  //   animationBeforeRequest.set({ display: "none" });
-  //   animationAfterRequest.set();
-  // }, []);
-
-  // useEffect(() => {
-  //   if (contactState.prevIsResponse) {
-  //     animationBeforeRequest.set({ display: "block", opacity: 0 });
-  //     animationAfterRequest.set({ display: "none" });
-  //   } else {
-  //     animationBeforeRequest.set({ display: "none" });
-  //     animationAfterRequest.set({ display: "block" });
-  //   }
-  // }, [contactState.prevIsResponse, contactState.isResponse]);
 
   return (
     <React.Fragment>

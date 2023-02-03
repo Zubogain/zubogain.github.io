@@ -3,8 +3,8 @@ import Head from "next/head";
 
 import { motion } from "framer-motion";
 
-import Projects from "@/components/projects";
-import Experience from "@/components/experience";
+import Projects from "@/components/Projects";
+import Experience from "@/components/Experience";
 import { NextSeo } from "next-seo";
 import { useTranslation } from 'next-i18next';
 

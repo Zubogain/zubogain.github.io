@@ -1,6 +1,6 @@
 import { getStaticPaths, getI18nProps } from '@Libs/getStatic';
 
-import ErrorPageContainer from "@Containers/error-page";
+import ErrorPageContainer from "@/containers/ErrorPage";
 
 export { getStaticPaths }
 export const getStaticProps = async ctx => {

@@ -1,6 +1,6 @@
 import { getStaticPaths, getI18nProps } from '@Libs/getStatic';
 
-import ContactContainer from "@Containers/contact";
+import ContactContainer from "@Containers/Contact";
 
 export { getStaticPaths }
 export const getStaticProps = async ctx => {
