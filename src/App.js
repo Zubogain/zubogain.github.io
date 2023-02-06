@@ -44,7 +44,7 @@ const Layout = ({ children }) => {
   const handlers = useSwipeable({
     onSwipedUp: (eventData) => {
       const el = document.getElementById("__next");
-      const isBottom = (el.scrollTop + el.offsetHeight) >= el.scrollHeight; // - 10
+      const isBottom = (el.scrollTop + el.offsetHeight) >= el.scrollHeight - 10; // - 10
 
       console.log("isBottom:", el.scrollHeight, el.scrollTop + el.offsetHeight)
 

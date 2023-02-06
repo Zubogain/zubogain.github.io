@@ -41,7 +41,7 @@ const Experience = ({ isStopAnimation, setIsStopAnimation }) => {
                 <h3 className="cap__title">{t("experience:experience.title")}</h3>
             </div>
 
-            <div className="col-12 mt-15 mb-30 card__container">
+            <div className="col-12 mt-15 card__container">
                 <div className="card__l-sh"></div>
 
                 <ScrollContainer
