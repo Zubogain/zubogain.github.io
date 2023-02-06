@@ -44,7 +44,7 @@ const Layout = ({ children }) => {
   const handlers = useSwipeable({
     onSwipedUp: (eventData) => {
       const el = document.getElementById("__next");
-      const isBottom = (el.scrollTop + el.offsetHeight) >= el.scrollHeight - 5; // - 10
+      const isBottom = (el.scrollTop + el.offsetHeight) >= el.scrollHeight - 1; // - 10
 
       console.log("isBottom:", el.scrollHeight, el.scrollTop + el.offsetHeight)
 
@@ -62,7 +62,7 @@ const Layout = ({ children }) => {
         router.push(prevRoute);
       }
     },
-    delta: 100,                            // min distance(px) before a swipe starts. *See Notes*
+    delta: 110,                            // min distance(px) before a swipe starts. *See Notes*
     preventScrollOnSwipe: false,           // prevents scroll during swipe (*See Details*)
     trackTouch: true,                      // track touch input
     trackMouse: true,                      // track mouse input
