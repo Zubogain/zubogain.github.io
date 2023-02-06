@@ -36,7 +36,7 @@
                 "url": "https://github.com/Zubogain/webpack-react-boilerplate",
                 "text": [
                     "Готовый React.js шаблон для разработки",
-                    "Webpack 4"
+                    "ES6, Webpack 4"
                 ]
             },
             {
@@ -45,7 +45,7 @@
                 "url": "https://github.com/Zubogain/webpack-vue-boilerplate",
                 "text": [
                     "Готовый Vue.js шаблон для разработки",
-                    "Webpack 4"
+                    "ES6, Webpack 4"
                 ]
             },
             {
@@ -54,7 +54,7 @@
                 "url": "https://github.com/Zubogain/nextjs-boilerplate",
                 "text": [
                     "Готовый Next.js шаблон для разработки",
-                    "Webpack 4"
+                    "ES6, Webpack 4"
                 ]
             },
             {
@@ -63,7 +63,25 @@
                 "url": "https://github.com/Zubogain/webpack-vanilla-boilerplate",
                 "text": [
                     "Готовый ES6 шаблон для разработки",
-                    "Webpack 4"
+                    "ES6, Webpack 4"
+                ]
+            },
+            {
+                "title": "Udemy parser",
+                "image": "/static/udemy-parser.png",
+                "url": "https://github.com/Zubogain/udemy-parser",
+                "text": [
+                    "Парсер категорий, подкатегорий и тем на всех языках для udemy.",
+                    "ES6, Puppeteer, xlsx, json"
+                ]
+            },
+            {
+                "title": "Migrations service",
+                "image": "/static/migrations-service.png",
+                "url": "https://github.com/Zubogain/migrations-service",
+                "text": [
+                    "Сервис решает такие задачи, как автоматическая миграция, заполнение таблиц seeders и контроль версий миграции таблиц в инфраструктуре контейнерных приложений.",
+                    "ES6, Sequelize, Postgres, Faker, Joi"
                 ]
             }
         ]

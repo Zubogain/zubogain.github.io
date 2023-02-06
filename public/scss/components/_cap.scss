@@ -4,7 +4,6 @@
     font-style: normal;
     font-weight: normal;
     font-size: 54px;
-    // line-height: 84px;
 
     color: #000000;
 
@@ -13,24 +12,40 @@
 
     margin: 0;
 
-    // text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.10);
+    &--medium {
+      font-size: 38px;
+      line-height: 46px;
+    }
 
     @include media-breakpoint-down(md) {
       font-size: 36px;
       line-height: 46px;
+
+      &--medium {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+  }
+
+  &__image {
+    width: 115px;
+    height: 115px;
+
+    @include media-breakpoint-down(md) {
+      width: 85px;
+      height: 85px;
     }
   }
 
   &__text {
     margin-left: 25px;
-    // max-width: 80%;
 
     margin-top: 25px;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
-    // line-height: 21px;
 
     color: #000000;
 
