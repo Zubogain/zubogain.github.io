@@ -54,7 +54,7 @@ const Layout = ({ children }) => {
     },
     onSwipedDown: (eventData) => {
       const el = document.getElementById("__next");
-      const isTop = el.scrollTop;
+      const isTop = !el.scrollTop;
 
       console.log("isTop:", el.scrollTop)
 
