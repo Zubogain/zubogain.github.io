@@ -22,7 +22,7 @@ const SkillsContainer = () => {
         }}
       />
       <motion.section
-        className="skills d-flex flex-column justify-content-center align-items-center"
+        className="skills d-flex flex-column justify-content-center align-items-center mb-30"
         key={"my_unique_key12"}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
