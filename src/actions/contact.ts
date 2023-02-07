@@ -18,7 +18,8 @@ export const asyncContactRequest = ({ name, email, subject, message }: IContactF
         const response = await fetch(`${API_URL}/email`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                Referer: "https://zubogain.github.io"
             },
             body: JSON.stringify({ name, email, subject, message })
         });
