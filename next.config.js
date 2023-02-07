@@ -5,6 +5,6 @@ const nextConfig = {
   reactStrictMode: true,
   // i18n,
   trailingSlash: true,
-}
+};
 
 module.exports = nextConfig;

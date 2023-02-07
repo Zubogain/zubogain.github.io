@@ -1,8 +1,8 @@
-import { PayloadAction } from '@reduxjs/toolkit';
+import { PayloadAction } from "@reduxjs/toolkit";
 import { ILocalizationState } from "interfaces/localization";
 import {
   LOCALIZATION_SET_LANG,
-  LOCALIZATION_SET_URL_PIE
+  LOCALIZATION_SET_URL_PIE,
 } from "../actions/localization";
 
 const initialState: ILocalizationState = {
@@ -10,7 +10,10 @@ const initialState: ILocalizationState = {
   urlPie: "",
 };
 
-export default function reducer(state = initialState, action: PayloadAction<any>) {
+export default function reducer(
+  state = initialState,
+  action: PayloadAction<any>
+) {
   switch (action.type) {
     case LOCALIZATION_SET_LANG:
       return { ...state, ...action.payload };

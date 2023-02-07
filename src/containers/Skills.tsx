@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from "next-i18next";
 
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
@@ -16,7 +16,7 @@ const SkillsContainer = () => {
       </Head>
       <NextSeo
         openGraph={{
-          type: 'website',
+          type: "website",
           title: t("skills:og.title"),
           description: t("skills:og.description"),
         }}
@@ -32,15 +32,13 @@ const SkillsContainer = () => {
           <div className="row justify-content-center">
             <div className="col-12 text-center">
               <h3 className="cap__title">{t("skills:title")}</h3>
-              <h3 className="cap__text">
-                {t("skills:text")}
-              </h3>
+              <h3 className="cap__text">{t("skills:text")}</h3>
             </div>
           </div>
         </div>
       </motion.section>
     </React.Fragment>
-  )
-}
+  );
+};
 
 export default SkillsContainer;

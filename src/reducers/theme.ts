@@ -1,4 +1,4 @@
-import { PayloadAction } from '@reduxjs/toolkit';
+import { PayloadAction } from "@reduxjs/toolkit";
 import { IThemeState } from "interfaces/theme";
 import {
   THEME_SET_HEADER,
@@ -34,7 +34,10 @@ const initialState: IThemeState = {
   },
 };
 
-export default function reducer(state = initialState, action: PayloadAction<any>) {
+export default function reducer(
+  state = initialState,
+  action: PayloadAction<any>
+) {
   switch (action.type) {
     case THEME_SET_ANIMATION_MOBILE_MENU_VARIANT:
       return {

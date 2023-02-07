@@ -1,38 +1,41 @@
-import languageDetector from '../libs/languageDetector';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import { QueryWithLocale } from 'interfaces/query';
+import languageDetector from "../libs/languageDetector";
+import { useRouter } from "next/router";
+import Link from "next/link";
+import { QueryWithLocale } from "interfaces/query";
 
 interface IProps {
-    locale: string
-    href?: string
+  locale: string;
+  href?: string;
 }
-
 
 const LanguageSwitchLink = ({ locale, ...rest }: IProps) => {
-    const router = useRouter()
-    const query = router.query as QueryWithLocale
+  const router = useRouter();
+  const query = router.query as QueryWithLocale;
 
-    let href = rest.href || router.asPath
-    let pName = router.pathname
+  let href = rest.href || router.asPath;
+  let pName = router.pathname;
 
-    if (query.locale) {
-        console.log(locale)
-        pName = pName.replace(`[locale]`, locale)
-    }
-    if (locale) {
-        href = rest.href ? `/${locale}${rest.href}` : pName
-    }
+  if (query.locale) {
+    console.log(locale);
+    pName = pName.replace(`[locale]`, locale);
+  }
+  if (locale) {
+    href = rest.href ? `/${locale}${rest.href}` : pName;
+  }
 
-    return (
-        <Link href={href} className="cap__text" onClick={() => {
-            if (languageDetector.cache) {
-                languageDetector.cache(locale)
-            }
-        }}>
-            {locale}
-        </Link>
-    )
-}
+  return (
+    <Link
+      href={href}
+      className="cap__text"
+      onClick={() => {
+        if (languageDetector.cache) {
+          languageDetector.cache(locale);
+        }
+      }}
+    >
+      {locale}
+    </Link>
+  );
+};
 
-export default LanguageSwitchLink
+export default LanguageSwitchLink;

@@ -8,13 +8,14 @@ export const localizationSetLang = (lang: string) => ({
   payload: lang,
 });
 
-export const localizationSetUrlPie = (urlPie: string) => (dispatch: ThunkDispatch<any, any, AnyAction>) => {
-  if (urlPie) {
-    return dispatch({
-      type: LOCALIZATION_SET_URL_PIE,
-      payload: {
-        urlPie,
-      },
-    });
-  }
-};
+export const localizationSetUrlPie =
+  (urlPie: string) => (dispatch: ThunkDispatch<any, any, AnyAction>) => {
+    if (urlPie) {
+      return dispatch({
+        type: LOCALIZATION_SET_URL_PIE,
+        payload: {
+          urlPie,
+        },
+      });
+    }
+  };

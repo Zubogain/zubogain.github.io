@@ -1,7 +1,27 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "airbnb",
+    "prettier",
+    "plugin:node/recommended",
+    "next/core-web-vitals"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["prettier"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": ["./tsconfig.json"]
+      }
+    }
+  ],
   "rules": {
-    "react-hooks/rules-of-hooks": 0,
-    "react-hooks/exhaustive-deps": 0
+    "prettier/prettier": "error",
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "func-names": "off",
+    "no-process-exit": "off",
+    "object-shorthand": "off",
+    "class-methods-use-this": "off"
   }
 }

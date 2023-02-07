@@ -2,10 +2,10 @@ import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from "next-i18next";
 
 const ErrorPageContainer = () => {
-  const { t } = useTranslation(['error-page']);
+  const { t } = useTranslation(["error-page"]);
 
   const router = useRouter();
 
@@ -15,7 +15,7 @@ const ErrorPageContainer = () => {
         <title>{t("error-page:title")}</title>
         <NextSeo
           openGraph={{
-            type: 'website',
+            type: "website",
             title: t("error-page:og.title"),
             description: t("error-page:og.description"),
           }}
@@ -26,12 +26,8 @@ const ErrorPageContainer = () => {
           <div className="row h-100 pb-5">
             <div className="col-12 mb-5">
               <div className="h-100 d-flex flex-column text-center justify-content-center">
-                <h1 className="cap__title">
-                  {t("error-page:title")}
-                </h1>
-                <p className="cap__text">
-                  {t("error-page:subtitle")}
-                </p>
+                <h1 className="cap__title">{t("error-page:title")}</h1>
+                <p className="cap__text">{t("error-page:subtitle")}</p>
                 <div className="row pb-5 justify-content-center">
                   <div className="col-lg-auto col-sm-8 col-12 mb-5">
                     <button

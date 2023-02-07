@@ -1,4 +1,4 @@
 export interface ILocalizationState {
-    lang: string
-    urlPie: string
+  lang: string;
+  urlPie: string;
 }

@@ -6,5 +6,5 @@ import theme from "./theme";
 export default combineReducers({
   localization,
   theme,
-  contact
+  contact,
 });

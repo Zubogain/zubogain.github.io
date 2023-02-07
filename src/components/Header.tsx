@@ -2,17 +2,16 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from "next-i18next";
 
 import ActiveLink from "./ActiveLink";
 import { useRouter } from "next/router";
 import LanguageSwitchLink from "./LanguageSwitchLink";
-import i18nextConfig from '../../next-i18next.config'
+import i18nextConfig from "../../next-i18next.config";
 
 const Header = () => {
   const router = useRouter();
-  const currentLocale =
-    router.query.locale || i18nextConfig.i18n.defaultLocale
+  const currentLocale = router.query.locale || i18nextConfig.i18n.defaultLocale;
 
   const { t } = useTranslation(["common"]);
 
@@ -24,16 +23,44 @@ const Header = () => {
             <div className="d-flex justify-content-center">
               <div className="header__fake" />
               <ul className="header__nav d-flex justify-content-center">
-                <li className="header__nav-item cap__text selected"><ActiveLink href={`/${currentLocale}/`} activeClassName="active">{t("common:header.nav.home")}</ActiveLink></li>
-                <li className="header__nav-item cap__text"><ActiveLink href={`/${currentLocale}/skills/`} activeClassName="active">{t("common:header.nav.skills")}</ActiveLink></li>
-                <li className="header__nav-item cap__text"><ActiveLink href={`/${currentLocale}/experience/`} activeClassName="active">{t("common:header.nav.experience")}</ActiveLink></li>
-                <li className="header__nav-item cap__text"><ActiveLink href={`/${currentLocale}/contact/`} activeClassName="active">{t("common:header.nav.contact")}</ActiveLink></li>
+                <li className="header__nav-item cap__text selected">
+                  <ActiveLink
+                    href={`/${currentLocale}/`}
+                    activeClassName="active"
+                  >
+                    {t("common:header.nav.home")}
+                  </ActiveLink>
+                </li>
+                <li className="header__nav-item cap__text">
+                  <ActiveLink
+                    href={`/${currentLocale}/skills/`}
+                    activeClassName="active"
+                  >
+                    {t("common:header.nav.skills")}
+                  </ActiveLink>
+                </li>
+                <li className="header__nav-item cap__text">
+                  <ActiveLink
+                    href={`/${currentLocale}/experience/`}
+                    activeClassName="active"
+                  >
+                    {t("common:header.nav.experience")}
+                  </ActiveLink>
+                </li>
+                <li className="header__nav-item cap__text">
+                  <ActiveLink
+                    href={`/${currentLocale}/contact/`}
+                    activeClassName="active"
+                  >
+                    {t("common:header.nav.contact")}
+                  </ActiveLink>
+                </li>
               </ul>
 
               <div className="header__lang d-flex justify-content-end">
-                {i18nextConfig.i18n.locales.map(locale => {
-                  if (locale === currentLocale) return null
-                  return <LanguageSwitchLink locale={locale} key={locale} />
+                {i18nextConfig.i18n.locales.map((locale) => {
+                  if (locale === currentLocale) return null;
+                  return <LanguageSwitchLink locale={locale} key={locale} />;
                 })}
               </div>
             </div>
@@ -78,7 +105,7 @@ const Header = () => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
 export default Header;

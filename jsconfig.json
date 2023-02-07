@@ -2,24 +2,12 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@Public/*": [
-        "./public/*"
-      ],
-      "@Components/*": [
-        "./src/components/*"
-      ],
-      "@Containers/*": [
-        "./src/containers/*"
-      ],
-      "@Actions/*": [
-        "./src/actions/*"
-      ],
-      "@Libs/*": [
-        "./src/libs/*"
-      ]
+      "@/*": ["./src/*"],
+      "@Public/*": ["./public/*"],
+      "@Components/*": ["./src/components/*"],
+      "@Containers/*": ["./src/containers/*"],
+      "@Actions/*": ["./src/actions/*"],
+      "@Libs/*": ["./src/libs/*"]
     }
   }
 }

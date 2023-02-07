@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from "next-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { NextSeo } from "next-seo";
 import { asyncContactRequest, contactSetRequest } from "../actions/contact";
@@ -16,7 +16,9 @@ import { IContactState } from "interfaces/contact";
 const ContactContainer = () => {
   const { t } = useTranslation(["contact"]);
   const dispatch: AppDispatch = useDispatch();
-  const contactState: IContactState = useSelector((state: RootState) => state.contact);
+  const contactState: IContactState = useSelector(
+    (state: RootState) => state.contact
+  );
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -24,38 +26,55 @@ const ContactContainer = () => {
 
   const handleInputName = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
-  }
+  };
 
   const handleInputEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
-  }
+  };
 
   const handleInputSubject = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSubject(event.target.value);
-  }
+  };
 
-  const handleInputMessage = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleInputMessage = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     setMessage(event.target.value);
-  }
+  };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    !contactState.isResponse && dispatch(asyncContactRequest({ name, email, subject, message }));
-  }
+    !contactState.isResponse &&
+      dispatch(asyncContactRequest({ name, email, subject, message }));
+  };
 
   useEffect(() => {
     if (contactState.isResponse || contactState.prevIsResponse) {
       setTimeout(() => {
-        dispatch(contactSetRequest({ isError: false, isResponse: false, prevIsResponse: false }));
+        dispatch(
+          contactSetRequest({
+            isError: false,
+            isResponse: false,
+            prevIsResponse: false,
+          })
+        );
       }, 3000);
     }
-
   }, [contactState.isResponse, contactState.prevIsResponse]);
 
-  useEffect(() => () => {
-    dispatch(contactSetRequest({ isError: false, isResponse: false, prevIsResponse: false }))
-  }, []);
+  useEffect(
+    () => () => {
+      dispatch(
+        contactSetRequest({
+          isError: false,
+          isResponse: false,
+          prevIsResponse: false,
+        })
+      );
+    },
+    []
+  );
 
   return (
     <React.Fragment>
@@ -64,7 +83,7 @@ const ContactContainer = () => {
       </Head>
       <NextSeo
         openGraph={{
-          type: 'website',
+          type: "website",
           title: t("contact:og.title"),
           description: t("contact:og.description"),
         }}
@@ -78,11 +97,8 @@ const ContactContainer = () => {
       >
         <div className="container">
           <div className="row justify-content-center align-items-center">
-            <AnimatePresence
-              mode="wait"
-              initial={false}
-            >
-              {contactState.prevIsResponse ?
+            <AnimatePresence mode="wait" initial={false}>
+              {contactState.prevIsResponse ? (
                 <motion.div
                   className="col-12 col-lg-6 text-center mb-30"
                   key={"my_unique_key4322"}
@@ -97,9 +113,11 @@ const ContactContainer = () => {
                     alt="checked"
                     priority={true}
                   />
-                  <h3 className="cap__title cap__title--medium text-lowercase">{t("contact:form.success-message.title")}</h3>
+                  <h3 className="cap__title cap__title--medium text-lowercase">
+                    {t("contact:form.success-message.title")}
+                  </h3>
                 </motion.div>
-                :
+              ) : (
                 <>
                   <motion.div
                     className="col-12 col-lg-6 text-center"
@@ -110,9 +128,7 @@ const ContactContainer = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <h3 className="cap__title">{t("contact:title")}</h3>
-                    <h3 className="cap__text">
-                      {t("contact:subtitle")}
-                    </h3>
+                    <h3 className="cap__text">{t("contact:subtitle")}</h3>
                   </motion.div>
 
                   <motion.div
@@ -126,7 +142,6 @@ const ContactContainer = () => {
                     <div className="row justify-content-center">
                       <div className="col-12 col-lg-6 col-xl-6">
                         <div className="row d-flex justify-content-center align-items-center h-100">
-
                           <div className="col-12 mb-auto">
                             <form
                               id="contact"
@@ -134,13 +149,40 @@ const ContactContainer = () => {
                               onSubmit={handleSubmit}
                             >
                               <div className="col-6 mt-30">
-                                <input name="name" minLength={1} onChange={handleInputName} className="form__input" placeholder={t("contact:form.placeholders.name")} required />
+                                <input
+                                  name="name"
+                                  minLength={1}
+                                  onChange={handleInputName}
+                                  className="form__input"
+                                  placeholder={t(
+                                    "contact:form.placeholders.name"
+                                  )}
+                                  required
+                                />
                               </div>
                               <div className="col-6 mt-30">
-                                <input name="email" type="email" onChange={handleInputEmail} className="form__input" placeholder={t("contact:form.placeholders.email")} required />
+                                <input
+                                  name="email"
+                                  type="email"
+                                  onChange={handleInputEmail}
+                                  className="form__input"
+                                  placeholder={t(
+                                    "contact:form.placeholders.email"
+                                  )}
+                                  required
+                                />
                               </div>
                               <div className="col-12 mt-30">
-                                <input name="subject" minLength={5} onChange={handleInputSubject} className="form__input" placeholder={t("contact:form.placeholders.subject")} required />
+                                <input
+                                  name="subject"
+                                  minLength={5}
+                                  onChange={handleInputSubject}
+                                  className="form__input"
+                                  placeholder={t(
+                                    "contact:form.placeholders.subject"
+                                  )}
+                                  required
+                                />
                               </div>
 
                               <div className="col-12 mt-30">
@@ -148,7 +190,9 @@ const ContactContainer = () => {
                                   name="message"
                                   className="form__input form__textarea"
                                   onChange={handleInputMessage}
-                                  placeholder={t("contact:form.placeholders.message")}
+                                  placeholder={t(
+                                    "contact:form.placeholders.message"
+                                  )}
                                   minLength={5}
                                   required
                                 />
@@ -160,14 +204,16 @@ const ContactContainer = () => {
                                   className="form__btn ml-auto mr-auto"
                                   placeholder="Message"
                                 >
-                                  {contactState.isResponse &&
+                                  {contactState.isResponse && (
                                     <div className="form__btn-loader">
                                       <div className="dot-floating" />
                                     </div>
-                                  }
-                                  <div style={
-                                    { opacity: contactState.isResponse ? 0 : 1 }
-                                  }>
+                                  )}
+                                  <div
+                                    style={{
+                                      opacity: contactState.isResponse ? 0 : 1,
+                                    }}
+                                  >
                                     {t("contact:form.buttons.send")}
                                   </div>
                                 </button>
@@ -179,13 +225,13 @@ const ContactContainer = () => {
                     </div>
                   </motion.div>
                 </>
-              }
+              )}
             </AnimatePresence>
           </div>
         </div>
       </motion.section>
     </React.Fragment>
-  )
-}
+  );
+};
 
 export default ContactContainer;

@@ -2,12 +2,12 @@ import React from "react";
 import Head from "next/head";
 import { NextSeo } from "next-seo";
 
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from "next-i18next";
 
 import { motion } from "framer-motion";
 
 const HomeContainer = () => {
-  const { t } = useTranslation(['home']);
+  const { t } = useTranslation(["home"]);
 
   return (
     <React.Fragment>
@@ -16,7 +16,7 @@ const HomeContainer = () => {
       </Head>
       <NextSeo
         openGraph={{
-          type: 'website',
+          type: "website",
           title: t("home:og.title"),
           description: t("home:og.description"),
         }}
@@ -40,7 +40,7 @@ const HomeContainer = () => {
         </div>
       </motion.section>
     </React.Fragment>
-  )
-}
+  );
+};
 
 export default HomeContainer;
