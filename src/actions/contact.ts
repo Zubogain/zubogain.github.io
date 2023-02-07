@@ -1,5 +1,5 @@
 import { ThunkDispatch, AnyAction } from "@reduxjs/toolkit";
-import { IContactForm, IContactState } from "interfaces/contact";
+import { IContactForm, IContactState } from "../interfaces/contact";
 import fetch from "isomorphic-unfetch";
 
 export const CONTACT_FORM_REQUEST = "CONTACT_FORM_REQUEST";
