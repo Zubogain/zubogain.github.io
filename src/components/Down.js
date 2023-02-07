@@ -23,7 +23,7 @@ const Down = () => {
     }, [router.route, router.query.locale]);
 
     return (
-        <Link href={nextRoute} className="slide-down d-flex justify-content-center">
+        <Link href={nextRoute} className="slide-down d-flex justify-content-center mt-30">
             <Image
                 priority
                 src="/static/angle-down.svg"

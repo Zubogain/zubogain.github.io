@@ -40,6 +40,11 @@
 @import "pages/contact";
 
 html,
+body {
+  overflow: hidden;
+}
+
+html,
 body,
 .main,
 #root,
@@ -47,7 +52,7 @@ body,
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden;
+  // overflow: hidden;
   background-color: #ffffff;
 }
 
@@ -55,6 +60,14 @@ body,
 .main {
   display: flex;
   flex-direction: column;
+}
+
+#__next {
+  overflow: auto;
+}
+
+.main {
+  // overflow: auto;
 }
 
 body {

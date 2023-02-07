@@ -30,6 +30,7 @@ const MyApp = ({ Component, pageProps, router, store }) => {
       <AppMain router={router}>
         <Component {...pageProps} lang={router.query.lang} store={store} />
       </AppMain>
+
     </>
   );
 };

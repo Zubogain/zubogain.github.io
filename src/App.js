@@ -42,14 +42,32 @@ const Layout = ({ children }) => {
   }, [router.route, router.query.locale]);
 
   const handlers = useSwipeable({
-    onSwipedUp: (eventData) => { router.push(nextRoute) },
-    onSwipedDown: (eventData) => { router.push(prevRoute) },
-    delta: 125,                             // min distance(px) before a swipe starts. *See Notes*
+    onSwipedUp: (eventData) => {
+      const el = document.getElementById("__next");
+      const isBottom = (el.scrollTop + el.offsetHeight) >= el.scrollHeight - 1; // - 10
+
+      console.log("isBottom:", el.scrollHeight, el.scrollTop + el.offsetHeight)
+
+      if (isBottom) {
+        router.push(nextRoute);
+      }
+    },
+    onSwipedDown: (eventData) => {
+      const el = document.getElementById("__next");
+      const isTop = el.scrollTop;
+
+      console.log("isTop:", el.scrollTop)
+
+      if (isTop <= 0) {
+        router.push(prevRoute);
+      }
+    },
+    delta: 110,                            // min distance(px) before a swipe starts. *See Notes*
     preventScrollOnSwipe: false,           // prevents scroll during swipe (*See Details*)
     trackTouch: true,                      // track touch input
-    trackMouse: true,                     // track mouse input
+    trackMouse: true,                      // track mouse input
     rotationAngle: 0,                      // set a rotation angle
-    swipeDuration: 250,               // allowable duration of a swipe (ms). *See Notes*
+    swipeDuration: 250,                    // allowable duration of a swipe (ms). *See Notes*
     touchEventOptions: { passive: true },  // options for touch listeners (*See Details*)
   });
 
@@ -71,7 +89,7 @@ const Layout = ({ children }) => {
       <NextSeo
         openGraph={staticContent.basicOpenGraph}
       />
-      <main className="main noselect" {...handlers}>
+      <main id="mega-main" className="main noselect" {...handlers}>
         <Header />
         {children}
         {showAngle && <Down />}
