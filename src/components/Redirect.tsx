@@ -12,13 +12,14 @@ export const useRedirect = (to?: string) => {
     if (toOrPath.startsWith(`/${detectedLng}`) && router.route === '/404') {
       // prevent endless loop
       router.replace(`/${detectedLng}${router.route}`)
+      return
     }
 
     if (languageDetector.cache) {
       languageDetector.cache(detectedLng as string)
     }
 
-    router.replace(`/${detectedLng}${to}`)
+    router.replace(`/${detectedLng}${toOrPath}`)
   })
 }
 

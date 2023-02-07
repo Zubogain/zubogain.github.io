@@ -9,7 +9,7 @@ import Image from 'next/image'
 
 import { ICarouselProps } from '@Interfaces/carousel'
 import { IProjectListItem } from '@Interfaces/projectList'
-import { randomUUID } from 'crypto'
+import crypto from 'crypto'
 
 const Projects = ({ isStopAnimation, setIsStopAnimation }: ICarouselProps) => {
   const { t } = useTranslation(['experience'])
@@ -71,7 +71,10 @@ const Projects = ({ isStopAnimation, setIsStopAnimation }: ICarouselProps) => {
         >
           <motion.div className="d-flex w-100" animate={animation}>
             {projectsList.map((item) => (
-              <div key={randomUUID()} className="col-12 col-md-6 col-lg-4">
+              <div
+                key={crypto.randomBytes(20).toString('hex')}
+                className="col-12 col-md-6 col-lg-4"
+              >
                 <a href={item.url} target="_blank" rel="noreferrer">
                   <div className="card text-center d-flex align-items-center justify-content-center">
                     <div
@@ -99,7 +102,7 @@ const Projects = ({ isStopAnimation, setIsStopAnimation }: ICarouselProps) => {
                       </h3>
                       {item.text.map((text, index) => (
                         <p
-                          key={randomUUID()}
+                          key={crypto.randomBytes(20).toString('hex')}
                           className={`card__subtitle card__subtitle-${
                             index + 1
                           }`}

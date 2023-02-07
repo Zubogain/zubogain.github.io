@@ -8,7 +8,7 @@ import ScrollContainer from 'react-indiana-drag-scroll'
 
 import { ICarouselProps } from '@Interfaces/carousel'
 import { IExperienceListItem } from '@Interfaces/experienceList'
-import { randomUUID } from 'crypto'
+import crypto from 'crypto'
 
 const Experience = ({
   isStopAnimation,
@@ -72,7 +72,10 @@ const Experience = ({
         >
           <motion.div className="d-flex w-100" animate={animation}>
             {experienceList.map((item) => (
-              <div key={randomUUID()} className="col-12 col-md-6 col-lg-4">
+              <div
+                key={crypto.randomBytes(20).toString('hex')}
+                className="col-12 col-md-6 col-lg-4"
+              >
                 <div className="card text-center">
                   <div className="card__header d-flex justify-content-center">
                     <h3 className="card__title">{item.title}</h3>

@@ -18,6 +18,7 @@
     "@reduxjs/toolkit": "^1.9.2",
     "@vercel/og": "^0.0.27",
     "bootstrap": "^4.6.2",
+    "crypto": "^1.0.1",
     "framer-motion": "^8.5.2",
     "i18next": "^22.4.9",
     "isomorphic-unfetch": "^4.0.2",
