@@ -1,14 +1,12 @@
-import { getStaticPaths, getI18nProps } from '../../src/libs/getStatic';
+import { getStaticPaths, getI18nProps } from '@Libs/getStatic'
 
-import ExperienceContainer from "../../src/containers/Experience";
+import ExperienceContainer from '@Containers/Experience'
 
 export { getStaticPaths }
-export const getStaticProps = async (ctx: any) => {
-    return {
-        props: {
-            ...(await getI18nProps(ctx, ['common', 'experience'])),
-        },
-    }
-}
+export const getStaticProps = async (ctx: any) => ({
+  props: {
+    ...(await getI18nProps(ctx, ['common', 'experience'])),
+  },
+})
 
-export default ExperienceContainer;
+export default ExperienceContainer

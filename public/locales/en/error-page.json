@@ -1,10 +1,10 @@
 {
+  "title": "Page not found",
+  "subtitle": "Something seems to have gone wrong.",
+  "og": {
     "title": "Page not found",
-    "subtitle": "Something seems to have gone wrong.",
-    "og": {
-        "title": "Page not found",
-        "description": "Something seems to have gone wrong.",
-        "image": "https://zubogain.github.io/static/og-image.png"
-    },
-    "go-back": "Go back!"
+    "description": "Something seems to have gone wrong.",
+    "image": "https://zubogain.github.io/static/og-image.png"
+  },
+  "go-back": "Go back!"
 }

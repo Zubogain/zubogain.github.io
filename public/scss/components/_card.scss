@@ -1,119 +1,117 @@
 .card {
-    height: 100%;
-    border: 3px solid #000;
+  height: 100%;
+  border: 3px solid #000;
 
-    padding: 10px;
+  padding: 10px;
+
+  background-color: rgba(255, 255, 255, 0.7);
+
+  &__subtitle {
+    &-1 {
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      margin-left: 10px !important;
+    }
+
+    &-2 {
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      margin-left: 3px !important;
+    }
+  }
+
+  &__left,
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__l-sh {
+    width: 0px;
+    position: absolute;
+    left: 0;
+    top: -5px;
+    bottom: -5px;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0px 0px 10px 10px white;
+  }
+
+  &__r-sh {
+    width: 0px;
+    position: absolute;
+    right: 0;
+    top: -5px;
+    bottom: -5px;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0px 0px 10px 10px white;
+  }
+
+  &__left {
+    color: red;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 1000;
+  }
+
+  &__right {
+    position: absolute;
+    right: 15px;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
 
     background-color: rgba(255, 255, 255, 0.7);
+  }
 
-    &__subtitle {
-        &-1 {
-            white-space: nowrap !important;
-            overflow: hidden !important;
-            text-overflow: ellipsis !important;
-            ;
-            margin-left: 10px !important;
-        }
+  &__title {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
 
-        &-2 {
-            white-space: nowrap !important;
-            overflow: hidden !important;
-            text-overflow: ellipsis !important;
-            margin-left: 3px !important;
-        }
-    }
+    font-size: 24px;
+  }
 
-    &__left,
-    &__right {
-        display: flex;
-        align-items: center;
-    }
+  &__title,
+  &__subtitle,
+  &__date,
+  &__text {
+    margin: 0;
+  }
 
-    &__l-sh {
-        width: 0px;
-        position: absolute;
-        left: 0;
-        top: -5px;
-        bottom: -5px;
-        z-index: 1000;
-        background-color: white;
-        box-shadow: 0px 0px 10px 10px white;
-    }
+  &__header {
+    position: relative;
+  }
 
-    &__r-sh {
-        width: 0px;
-        position: absolute;
-        right: 0;
-        top: -5px;
-        bottom: -5px;
-        z-index: 1000;
-        background-color: white;
-        box-shadow: 0px 0px 10px 10px white;
-    }
+  &__header &__title {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
+  &__header &__date {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
 
-    &__left {
-        color: red;
-        position: absolute;
-        left: 15px;
-        top: 0;
-        bottom: 0;
-        background-color: rgba(255, 255, 255, 0.7);
-        z-index: 1000;
-    }
+  &__subtitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
 
-    &__right {
-        position: absolute;
-        right: 15px;
-        top: 0;
-        bottom: 0;
-        z-index: 1000;
+  &__date {
+    font-size: 12px;
+    white-space: nowrap;
+  }
 
-        background-color: rgba(255, 255, 255, 0.7);
-    }
-
-    &__title {
-        white-space: nowrap !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-
-        font-size: 24px;
-    }
-
-    &__title,
-    &__subtitle,
-    &__date,
-    &__text {
-        margin: 0;
-    }
-
-    &__header {
-        position: relative;
-    }
-
-    &__header &__title {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    &__header &__date {
-        position: absolute;
-        right: 0px;
-        top: 0px;
-    }
-
-    &__subtitle {
-        font-size: 16px;
-        line-height: 24px;
-    }
-
-    &__date {
-        font-size: 12px;
-        white-space: nowrap;
-    }
-
-    &__text {
-        margin-top: 5px;
-        font-size: 16px;
-    }
+  &__text {
+    margin-top: 5px;
+    font-size: 16px;
+  }
 }

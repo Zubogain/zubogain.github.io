@@ -1,14 +1,12 @@
-import { getStaticPaths, getI18nProps } from '../../src/libs/getStatic';
+import { getStaticPaths, getI18nProps } from '@Libs/getStatic'
 
-import ContactContainer from "../../src/containers/Contact";
+import ContactContainer from '@Containers/Contact'
 
 export { getStaticPaths }
-export const getStaticProps = async (ctx: any) => {
-    return {
-        props: {
-            ...(await getI18nProps(ctx, ['common', 'contact'])),
-        },
-    }
-}
+export const getStaticProps = async (ctx: any) => ({
+  props: {
+    ...(await getI18nProps(ctx, ['common', 'contact'])),
+  },
+})
 
-export default ContactContainer;
+export default ContactContainer

@@ -1,3 +1,3 @@
-import { Redirect } from '../src/components/Redirect';
+import { Redirect } from '@Components/Redirect'
 
-export default Redirect;
+export default Redirect

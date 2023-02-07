@@ -1,152 +1,152 @@
-// Import putItemHandler function from put-item.mjs 
-import { Handler } from '../../../src/handler.mjs';
+// Import putItemHandler function from put-item.mjs
+import { Handler } from '../../../src/handler.mjs'
 
-// This includes all tests for Handler() 
+// This includes all tests for Handler()
 describe('Test Handler', function () {
+  // This test invokes Handler() and compare the result
+  it('Send an email', async () => {
+    const event = {
+      httpMethod: 'POST',
+      headers: {
+        'Access-Control-Allow-Headers': 'application/json',
+        'Access-Control-Allow-Origin': undefined,
+        'Access-Control-Allow-Methods': 'OPTIONS,POST',
+      },
+      body: '{"name": "name_name", "email": "email@email.com", "subject": "subject_subject", "message": "message_message"}',
+    }
 
-    // This test invokes Handler() and compare the result  
-    it('Send an email', async () => {
+    // Invoke Handler()
+    const result = await Handler(event)
 
-        const event = {
-            httpMethod: 'POST',
-            headers: {
-                'Access-Control-Allow-Headers': 'application/json',
-                'Access-Control-Allow-Origin': undefined,
-                'Access-Control-Allow-Methods': 'OPTIONS,POST'
-            },
-            body: '{"name": "name_name", "email": "email@email.com", "subject": "subject_subject", "message": "message_message"}'
-        };
+    const expectedResult = {
+      statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Headers': 'application/json',
+        'Access-Control-Allow-Origin': undefined,
+        'Access-Control-Allow-Methods': 'OPTIONS,POST',
+      },
+      body: JSON.stringify({ message: 'ok' }),
+    }
 
-        // Invoke Handler() 
-        const result = await Handler(event);
+    // Compare the result with the expected result
+    expect(result).toEqual(expectedResult)
+  })
 
-        const expectedResult = {
-            statusCode: 200,
-            headers: {
-                'Access-Control-Allow-Headers': 'application/json',
-                'Access-Control-Allow-Origin': undefined,
-                'Access-Control-Allow-Methods': 'OPTIONS,POST'
-            },
-            body: JSON.stringify({ message: "ok" })
-        };
+  it('Sending an email message with an invalid name', async () => {
+    const event = {
+      httpMethod: 'POST',
+      headers: {
+        'Access-Control-Allow-Headers': 'application/json',
+        'Access-Control-Allow-Origin': undefined,
+        'Access-Control-Allow-Methods': 'OPTIONS,POST',
+      },
+      body: '{"name": "n", "email": "email@email.com", "subject": "subject_subject", "message": "message_message"}',
+    }
 
-        // Compare the result with the expected result 
-        expect(result).toEqual(expectedResult);
-    });
+    // Invoke Handler()
+    const result = await Handler(event)
 
-    it('Sending an email message with an invalid name', async () => {
+    const expectedResult = {
+      statusCode: 400,
+      headers: {
+        'Access-Control-Allow-Headers': 'application/json',
+        'Access-Control-Allow-Origin': undefined,
+        'Access-Control-Allow-Methods': 'OPTIONS,POST',
+      },
+      body: JSON.stringify({
+        message: 'the name must be longer than 1 characters',
+      }),
+    }
 
-        const event = {
-            httpMethod: 'POST',
-            headers: {
-                'Access-Control-Allow-Headers': 'application/json',
-                'Access-Control-Allow-Origin': undefined,
-                'Access-Control-Allow-Methods': 'OPTIONS,POST'
-            },
-            body: '{"name": "n", "email": "email@email.com", "subject": "subject_subject", "message": "message_message"}'
-        };
+    // Compare the result with the expected result
+    expect(result).toEqual(expectedResult)
+  })
 
-        // Invoke Handler() 
-        const result = await Handler(event);
+  it('Send an email with an invalid email address', async () => {
+    const event = {
+      httpMethod: 'POST',
+      headers: {
+        'Access-Control-Allow-Headers': 'application/json',
+        'Access-Control-Allow-Origin': undefined,
+        'Access-Control-Allow-Methods': 'OPTIONS,POST',
+      },
+      body: '{"name": "name", "email": "email@email.", "subject": "subject_subject", "message": "message_message"}',
+    }
 
-        const expectedResult = {
-            statusCode: 400,
-            headers: {
-                'Access-Control-Allow-Headers': 'application/json',
-                'Access-Control-Allow-Origin': undefined,
-                'Access-Control-Allow-Methods': 'OPTIONS,POST'
-            },
-            body: JSON.stringify({ message: "the name must be longer than 1 characters" })
-        };
+    // Invoke Handler()
+    const result = await Handler(event)
 
-        // Compare the result with the expected result 
-        expect(result).toEqual(expectedResult);
-    });
+    const expectedResult = {
+      statusCode: 400,
+      headers: {
+        'Access-Control-Allow-Headers': 'application/json',
+        'Access-Control-Allow-Origin': undefined,
+        'Access-Control-Allow-Methods': 'OPTIONS,POST',
+      },
+      body: JSON.stringify({ message: 'unsupported email address type' }),
+    }
 
-    it('Send an email with an invalid email address', async () => {
+    // Compare the result with the expected result
+    expect(result).toEqual(expectedResult)
+  })
 
-        const event = {
-            httpMethod: 'POST',
-            headers: {
-                'Access-Control-Allow-Headers': 'application/json',
-                'Access-Control-Allow-Origin': undefined,
-                'Access-Control-Allow-Methods': 'OPTIONS,POST'
-            },
-            body: '{"name": "name", "email": "email@email.", "subject": "subject_subject", "message": "message_message"}'
-        };
+  it('Sending an email with an invalid subject line', async () => {
+    const event = {
+      httpMethod: 'POST',
+      headers: {
+        'Access-Control-Allow-Headers': 'application/json',
+        'Access-Control-Allow-Origin': undefined,
+        'Access-Control-Allow-Methods': 'OPTIONS,POST',
+      },
+      body: '{"name": "name", "email": "email@email.com", "subject": "subj", "message": "message_message"}',
+    }
 
-        // Invoke Handler() 
-        const result = await Handler(event);
+    // Invoke Handler()
+    const result = await Handler(event)
 
-        const expectedResult = {
-            statusCode: 400,
-            headers: {
-                'Access-Control-Allow-Headers': 'application/json',
-                'Access-Control-Allow-Origin': undefined,
-                'Access-Control-Allow-Methods': 'OPTIONS,POST'
-            },
-            body: JSON.stringify({ message: "unsupported email address type" })
-        };
+    const expectedResult = {
+      statusCode: 400,
+      headers: {
+        'Access-Control-Allow-Headers': 'application/json',
+        'Access-Control-Allow-Origin': undefined,
+        'Access-Control-Allow-Methods': 'OPTIONS,POST',
+      },
+      body: JSON.stringify({
+        message: 'the subject must be longer than 5 characters',
+      }),
+    }
 
-        // Compare the result with the expected result 
-        expect(result).toEqual(expectedResult);
-    });
+    // Compare the result with the expected result
+    expect(result).toEqual(expectedResult)
+  })
 
-    it('Sending an email with an invalid subject line', async () => {
+  it('Sending an email with an invalid message', async () => {
+    const event = {
+      httpMethod: 'POST',
+      headers: {
+        'Access-Control-Allow-Headers': 'application/json',
+        'Access-Control-Allow-Origin': undefined,
+        'Access-Control-Allow-Methods': 'OPTIONS,POST',
+      },
+      body: '{"name": "name", "email": "email@email.com", "subject": "subject_subject", "message": "mess"}',
+    }
 
-        const event = {
-            httpMethod: 'POST',
-            headers: {
-                'Access-Control-Allow-Headers': 'application/json',
-                'Access-Control-Allow-Origin': undefined,
-                'Access-Control-Allow-Methods': 'OPTIONS,POST'
-            },
-            body: '{"name": "name", "email": "email@email.com", "subject": "subj", "message": "message_message"}'
-        };
+    // Invoke Handler()
+    const result = await Handler(event)
 
-        // Invoke Handler() 
-        const result = await Handler(event);
+    const expectedResult = {
+      statusCode: 400,
+      headers: {
+        'Access-Control-Allow-Headers': 'application/json',
+        'Access-Control-Allow-Origin': undefined,
+        'Access-Control-Allow-Methods': 'OPTIONS,POST',
+      },
+      body: JSON.stringify({
+        message: 'the message must be longer than 5 characters',
+      }),
+    }
 
-        const expectedResult = {
-            statusCode: 400,
-            headers: {
-                'Access-Control-Allow-Headers': 'application/json',
-                'Access-Control-Allow-Origin': undefined,
-                'Access-Control-Allow-Methods': 'OPTIONS,POST'
-            },
-            body: JSON.stringify({ message: "the subject must be longer than 5 characters" })
-        };
-
-        // Compare the result with the expected result 
-        expect(result).toEqual(expectedResult);
-    });
-
-    it('Sending an email with an invalid message', async () => {
-
-        const event = {
-            httpMethod: 'POST',
-            headers: {
-                'Access-Control-Allow-Headers': 'application/json',
-                'Access-Control-Allow-Origin': undefined,
-                'Access-Control-Allow-Methods': 'OPTIONS,POST'
-            },
-            body: '{"name": "name", "email": "email@email.com", "subject": "subject_subject", "message": "mess"}'
-        };
-
-        // Invoke Handler() 
-        const result = await Handler(event);
-
-        const expectedResult = {
-            statusCode: 400,
-            headers: {
-                'Access-Control-Allow-Headers': 'application/json',
-                'Access-Control-Allow-Origin': undefined,
-                'Access-Control-Allow-Methods': 'OPTIONS,POST'
-            },
-            body: JSON.stringify({ message: "the message must be longer than 5 characters" })
-        };
-
-        // Compare the result with the expected result 
-        expect(result).toEqual(expectedResult);
-    });
-});
+    // Compare the result with the expected result
+    expect(result).toEqual(expectedResult)
+  })
+})

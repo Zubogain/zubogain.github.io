@@ -1,24 +1,24 @@
 {
-    "title": "Contact me",
-    "subtitle": "As an individual with a keen eye for opportunities, I am actively seeking ambitious freelance projects, or projects which are large in scale. However, if you have any requests or inquiries, please do not hesitate to reach out to me through the form below.",
-    "form": {
-        "placeholders": {
-            "name": "Name",
-            "email": "Email",
-            "subject": "Subject",
-            "message": "Message"
-        },
-        "buttons": {
-            "send": "Send message!"
-        },
-        "success-message": {
-            "title": "Message sent",
-            "subtitle": "lorem ipsum dolor sit"
-        }
+  "title": "Contact me",
+  "subtitle": "As an individual with a keen eye for opportunities, I am actively seeking ambitious freelance projects, or projects which are large in scale. However, if you have any requests or inquiries, please do not hesitate to reach out to me through the form below.",
+  "form": {
+    "placeholders": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message"
     },
-    "og": {
-        "title": "Contact me",
-        "description": "As an individual with a keen eye for opportunities, I am actively seeking ambitious freelance projects, or projects which are large in scale. However, if you have any requests or inquiries, please do not hesitate to reach out to me through the form below.",
-        "image": "https://zubogain.github.io/static/og-image.png"
+    "buttons": {
+      "send": "Send message!"
+    },
+    "success-message": {
+      "title": "Message sent",
+      "subtitle": "lorem ipsum dolor sit"
     }
+  },
+  "og": {
+    "title": "Contact me",
+    "description": "As an individual with a keen eye for opportunities, I am actively seeking ambitious freelance projects, or projects which are large in scale. However, if you have any requests or inquiries, please do not hesitate to reach out to me through the form below.",
+    "image": "https://zubogain.github.io/static/og-image.png"
+  }
 }

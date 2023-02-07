@@ -1,5 +1,5 @@
-@import "./normalize.css";
-@import "../fonts/fonts.css";
+@import './normalize.css';
+@import '../fonts/fonts.css';
 
 * {
   box-sizing: border-box;
@@ -35,18 +35,18 @@ body {
 .header .container {
   position: relative;
   background-color: rgb(123, 160, 151);
-  background-image: url("../img/Tower.png");
+  background-image: url('../img/Tower.png');
   background-repeat: no-repeat;
   background-position: 50% 35%;
 }
 
 .header .container:after {
-  content: "";
+  content: '';
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-image: url("../img/header-town-background.png");
+  background-image: url('../img/header-town-background.png');
   background-size: 153rem;
   background-position-x: 59.5%;
   background-position-y: calc(100% + 20.8rem);
@@ -55,9 +55,9 @@ body {
 }
 
 .header .container:before {
-  content: "";
+  content: '';
   height: 5rem;
-  background-image: url("../img/background.png");
+  background-image: url('../img/background.png');
   position: absolute;
   bottom: 0;
   left: 0;
@@ -66,7 +66,7 @@ body {
 
 .header__subtitle,
 .header__title {
-  font-family: "Canter-bold";
+  font-family: 'Canter-bold';
   font-size: 8.2rem;
   word-spacing: 0.1rem;
   letter-spacing: 0.2rem;
@@ -111,7 +111,7 @@ body {
 .header__countdown__item {
   width: 33.3%;
   font-size: 6rem;
-  font-family: "Canter-bold";
+  font-family: 'Canter-bold';
 }
 
 .header__countdown__item:not(:last-child) {
@@ -134,7 +134,7 @@ body {
   text-align: center;
   vertical-align: middle;
 
-  background-image: url("../img/bg.png");
+  background-image: url('../img/bg.png');
   background-repeat: no-repeat;
 }
 
@@ -156,7 +156,7 @@ body {
 /* header__countdown */
 
 .join-us .container {
-  background-image: url("../img/background.png");
+  background-image: url('../img/background.png');
 }
 
 .join-us__container {
@@ -165,7 +165,7 @@ body {
 }
 
 .join-us__title {
-  font-family: "Canter-bold";
+  font-family: 'Canter-bold';
   text-transform: uppercase;
   font-size: 7.2rem;
   text-align: center;
@@ -184,12 +184,12 @@ body {
 
 .join-us__map__decoration__top-left,
 .join-us__map__decoration__top-right {
-  content: "";
+  content: '';
 
   width: 6rem;
   height: 6rem;
 
-  background-image: url("../img/left.png");
+  background-image: url('../img/left.png');
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -214,7 +214,7 @@ body {
   height: 26rem;
   padding-left: 4.5rem;
   padding-right: 4.5rem;
-  background-image: url("../img/note.png");
+  background-image: url('../img/note.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin: auto;
@@ -230,7 +230,7 @@ body {
 }
 
 .join-us__form__input:before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: -0.5rem;
@@ -241,7 +241,7 @@ body {
 .join-us__form__input > input {
   width: 15rem;
   height: 2rem;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1.4rem;
 
   border: none;
@@ -264,7 +264,7 @@ body {
   width: 37.25rem;
   height: 5.5rem;
   text-align: start;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1.4rem;
 
   border: none;
@@ -276,7 +276,7 @@ body {
 }
 
 .join-us__form__button {
-  font-family: "Canter-bold-shadow";
+  font-family: 'Canter-bold-shadow';
   text-transform: uppercase;
   font-size: 3.2rem;
   display: block;
@@ -290,12 +290,12 @@ body {
 
 .join-us__form__decoration__top-left,
 .join-us__form__decoration__top-right {
-  content: "";
+  content: '';
 
   width: 6rem;
   height: 6rem;
 
-  background-image: url("../img/left.png");
+  background-image: url('../img/left.png');
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -320,7 +320,7 @@ body {
 }
 
 .footer .container {
-  background-image: url("../img/background.png");
+  background-image: url('../img/background.png');
 
   display: flex;
   flex-direction: column;
@@ -328,7 +328,7 @@ body {
 }
 
 .footer__location {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 0;
   font-size: 1.6rem;
   list-style: none;
@@ -364,15 +364,15 @@ body {
 }
 
 .icon-twitter {
-  background-image: url("../img/twitter.svg");
+  background-image: url('../img/twitter.svg');
 }
 
 .icon-skype {
-  background-image: url("../img/skype-logo.svg");
+  background-image: url('../img/skype-logo.svg');
 }
 
 .icon-pinterest {
-  background-image: url("../img/pinterest-logo.svg");
+  background-image: url('../img/pinterest-logo.svg');
 }
 
 @media screen and (max-width: 1250px) {

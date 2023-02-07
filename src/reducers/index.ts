@@ -1,10 +1,10 @@
-import { combineReducers } from "redux";
-import localization from "./localization";
-import contact from "./contact";
-import theme from "./theme";
+import { combineReducers } from 'redux'
+import contact from '@Reducers/contact'
+import theme from '@Reducers/theme'
 
-export default combineReducers({
-  localization,
+const reducer = combineReducers({
   theme,
-  contact
-});
+  contact,
+})
+
+export default reducer
