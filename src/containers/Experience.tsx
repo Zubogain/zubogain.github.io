@@ -1,50 +1,49 @@
-import React, { useEffect, useRef, useState } from "react";
-import Head from "next/head";
+import React, { useState } from 'react'
+import Head from 'next/head'
+import { useTranslation } from 'next-i18next'
+import { NextSeo } from 'next-seo'
+import { motion } from 'framer-motion'
 
-import { motion } from "framer-motion";
+import Projects from '@Components/Projects'
+import Experience from '@Components/Experience'
 
-import Projects from "../components/Projects";
-import Experience from "../components/Experience";
-import { NextSeo } from "next-seo";
-import { useTranslation } from "next-i18next";
-
-import { IProjectListItem } from "../interfaces/projectList";
-import { IExperienceListItem } from "../interfaces/experienceList";
+import { IProjectListItem } from '@Interfaces/projectList'
+import { IExperienceListItem } from '@Interfaces/experienceList'
 
 const ExperienceContainer = () => {
-  const { t } = useTranslation(["experience"]);
+  const { t } = useTranslation(['experience'])
 
-  const projectsList = t("experience:projects.list", {
+  const projectsList = t('experience:projects.list', {
     returnObjects: true,
-  }) as Array<IProjectListItem>;
-  const experienceList = t("experience:experience.list", {
+  }) as Array<IProjectListItem>
+  const experienceList = t('experience:experience.list', {
     returnObjects: true,
-  }) as Array<IExperienceListItem>;
+  }) as Array<IExperienceListItem>
 
-  const [isStopAnimation, setIsStopAnimation] = useState(false);
+  const [isStopAnimation, setIsStopAnimation] = useState(false)
 
   return (
-    <React.Fragment>
+    <>
       <Head>
-        <title>{`${t("experience:projects.title")} & ${t(
-          "experience:experience.title"
+        <title>{`${t('experience:projects.title')} & ${t(
+          'experience:experience.title',
         )}`}</title>
       </Head>
       <NextSeo
         openGraph={{
-          type: "website",
-          title: t("experience:og.title"),
-          description: `${t("experience:projects.title")}: ${projectsList
+          type: 'website',
+          title: t('experience:og.title'),
+          description: `${t('experience:projects.title')}: ${projectsList
             .map((item) => item.title)
-            .join(", ")}
-                    ${t("experience:experience.title")}: ${experienceList
+            .join(', ')}
+                    ${t('experience:experience.title')}: ${experienceList
             .map((item) => item.title)
-            .join(", ")}`,
+            .join(', ')}`,
         }}
       />
       <motion.section
         className="skills d-flex flex-column justify-content-center align-items-center"
-        key={"my_unique_key23"}
+        key="my_unique_key23"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
@@ -63,8 +62,8 @@ const ExperienceContainer = () => {
           </div>
         </div>
       </motion.section>
-    </React.Fragment>
-  );
-};
+    </>
+  )
+}
 
-export default ExperienceContainer;
+export default ExperienceContainer

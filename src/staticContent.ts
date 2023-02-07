@@ -1,4 +1,4 @@
-import { ISourceOptions } from "tsparticles-engine";
+import { ISourceOptions } from 'tsparticles-engine'
 
 export const particlesOption: ISourceOptions = {
   fpsLimit: 90,
@@ -6,11 +6,11 @@ export const particlesOption: ISourceOptions = {
     events: {
       onClick: {
         enable: true,
-        mode: "push",
+        mode: 'push',
       },
       onHover: {
         enable: true,
-        mode: "repulse",
+        mode: 'repulse',
       },
       resize: false,
     },
@@ -26,10 +26,10 @@ export const particlesOption: ISourceOptions = {
   },
   particles: {
     color: {
-      value: "#BEBEBE",
+      value: '#BEBEBE',
     },
     links: {
-      color: "#BEBEBE",
+      color: '#BEBEBE',
       distance: 150,
       enable: true,
       opacity: 0.5,
@@ -39,10 +39,10 @@ export const particlesOption: ISourceOptions = {
       enable: false,
     },
     move: {
-      direction: "none",
+      direction: 'none',
       enable: true,
       outModes: {
-        default: "bounce",
+        default: 'bounce',
       },
       random: false,
       speed: 0.7,
@@ -59,49 +59,49 @@ export const particlesOption: ISourceOptions = {
       value: 1,
     },
     shape: {
-      type: "circle",
+      type: 'circle',
     },
     size: {
       value: { min: 1, max: 5 },
     },
   },
   detectRetina: true,
-};
+}
 
 const basic = {
-  version: "v1.0.0a",
-  codename: "Minimalistic",
-  author: "Emil Shergali",
+  version: 'v1.0.0a',
+  codename: 'Minimalistic',
+  author: 'Emil Shergali',
 
   basicOpenGraph: {
-    type: "website",
+    type: 'website',
     images: [
       {
-        url: "https://zubogain.github.io/static/og-image-1200x630.png",
+        url: 'https://zubogain.github.io/static/og-image-1200x630.png',
         width: 1200,
         height: 630,
-        alt: "zubogain.github.io 1200x630",
+        alt: 'zubogain.github.io 1200x630',
       },
       {
-        url: "https://zubogain.github.io/static/og-image-800x600.png",
+        url: 'https://zubogain.github.io/static/og-image-800x600.png',
         width: 800,
         height: 600,
-        alt: "zubogain.github.io 800x600",
+        alt: 'zubogain.github.io 800x600',
       },
       {
-        url: "https://zubogain.github.io/static/og-image-600x600.png",
+        url: 'https://zubogain.github.io/static/og-image-600x600.png',
         width: 600,
         height: 600,
-        alt: "zubogain.github.io 600x600",
+        alt: 'zubogain.github.io 600x600',
       },
       {
-        url: "https://zubogain.github.io/static/og-image-200x200.png",
+        url: 'https://zubogain.github.io/static/og-image-200x200.png',
         width: 200,
         height: 200,
-        alt: "zubogain.github.io 200x200",
+        alt: 'zubogain.github.io 200x200',
       },
     ],
   },
-};
+}
 
-export default basic;
+export default basic

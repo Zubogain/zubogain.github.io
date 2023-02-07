@@ -1,7 +1,7 @@
 .slide-down {
-    @include media-breakpoint-up(md) {
-        margin-bottom: 75px;
-    }
+  @include media-breakpoint-up(md) {
+    margin-bottom: 75px;
+  }
 
-    cursor: pointer;
+  cursor: pointer;
 }

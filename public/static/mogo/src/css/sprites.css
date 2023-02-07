@@ -1,159 +1,159 @@
 .header-sprite {
-    background-image: url(../img/sprites/header-menu-sprite.png);
-    background-repeat: no-repeat;
-    display: block;
+  background-image: url(../img/sprites/header-menu-sprite.png);
+  background-repeat: no-repeat;
+  display: block;
 }
 
 .header-sprite-magnifying-glass {
-    width: 18px;
-    height: 18px;
-    background-position: -5px -5px;
+  width: 18px;
+  height: 18px;
+  background-position: -5px -5px;
 }
 
 .header-sprite-magnifying-glass:hover {
-    background-position: -33px -5px;
+  background-position: -33px -5px;
 }
 
 .header-sprite-shopping-cart {
-    width: 18px;
-    height: 18px;
-    background-position: -5px -33px;
+  width: 18px;
+  height: 18px;
+  background-position: -5px -33px;
 }
 
 .header-sprite-shopping-cart:hover {
-    background-position: -33px -33px;
+  background-position: -33px -33px;
 }
 
 /************************************/
 
 .amazing-services-sprite {
-    background-image: url(../img/sprites/amazing-services-sprite.png);
-    background-repeat: no-repeat;
-    display: inline-block;
-    margin-right: 3rem;
-    margin-top: 0.25rem;
+  background-image: url(../img/sprites/amazing-services-sprite.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-right: 3rem;
+  margin-top: 0.25rem;
 }
 
 .amazing-services-sprite-alarm {
-    width: 32px;
-    height: 31px;
-    background-position: -5px -5px;
+  width: 32px;
+  height: 31px;
+  background-position: -5px -5px;
 }
 
 .amazing-services-sprite-book {
-    width: 32px;
-    height: 32px;
-    background-position: -47px -5px;
+  width: 32px;
+  height: 32px;
+  background-position: -47px -5px;
 }
 
 .amazing-services-sprite-computer {
-    width: 32px;
-    height: 28px;
-    background-position: -5px -47px;
+  width: 32px;
+  height: 28px;
+  background-position: -5px -47px;
 }
 
 .amazing-services-sprite-home {
-    width: 32px;
-    height: 31px;
-    background-position: -47px -47px;
+  width: 32px;
+  height: 31px;
+  background-position: -47px -47px;
 }
 
 .amazing-services-sprite-image {
-    width: 32px;
-    height: 32px;
-    background-position: -89px -5px;
+  width: 32px;
+  height: 32px;
+  background-position: -89px -5px;
 }
 
 .amazing-services-sprite-web-design {
-    width: 32px;
-    height: 32px;
-    background-position: -89px -47px;
+  width: 32px;
+  height: 32px;
+  background-position: -89px -47px;
 }
 
 /************************************/
 
 .footer-sprite {
-    background-image: url(../img/sprites/footer-sprite.png);
-    background-repeat: no-repeat;
-    display: inline-block;
+  background-image: url(../img/sprites/footer-sprite.png);
+  background-repeat: no-repeat;
+  display: inline-block;
 }
 
 .footer-sprite-dribbble {
-    width: 16px;
-    height: 16px;
-    background-position: -5px -5px;
+  width: 16px;
+  height: 16px;
+  background-position: -5px -5px;
 }
 
 .footer-sprite-dribbble:hover {
-    background-position: -31px -5px;
+  background-position: -31px -5px;
 }
 
 .footer-sprite-facebook {
-    width: 8px;
-    height: 16px;
-    background-position: -57px -5px;
+  width: 8px;
+  height: 16px;
+  background-position: -57px -5px;
 }
 
 .footer-sprite-facebook:hover {
-    background-position: -75px -5px;
+  background-position: -75px -5px;
 }
 
 .footer-sprite-google-plus {
-    width: 16px;
-    height: 14px;
-    background-position: -5px -31px;
+  width: 16px;
+  height: 14px;
+  background-position: -5px -31px;
 }
 
 .footer-sprite-google-plus:hover {
-    background-position: -31px -31px;
+  background-position: -31px -31px;
 }
 
 .footer-sprite-instagram {
-    width: 16px;
-    height: 16px;
-    background-position: -57px -31px;
+  width: 16px;
+  height: 16px;
+  background-position: -57px -31px;
 }
 
 .footer-sprite-instagram:hover {
-    background-position: -5px -57px;
+  background-position: -5px -57px;
 }
 
 .footer-sprite-pinterest {
-    width: 13px;
-    height: 16px;
-    background-position: -31px -57px;
+  width: 13px;
+  height: 16px;
+  background-position: -31px -57px;
 }
 
 .footer-sprite-pinterest:hover {
-    background-position: -54px -57px;
+  background-position: -54px -57px;
 }
 
 .footer-sprite-tumblr {
-    width: 10px;
-    height: 16px;
-    background-position: -83px -31px;
+  width: 10px;
+  height: 16px;
+  background-position: -83px -31px;
 }
 
 .footer-sprite-tumblr:hover {
-    background-position: -77px -57px;
+  background-position: -77px -57px;
 }
 
 .footer-sprite-twitter {
-    width: 16px;
-    height: 14px;
-    background-position: -93px -5px;
+  width: 16px;
+  height: 14px;
+  background-position: -93px -5px;
 }
 
 .footer-sprite-twitter:hover {
-    background-position: -103px -29px;
+  background-position: -103px -29px;
 }
 
 .footer-sprite-youtube {
-    width: 16px;
-    height: 12px;
-    background-position: -103px -53px;
+  width: 16px;
+  height: 12px;
+  background-position: -103px -53px;
 }
 
 .footer-sprite-youtube:hover {
-    background-position: -97px -75px;
+  background-position: -97px -75px;
 }

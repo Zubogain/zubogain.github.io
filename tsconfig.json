@@ -1,6 +1,18 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@Src/*": ["./src/*"],
+      "@Public/*": ["./public/*"],
+      "@Components/*": ["./src/components/*"],
+      "@Containers/*": ["./src/containers/*"],
+      "@Actions/*": ["./src/actions/*"],
+      "@Reducers/*": ["./src/reducers/*"],
+      "@Libs/*": ["./src/libs/*"],
+      "@Interfaces/*": ["./src/interfaces/*"],
+      "@Types/*": ["./src/types/*"]
+    },
     "target": "ES6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

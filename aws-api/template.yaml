@@ -3,7 +3,7 @@ Description: >-
   about-me-api
 
 Transform:
-- AWS::Serverless-2016-10-31
+  - AWS::Serverless-2016-10-31
 
 Resources:
   createEmailFunction:
@@ -26,11 +26,11 @@ Resources:
             Method: POST
       Environment:
         Variables:
-          TO_EMAIL: "your_to_email"
-          SOURCE_EMAIL: "your_source_email"
-          ALLOW_ORIGIN: "https://zubogain.github.io"
+          TO_EMAIL: 'your_to_email'
+          SOURCE_EMAIL: 'your_source_email'
+          ALLOW_ORIGIN: 'https://zubogain.github.io'
 
 Outputs:
   WebEndpoint:
-    Description: "API Gateway endpoint URL for Prod stage"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+    Description: 'API Gateway endpoint URL for Prod stage'
+    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/'

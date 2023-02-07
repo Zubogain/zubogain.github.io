@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "Canter-bold";
+  font-family: 'Canter-bold';
 
-  src: url("./canter/Canter-Bold.eot");
+  src: url('./canter/Canter-Bold.eot');
 
-  src: url("./canter/Canter-Bold.eot?iefix") format("eot"),
-    url("./canter/Canter-Bold.woff") format("woff"),
-    url("./canter/Canter-Bold.ttf") format("truetype");
+  src: url('./canter/Canter-Bold.eot?iefix') format('eot'),
+    url('./canter/Canter-Bold.woff') format('woff'),
+    url('./canter/Canter-Bold.ttf') format('truetype');
 
   font-weight: normal;
 
@@ -13,13 +13,13 @@
 }
 
 @font-face {
-  font-family: "Canter-bold-shadow";
+  font-family: 'Canter-bold-shadow';
 
-  src: url("./canter/Canter-BoldShadow.eot");
+  src: url('./canter/Canter-BoldShadow.eot');
 
-  src: url("./canter/Canter-BoldShadow.eot?iefix") format("eot"),
-    url("./canter/Canter-BoldShadow.woff") format("woff"),
-    url("./canter/Canter-BoldShadow.ttf") format("truetype");
+  src: url('./canter/Canter-BoldShadow.eot?iefix') format('eot'),
+    url('./canter/Canter-BoldShadow.woff') format('woff'),
+    url('./canter/Canter-BoldShadow.ttf') format('truetype');
 
   font-weight: normal;
 
