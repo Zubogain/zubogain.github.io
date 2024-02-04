@@ -43,6 +43,7 @@ class AppDocument extends Document {
         </Head>
         <body id="root">
           <Main />
+          <div id="myportal" />
           <NextScript />
         </body>
       </Html>

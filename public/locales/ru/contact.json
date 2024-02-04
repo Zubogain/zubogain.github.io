@@ -14,6 +14,10 @@
     "success-message": {
       "title": "Сообщение отправлено",
       "subtitle": "lorem ipsum dolor sit"
+    },
+    "warning-message": {
+      "title": "Форма временно не работает",
+      "subtitle": "Форма временно не работает"
     }
   },
   "og": {
