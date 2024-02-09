@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 
 import { useRouter } from 'next/router'
@@ -50,7 +51,7 @@ const Layout = ({ children }: { children: any }) => {
   }, [router.route, query.locale])
 
   const handlers = useSwipeable({
-    onSwipedUp: (eventData) => {
+    onSwipedUp: () => {
       const el = document.getElementById('__next')
       if (el) {
         const isBottom = el.scrollTop + el.offsetHeight >= el.scrollHeight - 1 // - 10
@@ -66,7 +67,7 @@ const Layout = ({ children }: { children: any }) => {
         }
       }
     },
-    onSwipedDown: (eventData) => {
+    onSwipedDown: () => {
       const el = document.getElementById('__next')
       if (el) {
         const isTop = el.scrollTop
