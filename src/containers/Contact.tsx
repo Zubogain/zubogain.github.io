@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import Head from 'next/head'
-// import Modal from '@Components/Modal'
 
 import { useDispatch, useSelector } from 'react-redux'
 

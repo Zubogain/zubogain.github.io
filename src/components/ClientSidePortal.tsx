@@ -11,4 +11,4 @@ const ClientSidePortal = ({ children }: ClientSidePortalProps) => {
   return isClientSide ? ReactDOM.createPortal(children, document.body) : null
 }
 
-export { ClientSidePortal }
+export default ClientSidePortal
