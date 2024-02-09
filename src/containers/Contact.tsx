@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import { asyncContactRequest, contactSetRequest } from '@Actions/contact'
 
-import checkedSVG from '@Public/static/checked.svg'
+// import checkedSVG from '@Public/static/checked.svg'
 import warningSVG from '@Public/static/warning.svg'
 import Image from 'next/image'
 import { AppDispatch, RootState } from '@Src/store'
