@@ -10,7 +10,6 @@ import cn from 'classnames'
 import { defaultModalAnimation, defaultModalBackdropAnimation } from "@Libs/animation"
 import ClientSidePortal from '@Components/ClientSidePortal'
 import CrossSvg from "@Public/cross.svg"
-import styles from './Modal.module.scss'
 
 type ModalProps = PropsWithChildren<{
     isVisible: boolean // Modal visibility
@@ -43,7 +42,7 @@ const Modal: React.FC<ModalProps> = ({
     const headingId = useId()
 
     // Combine the modal class names from the props and the default class names
-    const modalMainClassName = cn(styles.modal, modalClassName)
+    const modalMainClassName = cn("modal", modalClassName)
 
     const modalAnimation = shouldReduceMotion ? {} : animation
     const modalBackdropAnimation = shouldReduceMotion ? {} : backdropAnimation
@@ -79,27 +78,27 @@ const Modal: React.FC<ModalProps> = ({
                         >
                             <button
                                 type="button"
-                                className={styles.closeModalBtn}
+                                className="modal__close-modal-btn"
                                 onClick={onClickCloseBtn}
                             >
                                 <Image src={CrossSvg} alt="" width={16} height={16} />
                                 <span className="sr-only">Close</span>
                             </button>
 
-                            <div className={styles.modalHeader}>
-                                <h2 id={headingId} className={styles.modalHeading}>
+                            <div className="modal__header">
+                                <h2 id={headingId} className="modal__heading">
                                     {heading}
                                 </h2>
                             </div>
 
-                            <div className={styles.modalContent}>{children}</div>
+                            <div className="modal__content">{children}</div>
                         </motion.div>
 
                         <motion.div
                             key="modal-backdrop"
                             {...modalBackdropAnimation}
                             onClick={onClickBackdrop}
-                            className={styles.modalBackdrop}
+                            className="modal__backdrop"
                         />
                     </>
                 )}
