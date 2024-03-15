@@ -1,5 +1,5 @@
 {
-  "name": "about-me",
+  "name": "buuz24-boilerlpate",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -43,7 +43,6 @@
     "redux-thunk": "^2.4.2",
     "sass": "^1.57.1",
     "three-dots": "^0.3.2",
-    "tsparticles": "^2.8.0",
     "tsparticles-engine": "^2.8.0"
   },
   "devDependencies": {

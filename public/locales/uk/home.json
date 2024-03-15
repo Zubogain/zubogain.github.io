@@ -1,0 +1,10 @@
+{
+  "page-title": "buuz24",
+  "title": "buuz24 - домашня сторінка",
+  "subtitle": "buuz24 - Home page subtitle",
+  "og": {
+    "title": "Home",
+    "description": "buuz24 - Home page",
+    "image": "https://buuz24.github.io/static/og-image.png"
+  }
+}

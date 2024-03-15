@@ -32,7 +32,7 @@ export const asyncContactRequest =
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Referer: 'https://zubogain.github.io',
+          Referer: 'https://buuz24.github.io',
         },
         body: JSON.stringify({ name, email, subject, message }),
       })

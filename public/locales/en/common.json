@@ -1,14 +1,11 @@
 {
   "header": {
     "nav": {
-      "home": "Home",
-      "skills": "Skills",
-      "experience": "Experience",
-      "contact": "Contact"
+      "home": "Home"
     },
     "lang": {
-      "value": "ru",
-      "url": "ru"
+      "value": "uk",
+      "url": "uk"
     }
   }
 }

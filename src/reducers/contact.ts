@@ -1,6 +1,6 @@
 import { PayloadAction } from '@reduxjs/toolkit'
 import { IContactState } from '@Interfaces/contact'
-import { CONTACT_FORM_REQUEST } from '@Actions/contact'
+import { CONTACT_FORM_REQUEST } from '@/src/actions/contact'
 
 const initialState: IContactState = {
   isError: false,

@@ -1,22 +1,19 @@
-![Zubogain card](./.github/zubogain-card.png)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FZubogain%2Fzubogain.github.io.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FZubogain%2Fzubogain.github.io?ref=badge_shield)
+![buuz24 card](./.github/buuz24-card.jpg)
 
 ## Overview
 
-Minimalistic website about me.
+buuz24 website.
 
 ## Technologies
 
-The site about me was created using [NextJS](https://nextjs.org/).
+The buuz24 site was created using [NextJS](https://nextjs.org/).
 
 ## Copyright (proprietary license)
 
-Copyright © Emil Shergali - All rights reserved.
+Copyright © buuz24 - All rights reserved.
 
 The source code of this software is provided for informational purposes only, without the right to copy, commercially exploit, distribute or any modification.
 
 Unauthorised using of this software is strictly forbidden.
 
-Written by: <zubogain@gmail.com>, 24.01.2023
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FZubogain%2Fzubogain.github.io.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FZubogain%2Fzubogain.github.io?ref=badge_large)
+Written by: <buuz24@icloud.com>, 13.03.2024

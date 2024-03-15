@@ -45,6 +45,11 @@ class AppDocument extends Document {
           <Main />
           <div id="myportal" />
           <NextScript />
+          <script src="/static/js/app.min.js?_v=20230826094030"></script>
+          <script src="/static/jquery-3.6.3.min.js?_v=20230826094030"></script>
+          <script src="/static/moment.js?_v=20230826094030"></script>
+          <script src="/static/daterangepicker.js?_v=20230826094030"></script>
+          <script src="/static/daterangepicker-script.js?_v=20230826094030"></script>
         </body>
       </Html>
     )

@@ -1,10 +1,10 @@
 {
-  "page-title": "Home",
-  "title": ["Hi,", "I am Emil,", "A software developer"],
-  "subtitle": "Software Developer / Cloud Expert",
+  "page-title": "buuz24",
+  "title": "buuz24 - home page",
+  "subtitle": "buuz24 - Home page subtitle",
   "og": {
     "title": "Home",
-    "description": "Hi, I'm Emil, a software developer and cloud expert",
-    "image": "https://zubogain.github.io/static/og-image.png"
+    "description": "buuz24 - Home page",
+    "image": "https://buuz24.github.io/static/og-image.png"
   }
 }

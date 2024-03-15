@@ -8,7 +8,6 @@ import { useSwipeable } from 'react-swipeable'
 import Down from '@Components/Down'
 import Footer from '@Components/Footer'
 import Header from '@Components/Header'
-import Particles from '@Components/Particles'
 
 import staticContent from '@Src/staticContent'
 import { QueryWithLocale } from '@Interfaces/query'
@@ -50,70 +49,14 @@ const Layout = ({ children }: { children: any }) => {
     }
   }, [router.route, query.locale])
 
-  const handlers = useSwipeable({
-    onSwipedUp: () => {
-      const el = document.getElementById('__next')
-      if (el) {
-        const isBottom = el.scrollTop + el.offsetHeight >= el.scrollHeight - 1 // - 10
-
-        console.log(
-          'isBottom:',
-          el.scrollHeight,
-          el.scrollTop + el.offsetHeight,
-        )
-
-        if (isBottom) {
-          router.push(nextRoute)
-        }
-      }
-    },
-    onSwipedDown: () => {
-      const el = document.getElementById('__next')
-      if (el) {
-        const isTop = el.scrollTop
-
-        console.log('isTop:', el.scrollTop)
-
-        if (isTop <= 0) {
-          router.push(prevRoute)
-        }
-      }
-    },
-    delta: 110, // min distance(px) before a swipe starts. *See Notes*
-    preventScrollOnSwipe: false, // prevents scroll during swipe (*See Details*)
-    trackTouch: true, // track touch input
-    trackMouse: true, // track mouse input
-    rotationAngle: 0, // set a rotation angle
-    swipeDuration: 250, // allowable duration of a swipe (ms). *See Notes*
-    touchEventOptions: { passive: true }, // options for touch listeners (*See Details*)
-  })
-
-  const [showFooter, setShowFooter] = useState(false)
-  const [showAngle, setShowAngle] = useState(true)
-
-  useEffect(() => {
-    if (
-      router.route === '/[locale]/contact' ||
-      router.route === '/[locale]/404'
-    ) {
-      if (showAngle) {
-        setShowAngle(false)
-      } else {
-        setShowFooter(true)
-      }
-    }
-  }, [router.route])
-
   return (
     <>
       <NextSeo openGraph={staticContent.basicOpenGraph} />
-      <main id="mega-main" className="main noselect" {...handlers}>
+      <main className="wrapper">
         <Header />
         {children}
-        {showAngle && <Down />}
-        {showFooter && <Footer />}
+        <Footer />
       </main>
-      <Particles />
     </>
   )
 }
