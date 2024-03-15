@@ -15,6 +15,7 @@ import Search from '@Components/Header/Search'
 import CategorySelector from '@Components/Header/CategorySelector'
 import LanguageDropdown from '@Components/Header/LanguageDropdown'
 import AuthDropdown from '@Components/Header/AuthSelector'
+import Dropdown from 'react-dropdown'
 
 function HeaderLine() {
   return <div className="header__line hide-mob" />
@@ -43,7 +44,10 @@ function Header() {
               <HeaderLine />
               <CategorySelector />
               <Search />
-              <LanguageDropdown />
+              {/* // dropdown sample */}
+              <Dropdown>
+                <LanguageDropdown />
+              </Dropdown>
               <HeaderLine />
               <AuthDropdown />
             </div>

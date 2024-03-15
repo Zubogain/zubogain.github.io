@@ -5520,7 +5520,7 @@ body::after {
 }
 
 .side-button {
-  position: sticky;
+  position: fixed; // sticky
   top: 66%;
   right: 0;
   z-index: 4;

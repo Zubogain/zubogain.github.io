@@ -5,10 +5,10 @@ import { NextSeo } from 'next-seo'
 import { useTranslation } from 'next-i18next'
 
 import { motion } from 'framer-motion'
-import TelegramBotSnippet from '@Components/Snippet/TelegramBot'
 import Breadcrumbs from '@Components/Breadcrumbs'
 import ProductSection from '@Components/Sections/ProductSection'
 import SimilarTechniqueSection from '@Components/Sections/SimilarTechnique'
+import TelegramBotSnippet from '@Components/Snippet/TelegramBot'
 
 const ProductContainer = () => {
   const { t } = useTranslation(['home'])
@@ -27,13 +27,12 @@ const ProductContainer = () => {
       />
       <div className="wrapper">
         <main>
-          <TelegramBotSnippet />
           <Breadcrumbs />
 
           <ProductSection />
           <SimilarTechniqueSection />
+          <TelegramBotSnippet />
         </main>
-        <div className="arrow-up _icon-arrow-1" />
       </div>
     </>
   )

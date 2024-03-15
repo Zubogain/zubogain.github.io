@@ -7,12 +7,11 @@ import { useTranslation } from 'next-i18next'
 
 import { motion } from 'framer-motion'
 
-import ModalCookies from '@Components/Modal/Cookies'
 import TechniqueMap from '@Components/Sections/TechniqueMap'
 import TechniqueSection from '@Components/Sections/Technique'
 import CatalogSection from '@Components/Sections/Catalog'
-
 import TelegramBotSnippet from '@Components/Snippet/TelegramBot'
+
 import RentOfTechniqueSection from '@Components/Sections/RentOfTechnique'
 
 const HomeContainer = () => {
@@ -47,14 +46,11 @@ const HomeContainer = () => {
       </motion.section> */}
 
       <main>
-        {/* TODO: move to app */}
-        <TelegramBotSnippet />
-        {/* TODO: move to app */}
-        <ModalCookies />
         <RentOfTechniqueSection />
         <TechniqueMap />
         <TechniqueSection />
         <CatalogSection />
+        <TelegramBotSnippet />
       </main>
     </>
   )

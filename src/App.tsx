@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from 'react'
 
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
 import { useSwipeable } from 'react-swipeable'
@@ -12,6 +12,8 @@ import Header from '@Components/Header'
 import staticContent from '@Src/staticContent'
 import { QueryWithLocale } from '@Interfaces/query'
 import { useThemeDetector } from '@Src/hooks'
+import ModalCookies from '@Components/Modal/Cookies'
+import ScrollArrow from '@Components/ScrollArrow'
 
 const Layout = ({ children }: { children: any }) => {
   const routes = [
@@ -64,6 +66,8 @@ const Layout = ({ children }: { children: any }) => {
         <Header />
         {children}
         <Footer />
+        <ModalCookies />
+        <ScrollArrow />
       </main>
     </>
   )

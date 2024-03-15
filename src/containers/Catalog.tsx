@@ -5,11 +5,11 @@ import { NextSeo } from 'next-seo'
 import { useTranslation } from 'next-i18next'
 
 import { motion } from 'framer-motion'
-import TelegramBotSnippet from '@Components/Snippet/TelegramBot'
 import Breadcrumbs from '@Components/Breadcrumbs'
 import CategoriesSection from '@Components/Sections/Categories'
 import CatalogSection from '@Components/Sections/Catalog'
 import AddTecnhique from '@Components/Sections/AddTechnique'
+import TelegramBotSnippet from '@Components/Snippet/TelegramBot'
 
 const CatalogContainer = () => {
   const { t } = useTranslation(['home'])
@@ -43,14 +43,14 @@ const CatalogContainer = () => {
       </motion.section> */}
 
       <main>
-        {/* TODO: move to app */}
-        <TelegramBotSnippet />
         <Breadcrumbs />
         <CategoriesSection />
 
         <CatalogSection />
 
         <AddTecnhique />
+
+        <TelegramBotSnippet />
       </main>
     </>
   )
