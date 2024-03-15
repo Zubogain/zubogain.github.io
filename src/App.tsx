@@ -49,6 +49,11 @@ const Layout = ({ children }: { children: any }) => {
     }
   }, [router.route, query.locale])
 
+  // set current theme
+  useEffect(() => {
+    console.log(window)
+  }, [])
+
   return (
     <>
       <NextSeo openGraph={staticContent.basicOpenGraph} />

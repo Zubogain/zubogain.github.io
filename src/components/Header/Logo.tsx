@@ -1,10 +1,10 @@
-import Image from 'next/image'
+/* eslint-disable @next/next/no-img-element */
 import ActiveLink from '@Components/ActiveLink'
 
 function Logo() {
   return (
     <ActiveLink href="/" activeClassName="">
-      <Image src="/static/img/main/logo-header.svg" alt="Buuz24" />
+      <img src="/static/img/main/logo-header.svg" alt="Buuz24" />
     </ActiveLink>
   )
 }
