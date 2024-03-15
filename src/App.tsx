@@ -11,6 +11,7 @@ import Header from '@Components/Header'
 
 import staticContent from '@Src/staticContent'
 import { QueryWithLocale } from '@Interfaces/query'
+import { useThemeDetector } from '@Src/hooks'
 
 const Layout = ({ children }: { children: any }) => {
   const routes = [
@@ -25,6 +26,8 @@ const Layout = ({ children }: { children: any }) => {
 
   const router = useRouter()
   const query = router.query as QueryWithLocale
+
+  const isDarkTheme = useThemeDetector()
 
   useEffect(() => {
     if (query.locale) {
@@ -49,10 +52,10 @@ const Layout = ({ children }: { children: any }) => {
     }
   }, [router.route, query.locale])
 
-  // set current theme
   useEffect(() => {
-    console.log(window)
-  }, [])
+    // eslint-disable-next-line no-unused-expressions
+    isDarkTheme && document.getElementById('root')?.classList.add('dark-theme')
+  }, [isDarkTheme])
 
   return (
     <>
