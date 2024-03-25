@@ -22,7 +22,7 @@
 // @import 'base/grid';
 
 // Layout ...
-// @import 'layout/header';
+@import 'layout/header';
 // @import 'layout/footer';
 // @import 'layout/slide-down';
 
@@ -31,6 +31,8 @@
 // @import 'components/card';
 // @import 'components/form';
 // @import 'components/link';
+@import 'components/popup';
+@import 'components/tabs';
 
 // Pages ...
 @import 'pages/error-page';
