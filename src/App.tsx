@@ -14,6 +14,7 @@ import { QueryWithLocale } from '@Interfaces/query'
 import { useThemeDetector } from '@Src/hooks'
 import ModalCookies from '@Components/Modal/Cookies'
 import ScrollArrow from '@Components/ScrollArrow'
+import Popup from '@Components/popup'
 
 const Layout = ({ children }: { children: any }) => {
   const routes = [
@@ -29,7 +30,7 @@ const Layout = ({ children }: { children: any }) => {
   const router = useRouter()
   const query = router.query as QueryWithLocale
 
-  const isDarkTheme = useThemeDetector()
+  // const isDarkTheme = false // useThemeDetector()
 
   useEffect(() => {
     if (query.locale) {
@@ -54,10 +55,10 @@ const Layout = ({ children }: { children: any }) => {
     }
   }, [router.route, query.locale])
 
-  useEffect(() => {
-    // eslint-disable-next-line no-unused-expressions
-    isDarkTheme && document.getElementById('root')?.classList.add('dark-theme')
-  }, [isDarkTheme])
+  // useEffect(() => {
+  //   // eslint-disable-next-line no-unused-expressions
+  //   isDarkTheme && document.getElementById('root')?.classList.add('dark-theme')
+  // }, [isDarkTheme])
 
   return (
     <>
@@ -69,6 +70,7 @@ const Layout = ({ children }: { children: any }) => {
         <ModalCookies />
         <ScrollArrow />
       </main>
+      <Popup />
     </>
   )
 }

@@ -1,3 +1,10 @@
+/* eslint-disable node/no-unpublished-require */
+/* eslint-disable node/no-missing-require */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable global-require */
+/* eslint-disable @next/next/no-sync-scripts */
+/* eslint-disable import/extensions */
+/* eslint-disable node/no-unsupported-features/es-syntax */
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 import i18nextConfig from '@/next-i18next.config'
@@ -45,11 +52,6 @@ class AppDocument extends Document {
           <Main />
           <div id="myportal" />
           <NextScript />
-          {/* <script src="/static/js/app.min.js?_v=20230826094030"></script>
-          <script src="/static/jquery-3.6.3.min.js?_v=20230826094030"></script>
-          <script src="/static/moment.js?_v=20230826094030"></script>
-          <script src="/static/daterangepicker.js?_v=20230826094030"></script>
-          <script src="/static/daterangepicker-script.js?_v=20230826094030"></script> */}
         </body>
       </Html>
     )

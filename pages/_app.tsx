@@ -11,6 +11,8 @@ import '@Public/scss/style.scss'
 
 import { store } from '@Src/store'
 
+import '@Public/static/js/bundle'
+
 const MyApp = ({ Component, pageProps, router }: AppProps) => (
   <>
     <Head>

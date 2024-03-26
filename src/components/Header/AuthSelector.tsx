@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 function AuthDropdown() {
   return (
     <div className="header__login login-header">
@@ -14,7 +15,7 @@ function AuthDropdown() {
           >
             Кабінет
           </span>
-          <span className="_icon-user"></span>
+          <span className="_icon-user" />
         </button>
         <div
           data-dropdown-list
@@ -24,7 +25,7 @@ function AuthDropdown() {
           <div
             data-da=".login-header__item,767.98,2"
             className="spollers__arrow"
-          ></div>
+          />
           <div className="login-header__top">
             <a
               href="#"

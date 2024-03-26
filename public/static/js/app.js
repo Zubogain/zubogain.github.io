@@ -1,3 +1,5 @@
+/*eslint max-classes-per-file: "warning"*/
+
 ;(() => {
   var __webpack_modules__ = {
     63: (module) => {
@@ -11132,40 +11134,38 @@
     const inputMasks = document.querySelectorAll('input')
     if (inputMasks.length)
       modules_flsModules.inputmask = Inputmask().mask(inputMasks)
-    document.addEventListener('DOMContentLoaded', function () {
-      var phoneInputs = document.querySelectorAll('.phone-mask')
-      var maskOptions = {
-        mask: '+99 999 999 9999',
-        placeholder: '+__ ___ ___ ____',
-        oncomplete: function () {
-          var inputValue = this.value
-          var isValid = false
-          if (inputValue.match(/^\+40/))
-            isValid = inputValue.match(/^\+40 [0-9]{3} [0-9]{3} [0-9]{3}$/)
-          else if (inputValue.match(/^\+90/))
-            isValid = inputValue.match(/^\+90 [0-9]{3} [0-9]{3} [0-9]{4}$/)
-          else if (inputValue.match(/^\+37 3/))
-            isValid = inputValue.match(/^\+37 3[0-9]{2} [0-9]{3} [0-9]{4}$/)
-          else if (inputValue.match(/^\+38 0/))
-            isValid = inputValue.match(/^\+38 0[0-9]{2} [0-9]{3} [0-9]{4}$/)
-          if (!isValid) {
-            this.classList.add('_form-error')
-            this.parentElement.classList.add('_form-error')
-            let inputError = this.parentElement.querySelector('.form__error')
-            if (inputError) this.parentElement.removeChild(inputError)
-            if (this.dataset.error)
-              this.parentElement.insertAdjacentHTML(
-                'beforebegin',
-                `<div class="form__error">${this.dataset.error}</div>`,
-              )
-            this.value = ''
-          }
-        },
-      }
-      phoneInputs.forEach(function (phoneInput) {
-        var inputMask = new Inputmask(maskOptions)
-        inputMask.mask(phoneInput)
-      })
+    var phoneInputs = document.querySelectorAll('.phone-mask')
+    var maskOptions = {
+      mask: '+99 999 999 9999',
+      placeholder: '+__ ___ ___ ____',
+      oncomplete: function () {
+        var inputValue = this.value
+        var isValid = false
+        if (inputValue.match(/^\+40/))
+          isValid = inputValue.match(/^\+40 [0-9]{3} [0-9]{3} [0-9]{3}$/)
+        else if (inputValue.match(/^\+90/))
+          isValid = inputValue.match(/^\+90 [0-9]{3} [0-9]{3} [0-9]{4}$/)
+        else if (inputValue.match(/^\+37 3/))
+          isValid = inputValue.match(/^\+37 3[0-9]{2} [0-9]{3} [0-9]{4}$/)
+        else if (inputValue.match(/^\+38 0/))
+          isValid = inputValue.match(/^\+38 0[0-9]{2} [0-9]{3} [0-9]{4}$/)
+        if (!isValid) {
+          this.classList.add('_form-error')
+          this.parentElement.classList.add('_form-error')
+          let inputError = this.parentElement.querySelector('.form__error')
+          if (inputError) this.parentElement.removeChild(inputError)
+          if (this.dataset.error)
+            this.parentElement.insertAdjacentHTML(
+              'beforebegin',
+              `<div class="form__error">${this.dataset.error}</div>`,
+            )
+          this.value = ''
+        }
+      },
+    }
+    phoneInputs.forEach(function (phoneInput) {
+      var inputMask = new Inputmask(maskOptions)
+      inputMask.mask(phoneInput)
     })
     var nouislider = __webpack_require__(211)
     function rangeInit() {
@@ -17166,608 +17166,601 @@
       setDataDropdown(loginHeader)
     }
     const wrapper = document.getElementById('map__button')
+    console.log('1231231232132131231233', wrapper)
     if (wrapper)
-      document.addEventListener('DOMContentLoaded', () => {
-        wrapper.addEventListener('click', () => {
-          wrapper.remove()
-          loader.load().then(() => {
-            var bounds = new google.maps.LatLngBounds()
-            const map = new google.maps.Map(document.getElementById('map'), {
-              center: {
-                lat: 50.4411073,
-                lng: 30.5444523,
+      wrapper.addEventListener('click', () => {
+        wrapper.remove()
+        loader.load().then(() => {
+          var bounds = new google.maps.LatLngBounds()
+          const map = new google.maps.Map(document.getElementById('map'), {
+            center: {
+              lat: 50.4411073,
+              lng: 30.5444523,
+            },
+            zoom: 12,
+            styles: [
+              {
+                elementType: 'geometry',
+                stylers: [
+                  {
+                    color: '#f5f5f5',
+                  },
+                ],
               },
-              zoom: 12,
-              styles: [
-                {
-                  elementType: 'geometry',
-                  stylers: [
-                    {
-                      color: '#f5f5f5',
-                    },
-                  ],
-                },
-                {
-                  elementType: 'labels.icon',
-                  stylers: [
-                    {
-                      visibility: 'off',
-                    },
-                  ],
-                },
-                {
-                  elementType: 'labels.text.fill',
-                  stylers: [
-                    {
-                      color: '#616161',
-                    },
-                  ],
-                },
-                {
-                  elementType: 'labels.text.stroke',
-                  stylers: [
-                    {
-                      color: '#f5f5f5',
-                    },
-                  ],
-                },
-                {
-                  featureType: 'administrative.land_parcel',
-                  elementType: 'labels.text.fill',
-                  stylers: [
-                    {
-                      color: '#bdbdbd',
-                    },
-                  ],
-                },
-                {
-                  featureType: 'poi',
-                  elementType: 'geometry',
-                  stylers: [
-                    {
-                      color: '#eeeeee',
-                    },
-                  ],
-                },
-                {
-                  featureType: 'poi',
-                  elementType: 'labels.text.fill',
-                  stylers: [
-                    {
-                      color: '#757575',
-                    },
-                  ],
-                },
-                {
-                  featureType: 'poi.park',
-                  elementType: 'geometry',
-                  stylers: [
-                    {
-                      color: '#e5e5e5',
-                    },
-                  ],
-                },
-                {
-                  featureType: 'poi.park',
-                  elementType: 'labels.text.fill',
-                  stylers: [
-                    {
-                      color: '#9e9e9e',
-                    },
-                  ],
-                },
-                {
-                  featureType: 'road',
-                  elementType: 'geometry',
-                  stylers: [
-                    {
-                      color: '#ffffff',
-                    },
-                  ],
-                },
-                {
-                  featureType: 'road.arterial',
-                  elementType: 'labels.text.fill',
-                  stylers: [
-                    {
-                      color: '#757575',
-                    },
-                  ],
-                },
-                {
-                  featureType: 'road.highway',
-                  elementType: 'geometry',
-                  stylers: [
-                    {
-                      color: '#dadada',
-                    },
-                  ],
-                },
-                {
-                  featureType: 'road.highway',
-                  elementType: 'labels.text.fill',
-                  stylers: [
-                    {
-                      color: '#616161',
-                    },
-                  ],
-                },
-                {
-                  featureType: 'road.local',
-                  elementType: 'labels.text.fill',
-                  stylers: [
-                    {
-                      color: '#9e9e9e',
-                    },
-                  ],
-                },
-                {
-                  featureType: 'transit.line',
-                  elementType: 'geometry',
-                  stylers: [
-                    {
-                      color: '#e5e5e5',
-                    },
-                  ],
-                },
-                {
-                  featureType: 'transit.station',
-                  elementType: 'geometry',
-                  stylers: [
-                    {
-                      color: '#eeeeee',
-                    },
-                  ],
-                },
-                {
-                  featureType: 'water',
-                  elementType: 'geometry',
-                  stylers: [
-                    {
-                      color: '#c9c9c9',
-                    },
-                  ],
-                },
-                {
-                  featureType: 'water',
-                  elementType: 'labels.text.fill',
-                  stylers: [
-                    {
-                      color: '#9e9e9e',
-                    },
-                  ],
-                },
-              ],
-            })
-            var markersLoc = [
-              ['Mumbai', 48.2437167, 19.3394151],
-              ['Pune', 48.2463182, 17.659755],
-              ['Bhopal ', 47.0842848, 3.1437127],
-              ['Agra', 50.4268, 30.5632],
-              ['Delhi', 50.9684777, 58.38623459999999],
-            ]
-            var infoTitle = document.querySelectorAll('.info-content__title')
-            for (var i = 0; i < infoTitle.length; i++);
-            var infoTitleText = document.querySelectorAll(
-              '.info-content__title-text',
-            )
-            for (i = 0; i < infoTitleText.length; i++);
-            var infoImg = document.querySelectorAll('.info-content__img')
-            for (i = 0; i < infoImg.length; i++);
-            var infoName = document.querySelectorAll('.info-content__name-type')
-            for (i = 0; i < infoName.length; i++);
-            var infoType = document.querySelectorAll(
-              '.info-content__descr-type',
-            )
-            for (i = 0; i < infoType.length; i++);
-            var infoBrand = document.querySelectorAll(
-              '.info-content__name-brand',
-            )
-            for (i = 0; i < infoBrand.length; i++);
-            var infoDescrBrand = document.querySelectorAll(
-              '.info-content__descr-brand',
-            )
-            for (i = 0; i < infoDescrBrand.length; i++);
-            var infoText1 = document.querySelectorAll('.info-content__text-1')
-            for (i = 0; i < infoText1.length; i++);
-            var infoText2 = document.querySelectorAll('.info-content__text-2')
-            for (i = 0; i < infoText2.length; i++);
-            var infoText3 = document.querySelectorAll('.info-content__text-3')
-            for (i = 0; i < infoText3.length; i++);
-            var infoText4 = document.querySelectorAll('.info-content__text-4')
-            for (i = 0; i < infoText4.length; i++);
-            var infoHour = document.querySelectorAll(
-              '.info-content__button-hour',
-            )
-            for (i = 0; i < infoHour.length; i++);
-            var infoDay = document.querySelectorAll('.info-content__button-day')
-            for (i = 0; i < infoDay.length; i++);
-            var infoOrder = document.querySelectorAll(
-              '.info-content__button-order',
-            )
-            for (i = 0; i < infoOrder.length; i++);
-            var infoBtnOrder = document.querySelectorAll(
-              '.info-content__button-order',
-            )
-            for (i = 0; i < infoBtnOrder.length; i++);
-            var infoWindowContent = [
-              [
-                '<div class="info-content">' +
-                  '<div class="info-content__wrapp">' +
-                  '<div class="info-content__body-title">' +
-                  '<div class="info-content__body-title">' +
-                  infoTitle[0].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__title-text">' +
-                  infoTitleText[0].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__wrapper">' +
-                  '<div class="info-content__image">' +
-                  '<img class="info-content__img" src="' +
-                  infoImg[0].src +
-                  '" alt="">' +
-                  '</div>' +
-                  '<div class="info-content__main">' +
-                  '<div class="info-content__header">' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-type">' +
-                  infoName[0].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-type">' +
-                  infoType[0].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-brand">' +
-                  infoBrand[0].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-brand">' +
-                  infoDescrBrand[0].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__footer">' +
-                  '<div class="info-content__text info-content__text-1">' +
-                  infoText1[0].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-2">' +
-                  infoText2[0].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-3">' +
-                  infoText3[0].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-4">' +
-                  infoText4[0].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__price">' +
-                  '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
-                  infoHour[0].innerHTML +
-                  '</button>' +
-                  '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
-                  infoDay[0].innerHTML +
-                  '</button>' +
-                  '<a href="' +
-                  infoOrder[0].href +
-                  '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
-                  infoBtnOrder[0].innerHTML +
-                  '</a>' +
-                  '</div>' +
-                  '</div>',
-              ],
-              [
-                '<div class="info-content">' +
-                  '<div class="info-content__wrapp">' +
-                  '<div class="info-content__body-title">' +
-                  '<div class="info-content__body-title">' +
-                  infoTitle[1].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__title-text">' +
-                  infoTitleText[1].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__wrapper">' +
-                  '<div class="info-content__image">' +
-                  '<img class="info-content__img" src="' +
-                  infoImg[1].src +
-                  '" alt="">' +
-                  '</div>' +
-                  '<div class="info-content__main">' +
-                  '<div class="info-content__header">' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-type">' +
-                  infoName[1].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-type">' +
-                  infoType[1].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-brand">' +
-                  infoBrand[1].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-brand">' +
-                  infoDescrBrand[1].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__footer">' +
-                  '<div class="info-content__text info-content__text-1">' +
-                  infoText1[1].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-2">' +
-                  infoText2[1].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-3">' +
-                  infoText3[1].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-4">' +
-                  infoText4[1].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__price">' +
-                  '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
-                  infoHour[1].innerHTML +
-                  '</button>' +
-                  '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
-                  infoDay[1].innerHTML +
-                  '</button>' +
-                  '<a href="' +
-                  infoOrder[1].href +
-                  '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
-                  infoBtnOrder[1].innerHTML +
-                  '</a>' +
-                  '</div>' +
-                  '</div>',
-              ],
-              [
-                '<div class="info-content">' +
-                  '<div class="info-content__wrapp">' +
-                  '<div class="info-content__body-title">' +
-                  '<div class="info-content__body-title">' +
-                  infoTitle[2].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__title-text">' +
-                  infoTitleText[2].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__wrapper">' +
-                  '<div class="info-content__image">' +
-                  '<img class="info-content__img" src="' +
-                  infoImg[2].src +
-                  '" alt="">' +
-                  '</div>' +
-                  '<div class="info-content__main">' +
-                  '<div class="info-content__header">' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-type">' +
-                  infoName[2].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-type">' +
-                  infoType[2].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-brand">' +
-                  infoBrand[2].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-brand">' +
-                  infoDescrBrand[2].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__footer">' +
-                  '<div class="info-content__text info-content__text-2">' +
-                  infoText1[2].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-2">' +
-                  infoText2[2].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-3">' +
-                  infoText3[2].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-4">' +
-                  infoText4[2].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__price">' +
-                  '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
-                  infoHour[2].innerHTML +
-                  '</button>' +
-                  '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
-                  infoDay[2].innerHTML +
-                  '</button>' +
-                  '<a href="' +
-                  infoOrder[2].href +
-                  '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
-                  infoBtnOrder[2].innerHTML +
-                  '</a>' +
-                  '</div>' +
-                  '</div>',
-              ],
-              [
-                '<div class="info-content">' +
-                  '<div class="info-content__wrapp">' +
-                  '<div class="info-content__body-title">' +
-                  '<div class="info-content__body-title">' +
-                  infoTitle[3].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__title-text">' +
-                  infoTitleText[3].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__wrapper">' +
-                  '<div class="info-content__image">' +
-                  '<img class="info-content__img" src="' +
-                  infoImg[3].src +
-                  '" alt="">' +
-                  '</div>' +
-                  '<div class="info-content__main">' +
-                  '<div class="info-content__header">' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-type">' +
-                  infoName[3].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-type">' +
-                  infoType[3].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-brand">' +
-                  infoBrand[3].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-brand">' +
-                  infoDescrBrand[3].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__footer">' +
-                  '<div class="info-content__text info-content__text-1">' +
-                  infoText1[3].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-2">' +
-                  infoText2[3].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-3">' +
-                  infoText3[3].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-4">' +
-                  infoText4[3].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__price">' +
-                  '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
-                  infoHour[3].innerHTML +
-                  '</button>' +
-                  '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
-                  infoDay[3].innerHTML +
-                  '</button>' +
-                  '<a href="' +
-                  infoOrder[3].href +
-                  '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
-                  infoBtnOrder[3].innerHTML +
-                  '</a>' +
-                  '</div>' +
-                  '</div>',
-              ],
-              [
-                '<div class="info-content">' +
-                  '<div class="info-content__wrapp">' +
-                  '<div class="info-content__body-title">' +
-                  '<div class="info-content__body-title">' +
-                  infoTitle[4].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__title-text">' +
-                  infoTitleText[4].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__wrapper">' +
-                  '<div class="info-content__image">' +
-                  '<img class="info-content__img" src="' +
-                  infoImg[4].src +
-                  '" alt="">' +
-                  '</div>' +
-                  '<div class="info-content__main">' +
-                  '<div class="info-content__header">' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-type">' +
-                  infoName[4].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-type">' +
-                  infoType[4].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-brand">' +
-                  infoBrand[4].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-brand">' +
-                  infoDescrBrand[4].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__footer">' +
-                  '<div class="info-content__text info-content__text-1">' +
-                  infoText1[4].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-2">' +
-                  infoText2[4].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-3">' +
-                  infoText3[4].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-4">' +
-                  infoText4[4].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__price">' +
-                  '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
-                  infoHour[4].innerHTML +
-                  '</button>' +
-                  '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
-                  infoDay[4].innerHTML +
-                  '</button>' +
-                  '<a href="' +
-                  infoOrder[4].href +
-                  '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
-                  infoBtnOrder[4].innerHTML +
-                  '</a>' +
-                  '</div>' +
-                  '</div>',
-              ],
-            ]
-            var infoWindow = new google.maps.InfoWindow({
-              content: '',
-              disableAutoPan: true,
-            })
-            const image = {
-              url: 'img/main/marker.png',
-              size: new google.maps.Size(51, 51),
-              origin: new google.maps.Point(0, 0),
-              anchor: new google.maps.Point(24, 55),
-              scaledSize: new google.maps.Size(51, 51),
-            }
-            for (i = 0; i < markersLoc.length; i++) {
-              var position = new google.maps.LatLng(
-                markersLoc[i][1],
-                markersLoc[i][2],
-              )
-              bounds.extend(position)
-              const marker = new google.maps.Marker({
-                position,
-                map,
-                icon: image,
-                title: markersLoc[i][0],
-              })
-              google.maps.event.addListener(
-                marker,
-                'click',
-                (function (marker, i) {
-                  return function () {
-                    infoWindow.setContent(infoWindowContent[i][0])
-                    infoWindow.open(map, marker)
-                  }
-                })(marker, i),
-              )
-              map.fitBounds(bounds)
-            }
+              {
+                elementType: 'labels.icon',
+                stylers: [
+                  {
+                    visibility: 'off',
+                  },
+                ],
+              },
+              {
+                elementType: 'labels.text.fill',
+                stylers: [
+                  {
+                    color: '#616161',
+                  },
+                ],
+              },
+              {
+                elementType: 'labels.text.stroke',
+                stylers: [
+                  {
+                    color: '#f5f5f5',
+                  },
+                ],
+              },
+              {
+                featureType: 'administrative.land_parcel',
+                elementType: 'labels.text.fill',
+                stylers: [
+                  {
+                    color: '#bdbdbd',
+                  },
+                ],
+              },
+              {
+                featureType: 'poi',
+                elementType: 'geometry',
+                stylers: [
+                  {
+                    color: '#eeeeee',
+                  },
+                ],
+              },
+              {
+                featureType: 'poi',
+                elementType: 'labels.text.fill',
+                stylers: [
+                  {
+                    color: '#757575',
+                  },
+                ],
+              },
+              {
+                featureType: 'poi.park',
+                elementType: 'geometry',
+                stylers: [
+                  {
+                    color: '#e5e5e5',
+                  },
+                ],
+              },
+              {
+                featureType: 'poi.park',
+                elementType: 'labels.text.fill',
+                stylers: [
+                  {
+                    color: '#9e9e9e',
+                  },
+                ],
+              },
+              {
+                featureType: 'road',
+                elementType: 'geometry',
+                stylers: [
+                  {
+                    color: '#ffffff',
+                  },
+                ],
+              },
+              {
+                featureType: 'road.arterial',
+                elementType: 'labels.text.fill',
+                stylers: [
+                  {
+                    color: '#757575',
+                  },
+                ],
+              },
+              {
+                featureType: 'road.highway',
+                elementType: 'geometry',
+                stylers: [
+                  {
+                    color: '#dadada',
+                  },
+                ],
+              },
+              {
+                featureType: 'road.highway',
+                elementType: 'labels.text.fill',
+                stylers: [
+                  {
+                    color: '#616161',
+                  },
+                ],
+              },
+              {
+                featureType: 'road.local',
+                elementType: 'labels.text.fill',
+                stylers: [
+                  {
+                    color: '#9e9e9e',
+                  },
+                ],
+              },
+              {
+                featureType: 'transit.line',
+                elementType: 'geometry',
+                stylers: [
+                  {
+                    color: '#e5e5e5',
+                  },
+                ],
+              },
+              {
+                featureType: 'transit.station',
+                elementType: 'geometry',
+                stylers: [
+                  {
+                    color: '#eeeeee',
+                  },
+                ],
+              },
+              {
+                featureType: 'water',
+                elementType: 'geometry',
+                stylers: [
+                  {
+                    color: '#c9c9c9',
+                  },
+                ],
+              },
+              {
+                featureType: 'water',
+                elementType: 'labels.text.fill',
+                stylers: [
+                  {
+                    color: '#9e9e9e',
+                  },
+                ],
+              },
+            ],
           })
+          var markersLoc = [
+            ['Mumbai', 48.2437167, 19.3394151],
+            ['Pune', 48.2463182, 17.659755],
+            ['Bhopal ', 47.0842848, 3.1437127],
+            ['Agra', 50.4268, 30.5632],
+            ['Delhi', 50.9684777, 58.38623459999999],
+          ]
+          var infoTitle = document.querySelectorAll('.info-content__title')
+          for (var i = 0; i < infoTitle.length; i++);
+          var infoTitleText = document.querySelectorAll(
+            '.info-content__title-text',
+          )
+          for (i = 0; i < infoTitleText.length; i++);
+          var infoImg = document.querySelectorAll('.info-content__img')
+          for (i = 0; i < infoImg.length; i++);
+          var infoName = document.querySelectorAll('.info-content__name-type')
+          for (i = 0; i < infoName.length; i++);
+          var infoType = document.querySelectorAll('.info-content__descr-type')
+          for (i = 0; i < infoType.length; i++);
+          var infoBrand = document.querySelectorAll('.info-content__name-brand')
+          for (i = 0; i < infoBrand.length; i++);
+          var infoDescrBrand = document.querySelectorAll(
+            '.info-content__descr-brand',
+          )
+          for (i = 0; i < infoDescrBrand.length; i++);
+          var infoText1 = document.querySelectorAll('.info-content__text-1')
+          for (i = 0; i < infoText1.length; i++);
+          var infoText2 = document.querySelectorAll('.info-content__text-2')
+          for (i = 0; i < infoText2.length; i++);
+          var infoText3 = document.querySelectorAll('.info-content__text-3')
+          for (i = 0; i < infoText3.length; i++);
+          var infoText4 = document.querySelectorAll('.info-content__text-4')
+          for (i = 0; i < infoText4.length; i++);
+          var infoHour = document.querySelectorAll('.info-content__button-hour')
+          for (i = 0; i < infoHour.length; i++);
+          var infoDay = document.querySelectorAll('.info-content__button-day')
+          for (i = 0; i < infoDay.length; i++);
+          var infoOrder = document.querySelectorAll(
+            '.info-content__button-order',
+          )
+          for (i = 0; i < infoOrder.length; i++);
+          var infoBtnOrder = document.querySelectorAll(
+            '.info-content__button-order',
+          )
+          for (i = 0; i < infoBtnOrder.length; i++);
+          var infoWindowContent = [
+            [
+              '<div class="info-content">' +
+                '<div class="info-content__wrapp">' +
+                '<div class="info-content__body-title">' +
+                '<div class="info-content__body-title">' +
+                infoTitle[0].innerHTML +
+                '</div>' +
+                '<div class="info-content__title-text">' +
+                infoTitleText[0].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__wrapper">' +
+                '<div class="info-content__image">' +
+                '<img class="info-content__img" src="' +
+                infoImg[0].src +
+                '" alt="">' +
+                '</div>' +
+                '<div class="info-content__main">' +
+                '<div class="info-content__header">' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-type">' +
+                infoName[0].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-type">' +
+                infoType[0].innerHTML +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-brand">' +
+                infoBrand[0].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-brand">' +
+                infoDescrBrand[0].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__footer">' +
+                '<div class="info-content__text info-content__text-1">' +
+                infoText1[0].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-2">' +
+                infoText2[0].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-3">' +
+                infoText3[0].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-4">' +
+                infoText4[0].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__price">' +
+                '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
+                infoHour[0].innerHTML +
+                '</button>' +
+                '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
+                infoDay[0].innerHTML +
+                '</button>' +
+                '<a href="' +
+                infoOrder[0].href +
+                '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
+                infoBtnOrder[0].innerHTML +
+                '</a>' +
+                '</div>' +
+                '</div>',
+            ],
+            [
+              '<div class="info-content">' +
+                '<div class="info-content__wrapp">' +
+                '<div class="info-content__body-title">' +
+                '<div class="info-content__body-title">' +
+                infoTitle[1].innerHTML +
+                '</div>' +
+                '<div class="info-content__title-text">' +
+                infoTitleText[1].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__wrapper">' +
+                '<div class="info-content__image">' +
+                '<img class="info-content__img" src="' +
+                infoImg[1].src +
+                '" alt="">' +
+                '</div>' +
+                '<div class="info-content__main">' +
+                '<div class="info-content__header">' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-type">' +
+                infoName[1].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-type">' +
+                infoType[1].innerHTML +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-brand">' +
+                infoBrand[1].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-brand">' +
+                infoDescrBrand[1].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__footer">' +
+                '<div class="info-content__text info-content__text-1">' +
+                infoText1[1].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-2">' +
+                infoText2[1].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-3">' +
+                infoText3[1].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-4">' +
+                infoText4[1].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__price">' +
+                '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
+                infoHour[1].innerHTML +
+                '</button>' +
+                '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
+                infoDay[1].innerHTML +
+                '</button>' +
+                '<a href="' +
+                infoOrder[1].href +
+                '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
+                infoBtnOrder[1].innerHTML +
+                '</a>' +
+                '</div>' +
+                '</div>',
+            ],
+            [
+              '<div class="info-content">' +
+                '<div class="info-content__wrapp">' +
+                '<div class="info-content__body-title">' +
+                '<div class="info-content__body-title">' +
+                infoTitle[2].innerHTML +
+                '</div>' +
+                '<div class="info-content__title-text">' +
+                infoTitleText[2].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__wrapper">' +
+                '<div class="info-content__image">' +
+                '<img class="info-content__img" src="' +
+                infoImg[2].src +
+                '" alt="">' +
+                '</div>' +
+                '<div class="info-content__main">' +
+                '<div class="info-content__header">' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-type">' +
+                infoName[2].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-type">' +
+                infoType[2].innerHTML +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-brand">' +
+                infoBrand[2].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-brand">' +
+                infoDescrBrand[2].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__footer">' +
+                '<div class="info-content__text info-content__text-2">' +
+                infoText1[2].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-2">' +
+                infoText2[2].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-3">' +
+                infoText3[2].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-4">' +
+                infoText4[2].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__price">' +
+                '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
+                infoHour[2].innerHTML +
+                '</button>' +
+                '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
+                infoDay[2].innerHTML +
+                '</button>' +
+                '<a href="' +
+                infoOrder[2].href +
+                '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
+                infoBtnOrder[2].innerHTML +
+                '</a>' +
+                '</div>' +
+                '</div>',
+            ],
+            [
+              '<div class="info-content">' +
+                '<div class="info-content__wrapp">' +
+                '<div class="info-content__body-title">' +
+                '<div class="info-content__body-title">' +
+                infoTitle[3].innerHTML +
+                '</div>' +
+                '<div class="info-content__title-text">' +
+                infoTitleText[3].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__wrapper">' +
+                '<div class="info-content__image">' +
+                '<img class="info-content__img" src="' +
+                infoImg[3].src +
+                '" alt="">' +
+                '</div>' +
+                '<div class="info-content__main">' +
+                '<div class="info-content__header">' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-type">' +
+                infoName[3].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-type">' +
+                infoType[3].innerHTML +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-brand">' +
+                infoBrand[3].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-brand">' +
+                infoDescrBrand[3].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__footer">' +
+                '<div class="info-content__text info-content__text-1">' +
+                infoText1[3].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-2">' +
+                infoText2[3].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-3">' +
+                infoText3[3].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-4">' +
+                infoText4[3].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__price">' +
+                '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
+                infoHour[3].innerHTML +
+                '</button>' +
+                '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
+                infoDay[3].innerHTML +
+                '</button>' +
+                '<a href="' +
+                infoOrder[3].href +
+                '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
+                infoBtnOrder[3].innerHTML +
+                '</a>' +
+                '</div>' +
+                '</div>',
+            ],
+            [
+              '<div class="info-content">' +
+                '<div class="info-content__wrapp">' +
+                '<div class="info-content__body-title">' +
+                '<div class="info-content__body-title">' +
+                infoTitle[4].innerHTML +
+                '</div>' +
+                '<div class="info-content__title-text">' +
+                infoTitleText[4].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__wrapper">' +
+                '<div class="info-content__image">' +
+                '<img class="info-content__img" src="' +
+                infoImg[4].src +
+                '" alt="">' +
+                '</div>' +
+                '<div class="info-content__main">' +
+                '<div class="info-content__header">' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-type">' +
+                infoName[4].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-type">' +
+                infoType[4].innerHTML +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-brand">' +
+                infoBrand[4].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-brand">' +
+                infoDescrBrand[4].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__footer">' +
+                '<div class="info-content__text info-content__text-1">' +
+                infoText1[4].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-2">' +
+                infoText2[4].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-3">' +
+                infoText3[4].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-4">' +
+                infoText4[4].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__price">' +
+                '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
+                infoHour[4].innerHTML +
+                '</button>' +
+                '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
+                infoDay[4].innerHTML +
+                '</button>' +
+                '<a href="' +
+                infoOrder[4].href +
+                '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
+                infoBtnOrder[4].innerHTML +
+                '</a>' +
+                '</div>' +
+                '</div>',
+            ],
+          ]
+          var infoWindow = new google.maps.InfoWindow({
+            content: '',
+            disableAutoPan: true,
+          })
+          const image = {
+            url: '/static/img/main/marker.png',
+            size: new google.maps.Size(51, 51),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(24, 55),
+            scaledSize: new google.maps.Size(51, 51),
+          }
+          for (i = 0; i < markersLoc.length; i++) {
+            var position = new google.maps.LatLng(
+              markersLoc[i][1],
+              markersLoc[i][2],
+            )
+            bounds.extend(position)
+            const marker = new google.maps.Marker({
+              position,
+              map,
+              icon: image,
+              title: markersLoc[i][0],
+            })
+            google.maps.event.addListener(
+              marker,
+              'click',
+              (function (marker, i) {
+                return function () {
+                  infoWindow.setContent(infoWindowContent[i][0])
+                  infoWindow.open(map, marker)
+                }
+              })(marker, i),
+            )
+            map.fitBounds(bounds)
+          }
         })
       })
     const mapWapper = document.querySelector('map__info-wrapper')
@@ -17778,615 +17771,606 @@
           mapWapper.classList.add('active')
         })
       }
-      document.addEventListener('DOMContentLoaded', mapWapperClick)
+      mapWapperClick()
+      // TODO: recheck dom events on mapWapperClick
+      // document.addEventListener('DOMContentLoaded', mapWapperClick)
     }
     const wrapperMap = document.getElementById('map__button-map')
     if (wrapperMap)
-      document.addEventListener('DOMContentLoaded', () => {
-        wrapperMap.addEventListener('click', () => {
-          wrapperMap.remove()
-          loader.load().then(() => {
-            var bounds = new google.maps.LatLngBounds()
-            const map = new google.maps.Map(
-              document.getElementById('map-map'),
+      wrapperMap.addEventListener('click', () => {
+        wrapperMap.remove()
+        loader.load().then(() => {
+          var bounds = new google.maps.LatLngBounds()
+          const map = new google.maps.Map(document.getElementById('map-map'), {
+            center: {
+              lat: 50.4411073,
+              lng: 30.5444523,
+            },
+            zoom: 12,
+            styles: [
               {
-                center: {
-                  lat: 50.4411073,
-                  lng: 30.5444523,
-                },
-                zoom: 12,
-                styles: [
+                elementType: 'geometry',
+                stylers: [
                   {
-                    elementType: 'geometry',
-                    stylers: [
-                      {
-                        color: '#f5f5f5',
-                      },
-                    ],
-                  },
-                  {
-                    elementType: 'labels.icon',
-                    stylers: [
-                      {
-                        visibility: 'off',
-                      },
-                    ],
-                  },
-                  {
-                    elementType: 'labels.text.fill',
-                    stylers: [
-                      {
-                        color: '#616161',
-                      },
-                    ],
-                  },
-                  {
-                    elementType: 'labels.text.stroke',
-                    stylers: [
-                      {
-                        color: '#f5f5f5',
-                      },
-                    ],
-                  },
-                  {
-                    featureType: 'administrative.land_parcel',
-                    elementType: 'labels.text.fill',
-                    stylers: [
-                      {
-                        color: '#bdbdbd',
-                      },
-                    ],
-                  },
-                  {
-                    featureType: 'poi',
-                    elementType: 'geometry',
-                    stylers: [
-                      {
-                        color: '#eeeeee',
-                      },
-                    ],
-                  },
-                  {
-                    featureType: 'poi',
-                    elementType: 'labels.text.fill',
-                    stylers: [
-                      {
-                        color: '#757575',
-                      },
-                    ],
-                  },
-                  {
-                    featureType: 'poi.park',
-                    elementType: 'geometry',
-                    stylers: [
-                      {
-                        color: '#e5e5e5',
-                      },
-                    ],
-                  },
-                  {
-                    featureType: 'poi.park',
-                    elementType: 'labels.text.fill',
-                    stylers: [
-                      {
-                        color: '#9e9e9e',
-                      },
-                    ],
-                  },
-                  {
-                    featureType: 'road',
-                    elementType: 'geometry',
-                    stylers: [
-                      {
-                        color: '#ffffff',
-                      },
-                    ],
-                  },
-                  {
-                    featureType: 'road.arterial',
-                    elementType: 'labels.text.fill',
-                    stylers: [
-                      {
-                        color: '#757575',
-                      },
-                    ],
-                  },
-                  {
-                    featureType: 'road.highway',
-                    elementType: 'geometry',
-                    stylers: [
-                      {
-                        color: '#dadada',
-                      },
-                    ],
-                  },
-                  {
-                    featureType: 'road.highway',
-                    elementType: 'labels.text.fill',
-                    stylers: [
-                      {
-                        color: '#616161',
-                      },
-                    ],
-                  },
-                  {
-                    featureType: 'road.local',
-                    elementType: 'labels.text.fill',
-                    stylers: [
-                      {
-                        color: '#9e9e9e',
-                      },
-                    ],
-                  },
-                  {
-                    featureType: 'transit.line',
-                    elementType: 'geometry',
-                    stylers: [
-                      {
-                        color: '#e5e5e5',
-                      },
-                    ],
-                  },
-                  {
-                    featureType: 'transit.station',
-                    elementType: 'geometry',
-                    stylers: [
-                      {
-                        color: '#eeeeee',
-                      },
-                    ],
-                  },
-                  {
-                    featureType: 'water',
-                    elementType: 'geometry',
-                    stylers: [
-                      {
-                        color: '#c9c9c9',
-                      },
-                    ],
-                  },
-                  {
-                    featureType: 'water',
-                    elementType: 'labels.text.fill',
-                    stylers: [
-                      {
-                        color: '#9e9e9e',
-                      },
-                    ],
+                    color: '#f5f5f5',
                   },
                 ],
               },
-            )
-            var markersLoc = [
-              ['Mumbai', 48.2437167, 19.3394151],
-              ['Pune', 48.2463182, 17.659755],
-              ['Bhopal ', 47.0842848, 3.1437127],
-              ['Agra', 50.4268, 30.5632],
-              ['Delhi', 50.9684777, 58.38623459999999],
-            ]
-            var infoTitle = document.querySelectorAll('.info-content__title')
-            for (var i = 0; i < infoTitle.length; i++);
-            var infoTitleText = document.querySelectorAll(
-              '.info-content__title-text',
-            )
-            for (i = 0; i < infoTitleText.length; i++);
-            var infoImg = document.querySelectorAll('.info-content__img')
-            for (i = 0; i < infoImg.length; i++);
-            var infoName = document.querySelectorAll('.info-content__name-type')
-            for (i = 0; i < infoName.length; i++);
-            var infoType = document.querySelectorAll(
-              '.info-content__descr-type',
-            )
-            for (i = 0; i < infoType.length; i++);
-            var infoBrand = document.querySelectorAll(
-              '.info-content__name-brand',
-            )
-            for (i = 0; i < infoBrand.length; i++);
-            var infoDescrBrand = document.querySelectorAll(
-              '.info-content__descr-brand',
-            )
-            for (i = 0; i < infoDescrBrand.length; i++);
-            var infoText1 = document.querySelectorAll('.info-content__text-1')
-            for (i = 0; i < infoText1.length; i++);
-            var infoText2 = document.querySelectorAll('.info-content__text-2')
-            for (i = 0; i < infoText2.length; i++);
-            var infoText3 = document.querySelectorAll('.info-content__text-3')
-            for (i = 0; i < infoText3.length; i++);
-            var infoText4 = document.querySelectorAll('.info-content__text-4')
-            for (i = 0; i < infoText4.length; i++);
-            var infoHour = document.querySelectorAll(
-              '.info-content__button-hour',
-            )
-            for (i = 0; i < infoHour.length; i++);
-            var infoDay = document.querySelectorAll('.info-content__button-day')
-            for (i = 0; i < infoDay.length; i++);
-            var infoOrder = document.querySelectorAll(
-              '.info-content__button-order',
-            )
-            for (i = 0; i < infoOrder.length; i++);
-            var infoBtnOrder = document.querySelectorAll(
-              '.info-content__button-order',
-            )
-            for (i = 0; i < infoBtnOrder.length; i++);
-            var infoWindowContent = [
-              [
-                '<div class="info-content">' +
-                  '<div class="info-content__wrapp">' +
-                  '<div class="info-content__body-title">' +
-                  '<div class="info-content__body-title">' +
-                  infoTitle[0].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__title-text">' +
-                  infoTitleText[0].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__wrapper">' +
-                  '<div class="info-content__image">' +
-                  '<img class="info-content__img" src="' +
-                  infoImg[0].src +
-                  '" alt="">' +
-                  '</div>' +
-                  '<div class="info-content__main">' +
-                  '<div class="info-content__header">' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-type">' +
-                  infoName[0].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-type">' +
-                  infoType[0].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-brand">' +
-                  infoBrand[0].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-brand">' +
-                  infoDescrBrand[0].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__footer">' +
-                  '<div class="info-content__text info-content__text-1">' +
-                  infoText1[0].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-2">' +
-                  infoText2[0].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-3">' +
-                  infoText3[0].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-4">' +
-                  infoText4[0].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__price">' +
-                  '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
-                  infoHour[0].innerHTML +
-                  '</button>' +
-                  '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
-                  infoDay[0].innerHTML +
-                  '</button>' +
-                  '<a href="' +
-                  infoOrder[0].href +
-                  '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
-                  infoBtnOrder[0].innerHTML +
-                  '</a>' +
-                  '</div>' +
-                  '</div>',
-              ],
-              [
-                '<div class="info-content">' +
-                  '<div class="info-content__wrapp">' +
-                  '<div class="info-content__body-title">' +
-                  '<div class="info-content__body-title">' +
-                  infoTitle[1].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__title-text">' +
-                  infoTitleText[1].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__wrapper">' +
-                  '<div class="info-content__image">' +
-                  '<img class="info-content__img" src="' +
-                  infoImg[1].src +
-                  '" alt="">' +
-                  '</div>' +
-                  '<div class="info-content__main">' +
-                  '<div class="info-content__header">' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-type">' +
-                  infoName[1].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-type">' +
-                  infoType[1].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-brand">' +
-                  infoBrand[1].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-brand">' +
-                  infoDescrBrand[1].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__footer">' +
-                  '<div class="info-content__text info-content__text-1">' +
-                  infoText1[1].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-2">' +
-                  infoText2[1].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-3">' +
-                  infoText3[1].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-4">' +
-                  infoText4[1].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__price">' +
-                  '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
-                  infoHour[1].innerHTML +
-                  '</button>' +
-                  '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
-                  infoDay[1].innerHTML +
-                  '</button>' +
-                  '<a href="' +
-                  infoOrder[1].href +
-                  '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
-                  infoBtnOrder[1].innerHTML +
-                  '</a>' +
-                  '</div>' +
-                  '</div>',
-              ],
-              [
-                '<div class="info-content">' +
-                  '<div class="info-content__wrapp">' +
-                  '<div class="info-content__body-title">' +
-                  '<div class="info-content__body-title">' +
-                  infoTitle[2].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__title-text">' +
-                  infoTitleText[2].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__wrapper">' +
-                  '<div class="info-content__image">' +
-                  '<img class="info-content__img" src="' +
-                  infoImg[2].src +
-                  '" alt="">' +
-                  '</div>' +
-                  '<div class="info-content__main">' +
-                  '<div class="info-content__header">' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-type">' +
-                  infoName[2].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-type">' +
-                  infoType[2].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-brand">' +
-                  infoBrand[2].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-brand">' +
-                  infoDescrBrand[2].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__footer">' +
-                  '<div class="info-content__text info-content__text-2">' +
-                  infoText1[2].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-2">' +
-                  infoText2[2].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-3">' +
-                  infoText3[2].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-4">' +
-                  infoText4[2].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__price">' +
-                  '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
-                  infoHour[2].innerHTML +
-                  '</button>' +
-                  '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
-                  infoDay[2].innerHTML +
-                  '</button>' +
-                  '<a href="' +
-                  infoOrder[2].href +
-                  '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
-                  infoBtnOrder[2].innerHTML +
-                  '</a>' +
-                  '</div>' +
-                  '</div>',
-              ],
-              [
-                '<div class="info-content">' +
-                  '<div class="info-content__wrapp">' +
-                  '<div class="info-content__body-title">' +
-                  '<div class="info-content__body-title">' +
-                  infoTitle[3].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__title-text">' +
-                  infoTitleText[3].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__wrapper">' +
-                  '<div class="info-content__image">' +
-                  '<img class="info-content__img" src="' +
-                  infoImg[3].src +
-                  '" alt="">' +
-                  '</div>' +
-                  '<div class="info-content__main">' +
-                  '<div class="info-content__header">' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-type">' +
-                  infoName[3].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-type">' +
-                  infoType[3].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-brand">' +
-                  infoBrand[3].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-brand">' +
-                  infoDescrBrand[3].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__footer">' +
-                  '<div class="info-content__text info-content__text-1">' +
-                  infoText1[3].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-2">' +
-                  infoText2[3].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-3">' +
-                  infoText3[3].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-4">' +
-                  infoText4[3].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__price">' +
-                  '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
-                  infoHour[3].innerHTML +
-                  '</button>' +
-                  '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
-                  infoDay[3].innerHTML +
-                  '</button>' +
-                  '<a href="' +
-                  infoOrder[3].href +
-                  '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
-                  infoBtnOrder[3].innerHTML +
-                  '</a>' +
-                  '</div>' +
-                  '</div>',
-              ],
-              [
-                '<div class="info-content">' +
-                  '<div class="info-content__wrapp">' +
-                  '<div class="info-content__body-title">' +
-                  '<div class="info-content__body-title">' +
-                  infoTitle[4].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__title-text">' +
-                  infoTitleText[4].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__wrapper">' +
-                  '<div class="info-content__image">' +
-                  '<img class="info-content__img" src="' +
-                  infoImg[4].src +
-                  '" alt="">' +
-                  '</div>' +
-                  '<div class="info-content__main">' +
-                  '<div class="info-content__header">' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-type">' +
-                  infoName[4].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-type">' +
-                  infoType[4].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__row">' +
-                  '<div class="info-content__name-brand">' +
-                  infoBrand[4].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__descr-brand">' +
-                  infoDescrBrand[4].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__footer">' +
-                  '<div class="info-content__text info-content__text-1">' +
-                  infoText1[4].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-2">' +
-                  infoText2[4].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-3">' +
-                  infoText3[4].innerHTML +
-                  '</div>' +
-                  '<div class="info-content__text info-content__text-4">' +
-                  infoText4[4].innerHTML +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '</div>' +
-                  '<div class="info-content__price">' +
-                  '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
-                  infoHour[4].innerHTML +
-                  '</button>' +
-                  '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
-                  infoDay[4].innerHTML +
-                  '</button>' +
-                  '<a href="' +
-                  infoOrder[4].href +
-                  '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
-                  infoBtnOrder[4].innerHTML +
-                  '</a>' +
-                  '</div>' +
-                  '</div>',
-              ],
-            ]
-            var marker,
-              infoWindow = new google.maps.InfoWindow({
-                content: '',
-                disableAutoPan: true,
-              })
-            const image = {
-              url: 'img/main/marker.png',
-              size: new google.maps.Size(51, 51),
-              origin: new google.maps.Point(0, 0),
-              anchor: new google.maps.Point(24, 55),
-              scaledSize: new google.maps.Size(51, 51),
-            }
-            for (i = 0; i < markersLoc.length; i++) {
-              var position = new google.maps.LatLng(
-                markersLoc[i][1],
-                markersLoc[i][2],
-              )
-              bounds.extend(position)
-              marker = new google.maps.Marker({
-                position,
-                map,
-                icon: image,
-                title: markersLoc[i][0],
-              })
-              google.maps.event.addListener(
-                marker,
-                'click',
-                (function (marker, i) {
-                  return function () {
-                    infoWindow.setContent(infoWindowContent[i][0])
-                    infoWindow.open(map, marker)
-                  }
-                })(marker, i),
-              )
-              map.fitBounds(bounds)
-            }
+              {
+                elementType: 'labels.icon',
+                stylers: [
+                  {
+                    visibility: 'off',
+                  },
+                ],
+              },
+              {
+                elementType: 'labels.text.fill',
+                stylers: [
+                  {
+                    color: '#616161',
+                  },
+                ],
+              },
+              {
+                elementType: 'labels.text.stroke',
+                stylers: [
+                  {
+                    color: '#f5f5f5',
+                  },
+                ],
+              },
+              {
+                featureType: 'administrative.land_parcel',
+                elementType: 'labels.text.fill',
+                stylers: [
+                  {
+                    color: '#bdbdbd',
+                  },
+                ],
+              },
+              {
+                featureType: 'poi',
+                elementType: 'geometry',
+                stylers: [
+                  {
+                    color: '#eeeeee',
+                  },
+                ],
+              },
+              {
+                featureType: 'poi',
+                elementType: 'labels.text.fill',
+                stylers: [
+                  {
+                    color: '#757575',
+                  },
+                ],
+              },
+              {
+                featureType: 'poi.park',
+                elementType: 'geometry',
+                stylers: [
+                  {
+                    color: '#e5e5e5',
+                  },
+                ],
+              },
+              {
+                featureType: 'poi.park',
+                elementType: 'labels.text.fill',
+                stylers: [
+                  {
+                    color: '#9e9e9e',
+                  },
+                ],
+              },
+              {
+                featureType: 'road',
+                elementType: 'geometry',
+                stylers: [
+                  {
+                    color: '#ffffff',
+                  },
+                ],
+              },
+              {
+                featureType: 'road.arterial',
+                elementType: 'labels.text.fill',
+                stylers: [
+                  {
+                    color: '#757575',
+                  },
+                ],
+              },
+              {
+                featureType: 'road.highway',
+                elementType: 'geometry',
+                stylers: [
+                  {
+                    color: '#dadada',
+                  },
+                ],
+              },
+              {
+                featureType: 'road.highway',
+                elementType: 'labels.text.fill',
+                stylers: [
+                  {
+                    color: '#616161',
+                  },
+                ],
+              },
+              {
+                featureType: 'road.local',
+                elementType: 'labels.text.fill',
+                stylers: [
+                  {
+                    color: '#9e9e9e',
+                  },
+                ],
+              },
+              {
+                featureType: 'transit.line',
+                elementType: 'geometry',
+                stylers: [
+                  {
+                    color: '#e5e5e5',
+                  },
+                ],
+              },
+              {
+                featureType: 'transit.station',
+                elementType: 'geometry',
+                stylers: [
+                  {
+                    color: '#eeeeee',
+                  },
+                ],
+              },
+              {
+                featureType: 'water',
+                elementType: 'geometry',
+                stylers: [
+                  {
+                    color: '#c9c9c9',
+                  },
+                ],
+              },
+              {
+                featureType: 'water',
+                elementType: 'labels.text.fill',
+                stylers: [
+                  {
+                    color: '#9e9e9e',
+                  },
+                ],
+              },
+            ],
           })
+          var markersLoc = [
+            ['Mumbai', 48.2437167, 19.3394151],
+            ['Pune', 48.2463182, 17.659755],
+            ['Bhopal ', 47.0842848, 3.1437127],
+            ['Agra', 50.4268, 30.5632],
+            ['Delhi', 50.9684777, 58.38623459999999],
+          ]
+          var infoTitle = document.querySelectorAll('.info-content__title')
+          for (var i = 0; i < infoTitle.length; i++);
+          var infoTitleText = document.querySelectorAll(
+            '.info-content__title-text',
+          )
+          for (i = 0; i < infoTitleText.length; i++);
+          var infoImg = document.querySelectorAll('.info-content__img')
+          for (i = 0; i < infoImg.length; i++);
+          var infoName = document.querySelectorAll('.info-content__name-type')
+          for (i = 0; i < infoName.length; i++);
+          var infoType = document.querySelectorAll('.info-content__descr-type')
+          for (i = 0; i < infoType.length; i++);
+          var infoBrand = document.querySelectorAll('.info-content__name-brand')
+          for (i = 0; i < infoBrand.length; i++);
+          var infoDescrBrand = document.querySelectorAll(
+            '.info-content__descr-brand',
+          )
+          for (i = 0; i < infoDescrBrand.length; i++);
+          var infoText1 = document.querySelectorAll('.info-content__text-1')
+          for (i = 0; i < infoText1.length; i++);
+          var infoText2 = document.querySelectorAll('.info-content__text-2')
+          for (i = 0; i < infoText2.length; i++);
+          var infoText3 = document.querySelectorAll('.info-content__text-3')
+          for (i = 0; i < infoText3.length; i++);
+          var infoText4 = document.querySelectorAll('.info-content__text-4')
+          for (i = 0; i < infoText4.length; i++);
+          var infoHour = document.querySelectorAll('.info-content__button-hour')
+          for (i = 0; i < infoHour.length; i++);
+          var infoDay = document.querySelectorAll('.info-content__button-day')
+          for (i = 0; i < infoDay.length; i++);
+          var infoOrder = document.querySelectorAll(
+            '.info-content__button-order',
+          )
+          for (i = 0; i < infoOrder.length; i++);
+          var infoBtnOrder = document.querySelectorAll(
+            '.info-content__button-order',
+          )
+          for (i = 0; i < infoBtnOrder.length; i++);
+          var infoWindowContent = [
+            [
+              '<div class="info-content">' +
+                '<div class="info-content__wrapp">' +
+                '<div class="info-content__body-title">' +
+                '<div class="info-content__body-title">' +
+                infoTitle[0].innerHTML +
+                '</div>' +
+                '<div class="info-content__title-text">' +
+                infoTitleText[0].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__wrapper">' +
+                '<div class="info-content__image">' +
+                '<img class="info-content__img" src="' +
+                infoImg[0].src +
+                '" alt="">' +
+                '</div>' +
+                '<div class="info-content__main">' +
+                '<div class="info-content__header">' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-type">' +
+                infoName[0].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-type">' +
+                infoType[0].innerHTML +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-brand">' +
+                infoBrand[0].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-brand">' +
+                infoDescrBrand[0].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__footer">' +
+                '<div class="info-content__text info-content__text-1">' +
+                infoText1[0].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-2">' +
+                infoText2[0].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-3">' +
+                infoText3[0].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-4">' +
+                infoText4[0].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__price">' +
+                '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
+                infoHour[0].innerHTML +
+                '</button>' +
+                '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
+                infoDay[0].innerHTML +
+                '</button>' +
+                '<a href="' +
+                infoOrder[0].href +
+                '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
+                infoBtnOrder[0].innerHTML +
+                '</a>' +
+                '</div>' +
+                '</div>',
+            ],
+            [
+              '<div class="info-content">' +
+                '<div class="info-content__wrapp">' +
+                '<div class="info-content__body-title">' +
+                '<div class="info-content__body-title">' +
+                infoTitle[1].innerHTML +
+                '</div>' +
+                '<div class="info-content__title-text">' +
+                infoTitleText[1].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__wrapper">' +
+                '<div class="info-content__image">' +
+                '<img class="info-content__img" src="' +
+                infoImg[1].src +
+                '" alt="">' +
+                '</div>' +
+                '<div class="info-content__main">' +
+                '<div class="info-content__header">' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-type">' +
+                infoName[1].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-type">' +
+                infoType[1].innerHTML +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-brand">' +
+                infoBrand[1].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-brand">' +
+                infoDescrBrand[1].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__footer">' +
+                '<div class="info-content__text info-content__text-1">' +
+                infoText1[1].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-2">' +
+                infoText2[1].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-3">' +
+                infoText3[1].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-4">' +
+                infoText4[1].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__price">' +
+                '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
+                infoHour[1].innerHTML +
+                '</button>' +
+                '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
+                infoDay[1].innerHTML +
+                '</button>' +
+                '<a href="' +
+                infoOrder[1].href +
+                '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
+                infoBtnOrder[1].innerHTML +
+                '</a>' +
+                '</div>' +
+                '</div>',
+            ],
+            [
+              '<div class="info-content">' +
+                '<div class="info-content__wrapp">' +
+                '<div class="info-content__body-title">' +
+                '<div class="info-content__body-title">' +
+                infoTitle[2].innerHTML +
+                '</div>' +
+                '<div class="info-content__title-text">' +
+                infoTitleText[2].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__wrapper">' +
+                '<div class="info-content__image">' +
+                '<img class="info-content__img" src="' +
+                infoImg[2].src +
+                '" alt="">' +
+                '</div>' +
+                '<div class="info-content__main">' +
+                '<div class="info-content__header">' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-type">' +
+                infoName[2].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-type">' +
+                infoType[2].innerHTML +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-brand">' +
+                infoBrand[2].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-brand">' +
+                infoDescrBrand[2].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__footer">' +
+                '<div class="info-content__text info-content__text-2">' +
+                infoText1[2].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-2">' +
+                infoText2[2].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-3">' +
+                infoText3[2].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-4">' +
+                infoText4[2].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__price">' +
+                '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
+                infoHour[2].innerHTML +
+                '</button>' +
+                '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
+                infoDay[2].innerHTML +
+                '</button>' +
+                '<a href="' +
+                infoOrder[2].href +
+                '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
+                infoBtnOrder[2].innerHTML +
+                '</a>' +
+                '</div>' +
+                '</div>',
+            ],
+            [
+              '<div class="info-content">' +
+                '<div class="info-content__wrapp">' +
+                '<div class="info-content__body-title">' +
+                '<div class="info-content__body-title">' +
+                infoTitle[3].innerHTML +
+                '</div>' +
+                '<div class="info-content__title-text">' +
+                infoTitleText[3].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__wrapper">' +
+                '<div class="info-content__image">' +
+                '<img class="info-content__img" src="' +
+                infoImg[3].src +
+                '" alt="">' +
+                '</div>' +
+                '<div class="info-content__main">' +
+                '<div class="info-content__header">' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-type">' +
+                infoName[3].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-type">' +
+                infoType[3].innerHTML +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-brand">' +
+                infoBrand[3].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-brand">' +
+                infoDescrBrand[3].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__footer">' +
+                '<div class="info-content__text info-content__text-1">' +
+                infoText1[3].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-2">' +
+                infoText2[3].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-3">' +
+                infoText3[3].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-4">' +
+                infoText4[3].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__price">' +
+                '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
+                infoHour[3].innerHTML +
+                '</button>' +
+                '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
+                infoDay[3].innerHTML +
+                '</button>' +
+                '<a href="' +
+                infoOrder[3].href +
+                '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
+                infoBtnOrder[3].innerHTML +
+                '</a>' +
+                '</div>' +
+                '</div>',
+            ],
+            [
+              '<div class="info-content">' +
+                '<div class="info-content__wrapp">' +
+                '<div class="info-content__body-title">' +
+                '<div class="info-content__body-title">' +
+                infoTitle[4].innerHTML +
+                '</div>' +
+                '<div class="info-content__title-text">' +
+                infoTitleText[4].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__wrapper">' +
+                '<div class="info-content__image">' +
+                '<img class="info-content__img" src="' +
+                infoImg[4].src +
+                '" alt="">' +
+                '</div>' +
+                '<div class="info-content__main">' +
+                '<div class="info-content__header">' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-type">' +
+                infoName[4].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-type">' +
+                infoType[4].innerHTML +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__row">' +
+                '<div class="info-content__name-brand">' +
+                infoBrand[4].innerHTML +
+                '</div>' +
+                '<div class="info-content__descr-brand">' +
+                infoDescrBrand[4].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__footer">' +
+                '<div class="info-content__text info-content__text-1">' +
+                infoText1[4].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-2">' +
+                infoText2[4].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-3">' +
+                infoText3[4].innerHTML +
+                '</div>' +
+                '<div class="info-content__text info-content__text-4">' +
+                infoText4[4].innerHTML +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="info-content__price">' +
+                '<button type="submit" class="info-content__button-price info-content__button-hour btn">' +
+                infoHour[4].innerHTML +
+                '</button>' +
+                '<button type="submit" class="info-content__button-price info-content__button-day btn">' +
+                infoDay[4].innerHTML +
+                '</button>' +
+                '<a href="' +
+                infoOrder[4].href +
+                '" target="_blank" class="info-content__button-price info-content__button-order btn btn-c" data-translate="GET_ORDER_BUTTON">' +
+                infoBtnOrder[4].innerHTML +
+                '</a>' +
+                '</div>' +
+                '</div>',
+            ],
+          ]
+          var marker,
+            infoWindow = new google.maps.InfoWindow({
+              content: '',
+              disableAutoPan: true,
+            })
+          const image = {
+            url: '/static/img/main/marker.png',
+            size: new google.maps.Size(51, 51),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(24, 55),
+            scaledSize: new google.maps.Size(51, 51),
+          }
+          for (i = 0; i < markersLoc.length; i++) {
+            var position = new google.maps.LatLng(
+              markersLoc[i][1],
+              markersLoc[i][2],
+            )
+            bounds.extend(position)
+            marker = new google.maps.Marker({
+              position,
+              map,
+              icon: image,
+              title: markersLoc[i][0],
+            })
+            google.maps.event.addListener(
+              marker,
+              'click',
+              (function (marker, i) {
+                return function () {
+                  infoWindow.setContent(infoWindowContent[i][0])
+                  infoWindow.open(map, marker)
+                }
+              })(marker, i),
+            )
+            map.fitBounds(bounds)
+          }
         })
       })
     var sttElem = document.querySelector('.arrow-up')
@@ -18422,7 +18406,8 @@
         sttScroll()
         sttClick()
       }
-      document.addEventListener('DOMContentLoaded', sttFunc)
+      sttFunc()
+      // document.addEventListener('DOMContentLoaded', sttFunc)
     }
     const locationBody = document.querySelector('.location-header__body')
     if (locationBody) {
@@ -18520,38 +18505,59 @@
         const dropDownBtn = dropDownWrapper.querySelector(
           '[data-dropdown-button]',
         )
-        const dropDownList = dropDownWrapper.querySelector(
-          '[data-dropdown-list]',
-        )
-        const dropDownListItems = dropDownList.querySelectorAll(
-          '[data-dropdown-item]',
-        )
+
+        let dropDownList = getDropDownList()
+
+        function getDropDownList() {
+          if (!dropDownList)
+            dropDownList = dropDownWrapper.querySelector('[data-dropdown-list]')
+        }
+
+        let dropDownListItems
+        if (dropDownList) {
+          dropDownListItems = dropDownList.querySelectorAll(
+            '[data-dropdown-item]',
+          )
+        }
         const dropDownInput = dropDownWrapper.querySelector(
           '[data-dropdown-input]',
         )
         dropDownBtn.addEventListener('click', function (e) {
-          console.log(dropDownList.classList)
-          dropDownList.classList.toggle('visible')
-          this.classList.toggle('active')
-          this.parentElement.classList.toggle('active')
+          try {
+            getDropDownList()
+            console.log(dropDownList.classList)
+            dropDownList.classList.toggle('visible')
+            this.classList.toggle('active')
+            this.parentElement.classList.toggle('active')
+          } catch (e) {
+            console.log(e)
+          }
         })
         dropDownBtn.addEventListener('mouseenter', function (e) {
-          dropDownList.classList.add('visible')
-          this.classList.add('active')
-          this.parentElement.classList.add('active')
+          try {
+            getDropDownList()
+            dropDownList.classList.add('visible')
+            this.classList.add('active')
+            this.parentElement.classList.add('active')
+          } catch (e) {
+            console.log(e)
+          }
         })
-        dropDownListItems.forEach(function (listItem) {
-          listItem.addEventListener('click', function (e) {
-            e.stopPropagation()
-            dropDownBtn.innerText = this.innerText
-            dropDownBtn.setAttribute('data-value', this.dataset.value)
-            dropDownBtn.focus()
-            dropDownInput.setAttribute('value', this.dataset.value)
-            dropDownList.classList.remove('visible')
-            dropDownBtn.classList.remove('active')
-            dropDownBtn.parentElement.classList.remove('active')
+
+        if (dropDownListItems) {
+          dropDownListItems.forEach(function (listItem) {
+            listItem.addEventListener('click', function (e) {
+              e.stopPropagation()
+              dropDownBtn.innerText = this.innerText
+              dropDownBtn.setAttribute('data-value', this.dataset.value)
+              dropDownBtn.focus()
+              dropDownInput.setAttribute('value', this.dataset.value)
+              dropDownList.classList.remove('visible')
+              dropDownBtn.classList.remove('active')
+              dropDownBtn.parentElement.classList.remove('active')
+            })
           })
-        })
+        }
         document.addEventListener('keydown', function (e) {
           if ('Tab' === e.key || 'Escape' === e.key) {
             dropDownBtn.classList.remove('active')
@@ -18649,34 +18655,32 @@
       if (cookiesAccepted || cookiesRefused)
         cookieAlert.classList.remove('show')
     }
-    document.addEventListener('DOMContentLoaded', () => {
-      const inputFile = document.querySelectorAll('.upload-file__input')
-      inputFile.forEach(function (el) {
-        const inputFileWrapper = el.closest('.upload-file__input-body')
-        let textSelector = inputFileWrapper.querySelector(
-          '.upload-file__label-text',
-        )
-        let fileList
-        el.addEventListener('change', function (e) {
-          fileList = []
-          for (let i = 0; i < el.files.length; i++) fileList.push(el.files[i])
-          fileList.forEach((file) => {
-            uploadFile(file)
-          })
+    const inputFile = document.querySelectorAll('.upload-file__input')
+    inputFile.forEach(function (el) {
+      const inputFileWrapper = el.closest('.upload-file__input-body')
+      let textSelector = inputFileWrapper.querySelector(
+        '.upload-file__label-text',
+      )
+      let fileList
+      el.addEventListener('change', function (e) {
+        fileList = []
+        for (let i = 0; i < el.files.length; i++) fileList.push(el.files[i])
+        fileList.forEach((file) => {
+          uploadFile(file)
         })
-        const uploadFile = (file) => {
-          if (file.size > 5 * 1024 * 1024) {
-            alert('Файл должен быть не более 5 МБ.')
-            return
-          }
-          if (file && file.length > 1) {
-            if (file.length <= 4)
-              textSelector.textContent = `Выбрано ${file.length} файла`
-            if (file.length > 4)
-              textSelector.textContent = `Выбрано ${file.length} файлов`
-          } else textSelector.textContent = `Завантажено`
-        }
       })
+      const uploadFile = (file) => {
+        if (file.size > 5 * 1024 * 1024) {
+          alert('Файл должен быть не более 5 МБ.')
+          return
+        }
+        if (file && file.length > 1) {
+          if (file.length <= 4)
+            textSelector.textContent = `Выбрано ${file.length} файла`
+          if (file.length > 4)
+            textSelector.textContent = `Выбрано ${file.length} файлов`
+        } else textSelector.textContent = `Завантажено`
+      }
     })
     const searchInput = document.querySelector('#search-input')
     const suggestionsList = document.querySelector('#suggestions-list')

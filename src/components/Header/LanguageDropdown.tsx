@@ -1,4 +1,10 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
+
+import { useEffect } from 'react'
+
+/* eslint-disable react/button-has-type */
 function LanguageDropdown() {
+  useEffect(() => {}, [])
   return (
     <div
       data-dropdown-hover
@@ -13,7 +19,7 @@ function LanguageDropdown() {
         UA
       </button>
       <div data-dropdown-list className="lang-header__list dropdown__list">
-        <div className="spollers__arrow"></div>
+        <div className="spollers__arrow" />
         <div className="lang-header__row">
           <div className="lang-header__title" data-translate="CHANGE_LANG">
             ЗМІНИТИ МОВУ
@@ -50,7 +56,7 @@ function LanguageDropdown() {
             <div className="location-header__radio">
               <input
                 className="location-header__radio-input"
-                checked
+                defaultChecked
                 type="radio"
                 id="lang-2"
                 name="lang"
@@ -105,7 +111,7 @@ function LanguageDropdown() {
         data-dropdown-input
         type="text"
         name="select-category"
-        value=""
+        defaultValue=""
         className="dropdown__input-hidden"
       />
     </div>

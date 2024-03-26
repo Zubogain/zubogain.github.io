@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 function Search() {
   return (
     <form action="#" className="header__search search-header">
@@ -10,18 +11,12 @@ function Search() {
         placeholder="Що потрібно знайти?"
         className="search-header__input"
       />
-      <ul
-        id="suggestions-list"
-        className="search-header__suggestions-list"
-      ></ul>
+      <ul id="suggestions-list" className="search-header__suggestions-list" />
       <button
         type="submit"
         className="search-header__button _icon-search-1 btn-c"
-      ></button>
-      <button
-        type="button"
-        className="search-header__button-clear btn-close"
-      ></button>
+      />
+      <button type="button" className="search-header__button-clear btn-close" />
     </form>
   )
 }

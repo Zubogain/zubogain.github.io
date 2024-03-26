@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 function RegionSelector() {
   return (
     <div className="header__location location-header">
@@ -14,7 +15,7 @@ function RegionSelector() {
           data-dropdown-list=""
           className="location-header__list dropdown__list"
         >
-          <div className="spollers__arrow"></div>
+          <div className="spollers__arrow" />
           <div className="lang-header__row">
             <div className="lang-header__title" data-translate="CHOOSE_REGION">
               Вибрати регіон
@@ -29,7 +30,7 @@ function RegionSelector() {
               <div className="location-header__radio">
                 <input
                   className="location-header__radio-input"
-                  checked
+                  defaultChecked
                   type="radio"
                   id="location-1"
                   name="location"
@@ -66,7 +67,7 @@ function RegionSelector() {
           className="dropdown__input-hidden"
         />
         <div data-da=".wrapper,767.98,1" className="location-header__body">
-          <div className="spollers__arrow"></div>
+          <div className="spollers__arrow" />
           <p className="location-header__text" data-translate="LANG_POPUP_INFO">
             Ми визначили вашу країну як Україна. Ви можете змінити це в
             налаштуваннях.

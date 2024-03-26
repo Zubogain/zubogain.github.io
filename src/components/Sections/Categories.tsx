@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 function CategoriesSection() {
   return (
     <section className="categories">

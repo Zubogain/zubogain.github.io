@@ -161,7 +161,7 @@ function AddTecnhique() {
                     Бетон & Дорожностроительная техника
                   </h6>
                   <ul className="category-header__list">
-                    <li className="category-header__item"></li>
+                    <li className="category-header__item" />
                     <li
                       className="dropdown__item"
                       data-dropdown-item
@@ -218,7 +218,7 @@ function AddTecnhique() {
                     Коммунально-дорожные машины & Другая техника
                   </h6>
                   <ul className="category-header__list">
-                    <li className="category-header__item"></li>
+                    <li className="category-header__item" />
                     <li
                       className="dropdown__item"
                       data-dropdown-item
@@ -268,7 +268,7 @@ function AddTecnhique() {
             <input
               type="text"
               name="select-category"
-              value=""
+              defaultValue=""
               data-dropdown-input
               className="dropdown__input-hidden"
             />

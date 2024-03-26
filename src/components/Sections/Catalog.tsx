@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/label-has-associated-control */
@@ -2292,7 +2293,7 @@ function CatalogSection() {
                   <input
                     type="text"
                     name="orders-location"
-                    value=""
+                    defaultValue=""
                     data-dropdown-input
                     className="dropdown__input-hidden"
                   />
@@ -2546,7 +2547,7 @@ function CatalogSection() {
                     type="text"
                     id="orders-category"
                     name="select-category"
-                    value=""
+                    defaultValue=""
                     data-dropdown-input
                     className="dropdown__input-hidden"
                   />
@@ -2601,7 +2602,7 @@ function CatalogSection() {
                   <input
                     type="text"
                     name="orders-payment"
-                    value=""
+                    defaultValue=""
                     data-dropdown-input
                     className="dropdown__input-hidden"
                   />
